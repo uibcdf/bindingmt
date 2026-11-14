@@ -1,5 +1,29 @@
 # BindingMT Development Guide
 
+### Public native BindingSite region projection — 2026-11-14
+
+`BindingSite.resolve_region` now projects native source atom/group membership
+through public MolSysMT operations. [The delivered C1 profile](binding_site_region.md)
+records original/target axes, explicit group expansion, state/occurrence relations,
+known omissions/generated atoms and detached experimental 0.1 result replay.
+`BindingSite.region_from_dict(..., experimental=True)` verifies saved relationships
+without molecular queries. Counts/maps do not authenticate a source or binding.
+
+**765 complete selected tests pass per normal/pm-fs policy**, including 70 new
+public-operation controls and 195 existing site tests. Actual saved JSON also
+passes fresh-process Pint/unyt replay. Source/native bytes remain pinned to the
+preceding #746 receiving; fetched provider advances are not merged. No resource
+interruption occurs. Earlier native498/evaluator holds stay unqualified.
+
+Next implement C1's explicit `from_selection` route through MolSysMT, keeping
+inventory, spatial/state-dependent selection and retained declaration semantics
+separate. Public C2/M2, T/H/P/shared/consumer and broader installed/public/platform
+gates remain pending; #111 stays active. Exact source/XML/resource/replay/gate/
+export/publication receipts retain #50 custody in
+`.molsyssuite/site-region-111-20261114/`, review 2026-11-21. No new tag/package or
+manual remote CI is dispatched. The dated checkpoints below retain their original
+scope; their historical next actions are superseded by this paragraph.
+
 ### Finite C1 facts received in the client environment — 2026-11-14
 
 [MolSysMT #746's finite offer](binding_site_molecular_contract_receiving.md) now

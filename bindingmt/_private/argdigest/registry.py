@@ -662,6 +662,16 @@ ARGUMENT_DIGESTERS = {
     'query_ref': _optional_mapping('query_ref'),
     'analysis_names': _provider_owned,
     'max_source_atoms': _integer('max_source_atoms', minimum=1),
+    'max_structure_occurrences': _integer('max_structure_occurrences', minimum=1),
+    'target': _provider_owned,
+    'group_correspondence': _declaration_value,
+    'structure_correspondence': _declaration_value,
+    'target_structure_index': _integer(
+        'target_structure_index', minimum=0, optional=True
+    ),
+    'view': _optional_string('view'),
+    'expansion': _optional_string('expansion'),
+    'coverage_policy': _optional_string('coverage_policy'),
     'max_native_occurrences': _integer('max_native_occurrences', minimum=1),
     'interface': _provider_owned,
     'radius': _provider_owned,

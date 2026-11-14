@@ -397,6 +397,69 @@ class BindingSite(_InterfaceRecordIO):
             'definition_key': 'definition',
         }
 
+    @signal(tags=['api', 'site', 'projection'])
+    @arg_digest(config='bindingmt._argdigest')
+    def resolve_region(
+        self,
+        molecular_system,
+        *,
+        target=None,
+        atom_map=None,
+        group_correspondence=None,
+        structure_correspondence=None,
+        view=None,
+        structure_index=None,
+        target_structure_index=None,
+        chemical_state=None,
+        expansion=None,
+        coverage_policy='require_complete',
+        context_policy='require_match',
+        max_source_atoms=100000,
+        max_structure_occurrences=4096,
+    ):
+        """Project source atom/group entries through public MolSysMT queries.
+
+        ``molecular_system`` is the original resident MolSys associated with the
+        declaration by the caller. A separate ``target`` requires explicit atom
+        and structure maps. Groups require ``source_members`` or
+        ``target_group_members`` expansion. Default coverage refuses omissions.
+        The detached experimental 0.1 result records checked correspondence;
+        it does not assert source authenticity, geometric inclusion or binding.
+        See ``devguide/binding_site_region.md`` for scope and trust preconditions.
+        """
+        from bindingmt._private.site_region import resolve
+
+        return resolve(
+            self,
+            molecular_system,
+            target=target,
+            atom_map=atom_map,
+            group_correspondence=group_correspondence,
+            structure_correspondence=structure_correspondence,
+            view=view,
+            structure_index=structure_index,
+            target_structure_index=target_structure_index,
+            chemical_state=chemical_state,
+            expansion=expansion,
+            coverage_policy=coverage_policy,
+            context_policy=context_policy,
+            max_source_atoms=max_source_atoms,
+            max_structure_occurrences=max_structure_occurrences,
+        )
+
+    @staticmethod
+    @signal(tags=['api', 'site', 'persistence'])
+    @arg_digest(config='bindingmt._argdigest')
+    def region_from_dict(record, *, experimental=False):
+        """Admit a saved region result without querying a molecular source.
+
+        This checks historical record integrity and correspondence, not current
+        applicability. Explicit experimental opt-in is required.
+        """
+        from bindingmt._private.site_region import read
+
+        return read(record, experimental)
+
     def _derive(self, record, kind, reason):
         _require(text(reason), 'reason', 'Record why this declaration is derived.')
         record['record_id'] = str(uuid4())
@@ -511,7 +574,7 @@ class BindingSite(_InterfaceRecordIO):
             'capabilities': {
                 'declaration': True,
                 'persistence': True,
-                'molecular_projection': False,
+                'molecular_projection': molecular,
                 'domain_placement': False,
             },
         }

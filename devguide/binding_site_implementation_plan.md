@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Recorded: 2026-11-11. Work-plan revision **2, reviewed**.
-Status: **admitted M1/internal C2 received; #116 corrected and finite C1 facts client-received; public C1/placement pending**.
+Status: **admitted M1/internal C2 and bounded public C1 region/replay received; C1 selection and public C2/M2 placement pending**.
 This plan turns the [audited design](binding_site_design.md) and its
 [worked handoffs](binding_site_review.md) into independently reviewable increments.
 It records work order and acceptance; only the dated delivered profiles below are implemented.
@@ -172,7 +172,7 @@ permission to publish partial enforcement or a callable stub.
 | P0t/h/p | Inputs offered, not yet received | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
 | B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
 | B2 | Static 0.1/0.2/0.3 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
-| C1 | Finite source/native facts client-received; actual public projection/qualification pending | A qualified direct region projection on a chosen MolSys structure. |
+| C1 | Bounded public native region/replay received; selection/addressed workflows pending | Qualified direct projection and the explicit selection route on the admitted MolSys/state scope. |
 | C2 | Internal static geometry/recipe received; public placement/assurance pending, molecular use also needs C1 | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
 | T0 | Pending B2/TopoMT profile and input | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
@@ -335,6 +335,14 @@ is overwritten or silently upgraded. The illustrative review JSON is not used
 as proof that the implementation emitted those records.
 
 ## 8. C1: direct molecular region projection
+
+**Delivered bounded native membership profile:**
+[the actual public projection contract](binding_site_region.md), source-received
+2026-11-14 with 70 new controls and 765 complete selected cases per normal/pm-fs
+policy. It implements direct/original and explicitly mapped derived atom/group
+projection and offline typed historical replay. The `from_selection` route and
+richer addressed/spatial resolution below remain work; this does not close full
+C1, public C2/M2 or shared/consumer acceptance.
 
 Implement the agreed `resolve_region` profile against public MolSysMT operations.
 The ordinary input is a native MolSys; read only the explicitly relevant
@@ -796,3 +804,35 @@ work; these owner-module controls do not implement that consumer operation.
 Full suite/native ABI/build authenticity, installed/public/platform/final-pair and
 shared/consumer adoption stay separate. Exact receipts remain under #50 in
 `.molsyssuite/site-molecular-owner-746-20261114/`, review 2026-11-21.
+
+## Public native C1 slice delivered — 2026-11-14
+
+[The first region profile](binding_site_region.md) adds real
+`BindingSite.resolve_region` and `BindingSite.region_from_dict`. The original
+resident source is caller-associated; a separate native target requires owner
+atom-map data and explicit target-to-source occurrence correspondence. Group
+identity needs aligned surviving atom witnesses or explicit injective
+correspondence. Preserve entry order, original/source-local axes, repetitions,
+known selected states, omissions and generated atoms without inherited identity.
+Default complete coverage refuses known losses before indexed target expansion.
+Detached experimental result 0.1 includes full original Site, exact refs and
+bounded owner observations. Its typed reader admits historical JSON without
+molecular queries or a current-applicability claim. No shared `@1` is frozen.
+
+70 new actual-operation controls, 195 earlier site, 463 lower-resource software
+and 37 argument/bootstrap cases pass completely per normal/pm-fs policy:
+**765 per policy**. Actual saved JSON also passes separate fresh-process
+Pint/unyt admission with molecular operations blocked; public owner map
+normalization is data-only. Earlier source/scientific inputs and producer
+identities are unchanged. The first 40-case attempt's wrong expected exception
+type is corrected without suppressing the provider's unknown-state refusal.
+No new resource interruption occurs; native498/evaluator holds remain held.
+Six workspace/fresh committed-export checks, exact source/native snapshots,
+XML/resource/saved-JSON/replay/publication receipts retain #50 custody under
+`.molsyssuite/site-region-111-20261114/`, review 2026-11-21.
+
+Next implement `from_selection` through MolSysMT and qualify the explicit
+inventory versus spatial/state-dependent selection policy and retained
+declaration. Keep richer addressed/geometry inclusion separate. Public C2/M2,
+T/H/P/shared/consumer/full-suite/installed/public/platform/final-pair gates remain
+pending. #111 remains active; no package/tag or manual remote CI is dispatched.

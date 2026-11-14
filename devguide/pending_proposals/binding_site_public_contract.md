@@ -1,12 +1,12 @@
 ---
-summary: Review the BindingSite work plan with operation-specific prerequisites, explicit selection/import work, structural and check/use controls, and evidenced core/application/receiving milestones.
+summary: Deliver BindingSite declarations and bounded native region projection with historical replay; retain explicit selection, placement and owner receiving gates.
 issue: uibcdf/bindingmt#111
 status: active
 opened: 2026-11-11
 closed:
 verification: reproduced
 area: [architecture, public-api, interoperability]
-guard: tests/test_binding_site.py
+guard: tests/test_site_region.py
 normative:
 blocked_by: []
 supersedes: []
@@ -307,3 +307,30 @@ and earlier evaluator hold are preserved and not automatically rerun. #111 stays
 active. Exact source/frozen-guard/XML/resource/gate/export/publication receipts
 retain #50 custody in `.molsyssuite/site-molecular-owner-746-20261114/`, review
 2026-11-21; the new small task has no resource interruption.
+
+## Public native region and historical replay — 2026-11-14
+
+[The implemented C1 slice](../binding_site_region.md) now provides public
+`resolve_region` for native atom/group membership and `region_from_dict` for
+experimental historical result admission. Public MolSysMT owns get/select/group
+expansion and typed maps. Original/target axes, requested entry order, explicit
+group expansion, structure/state associations, omissions/generated members and
+full immutable site/evidence remain inspectable. Missing maps never become
+identity, default complete coverage refuses known losses, and generated members
+inherit no original source identity. The saved result checks owned relationships
+without molecular queries or reassessing current applicability.
+
+70 new controls and **765 complete selected tests per normal/pm-fs policy** pass,
+plus actual saved-JSON fresh-process Pint/unyt replay with molecular routes
+blocked. Exact provider/native closure remains unchanged from #746 receiving;
+new fetched provider advances are not merged into this tested population.
+Original scientific fixtures/producers and the held native498/evaluator
+attempts are preserved. All new owned groups terminate without an interruption.
+Applicable workspace and fresh committed-export checks, source/XML/resource/
+replay/publication receipts retain #50 custody under
+`.molsyssuite/site-region-111-20261114/`, review 2026-11-21.
+
+Next complete C1's explicit selection route through the owner. Richer addressed
+resolution, public C2/M2, T/H/P/shared/consumer/full-suite/installed/public/platform/
+final-pair gates remain pending. #111 stays active; source tag 0.1.0, publication
+state and missing remote CI evidence are unchanged.

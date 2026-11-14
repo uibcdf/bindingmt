@@ -123,8 +123,19 @@ The [source-index membership profile](binding_site_membership.md) extends the
 same site validation/lifecycle with explicit atom/group axis semantics. Local
 normalization transports ordered declared integers, without selecting, expanding
 groups, matching molecular identity or deriving coordinates. New wire 0.2 is
-admitted separately from the actual old 0.1 profile. C1 owner facts are requested
-under MolSysMT #746; no successful native projection is fabricated from labels.
+admitted separately from the actual old 0.1 profile. C1 owner facts are received
+under MolSysMT #746; native source identity is never fabricated from labels.
+
+The [bounded public C1 projection](binding_site_region.md) composes public
+MolSysMT get/select/atom-map routes from `core/site.py` through
+`_private/site_region.py`. BindingMT arranges its owned declared entries,
+correspondence/coverage and historical record checks; MolSysMT performs source
+queries, group expansion and typed map admission. Original source, optional
+target and explicit group/structure maps retain distinct axes. The detached
+result is an experimental Mapping, not another molecular class, source snapshot
+or general identity framework. Its typed reader queries no molecular source.
+The initial profile does not calculate coordinates, geometry, contacts or
+binding, and does not replace remaining C1 selection or C2 placement work.
 
 The [elementary geometry profile](binding_site_geometry.md) adds explicit sealed
 length quantities and an owned dimensionless orientation kind through the same
@@ -150,8 +161,8 @@ The [reviewed C1 provider offer](binding_site_molecular_contract_receiving.md)
 identifies owner-supplied public facts versus caller preconditions; atom maps,
 group-entry correspondence and structure-occurrence relations remain distinct.
 The finite owner modules now pass in the client source/native context; that
-receiving remains separate from public BindingSite projection implementation
-and broader build/installed/platform qualification.
+receiving precedes the bounded public BindingSite projection above and remains
+separate from broader build/installed/platform qualification.
 
 ## Current source map
 

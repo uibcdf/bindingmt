@@ -21,8 +21,30 @@ than treating the skipped push as passing.
 
 Owner: [BindingMT #73](https://github.com/uibcdf/bindingmt/issues/73).
 Accepted maintainer objective: 2026-11-06, [BMT-046](DECISIONS.md#bmt-046--deliver-the-complete-functional-objective-before-stabilization).
-Status: **active; #116 corrected and finite C1 facts client-received; admitted M1/internal C2 remain received; public C1/C2/M2 and #112 P/shared receiving remain pending**.
+Status: **active; bounded public C1 native region/replay source-received; C1 selection, public C2/M2 and #112 P/shared receiving remain pending**.
 Inspected starting source: `530a4cf`.
+
+### Public C1 native region and historical replay — 2026-11-14
+
+[The delivered atom/group profile](binding_site_region.md) adds
+`BindingSite.resolve_region` and the explicit experimental `region_from_dict`
+reader using public MolSysMT queries/maps. Preserve source versus target indices,
+entry order, selected state/occurrences, missing/generated members and immutable
+site/evidence. Default complete coverage refuses omissions. Historical replay
+checks recorded relationships without asserting current applicability.
+
+765 complete selected cases pass per normal/pm-fs policy (70 new region, 195
+earlier site, 463 resource/helper/serialization/internal C2, 37 argument/bootstrap).
+Actual saved JSON passes fresh-process Pint/unyt admission with molecular queries
+blocked. No provider/environment/native/scientific input is changed; no new
+resource interruption occurs. Earlier native498 and evaluator holds are preserved.
+Six applicable checks cover workspace and fresh committed export; hosted CI,
+full-suite/installed/public/platform/final-pair receiving is not inferred.
+
+Next complete the explicit C1 selection workflow; public C2/M2 and T/H/P/shared/
+consumer adoption keep independent gates. Source/native closure, limits and #50
+custody are in the contract and `.molsyssuite/site-region-111-20261114/`, review
+2026-11-21. #111 stays active, with no new tag/package or manual remote CI.
 
 ### Finite C1 facts received in the client environment — 2026-11-14
 

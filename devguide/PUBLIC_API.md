@@ -19,6 +19,7 @@ as implemented exports by the naming transition.
 | Inspect available evidence | `audit_pose`, `audit_result`, `verify_captured_inputs` | Cross-check supplied mappings/captured bytes offline. An internally consistent record is not authenticated provenance or chemical validation. |
 | Change a result's order | `DockingResult.rank_by` | Stable ordering of existing scores, with ranking history; no new score or search. |
 | Declare/preserve a binding-site hypothesis | `BindingSite.from_residues`, `from_definition`, `from_atoms`, `from_groups`, `from_sphere`, `from_box` | Detached declarations, explicit source/scope/frame and versioned persistence; no molecular resolution or domain placement. |
+| Project a native site region / admit saved output | `BindingSite.resolve_region`, `BindingSite.region_from_dict` | Source atom/group membership, explicit derived maps/state/occurrences and coverage; detached experimental 0.1 result, with no binding or placement claim. |
 | Describe a physical region | `BoxRegion` | Quantity-aware box construction. `from_selection` additionally reads a molecular system through MolSysMT. |
 | Declare molecular inputs | `DockingProblem`, `DockingProblem.for_redocking` | Resolve supported inputs/selections/states through MolSysMT. This can read/convert molecular data. |
 | Make explicit preparations | `prepare_receptor`, `prepare_ligand` | Molecular preparation and export using provider tools; choices remain explicit and case-dependent. |
@@ -137,8 +138,30 @@ Molecular input normalization propagates the original `MemoryError` and
 failures keep their field-local diagnosis and original cause; see
 [#116's source correction and qualification limits](archive/molecular_input_os_resource_error.md).
 The [client-received MolSysMT #746 offer](binding_site_molecular_contract_receiving.md)
-supplies finite public facts for future site resolution; it does not add a
-`resolve_region` callable or qualify current molecular placement in this checkpoint.
+supplies the finite public molecular facts used by the subsequently delivered
+[C1 region profile](binding_site_region.md). The actual public
+`site.resolve_region(original_molsys, structure_index=...)` now returns a detached
+experimental 0.1 Mapping for atom/group membership. Access
+`region['projection']['exported_target_atom_indices']` and inspect entry-level
+missing/generated members and coverage. Groups require explicit
+`expansion='source_members'` or `'target_group_members'`. A separate `target`
+requires `atom_map` and full target-to-source `structure_correspondence`;
+`target_structure_index` disambiguates repeated occurrences. Known selected
+structure/state associations are mandatory; no reference-state fallback occurs.
+Complete coverage is the default; `coverage_policy='allow_partial'` preserves
+omissions without weakening map/context admission. Caller asset association and
+consistent inputs remain required; internally valid maps prove no common origin.
+
+`BindingSite.region_from_dict(record, experimental=True)` checks this saved result
+without molecular queries; ordinary JSON persistence suffices. It preserves the
+complete original site and producer, checks digest/refs/ordered relationships and
+delegates typed map validation to MolSysMT's data-only public route. It does not
+reassess current source/frame/binding applicability. `inspect()` on a membership
+declaration now reports projection capability, while its declaration's resolution
+remains `not_performed`. Other views still report no molecular projection.
+`from_selection`, richer addressed/spatial resolution and public
+`to_search_domain`/C2 placement remain pending. The existing site wire versions,
+record producers and 0.1.0 source tag are unchanged; no shared schema is frozen.
 
 ## Interface declarations and experimental persistence
 

@@ -20,7 +20,7 @@ checkpoint under #30 / MolSysSuite #190. Retain that missing evidence rather
 than treating the skipped push as passing.
 
 Owner: [BindingMT #82](https://github.com/uibcdf/bindingmt/issues/82).
-Checkpoint date: **2026-11-13**; original machine handoff: **2026-11-06**.
+Checkpoint date: **2026-11-14**; original machine handoff: **2026-11-06**.
 The destination is another **machine**, using the
 same `uibcdf/bindingmt` repository, issue history and scientific producers.
 The original migration preserves repository/issue/scientific identities; the
@@ -29,6 +29,31 @@ separate source milestone is recorded below.
 Read [development/onboarding](DEVELOPMENT.md) for setup and code navigation.
 [PRE_STABILIZATION_PLAN.md](PRE_STABILIZATION_PLAN.md) owns the full product
 requirements; this file explains how to resume without recovering chat history.
+
+### Resume here: public native region projection — 2026-11-14
+
+[The delivered C1 slice](binding_site_region.md) implements public
+`BindingSite.resolve_region` on original native atom/group membership, optional
+explicitly mapped target, group expansion policy and known selected state scope.
+It preserves repetitions, omissions/generated identity and full original site.
+`region_from_dict(..., experimental=True)` admits detached historical JSON with
+no molecular queries; it does not reassess current source identity or binding.
+
+765 complete selected tests pass per normal/pm-fs policy plus actual saved-result
+fresh-process Pint/unyt replay. Runtime/provider/native/frozen-input bytes are
+snapshotted before/after; existing 0.1.0 and scientific producers are unchanged.
+The source closure remains the preceding #746 receiving, despite fetched remote
+provider advances. All new cells terminate without a resource interruption under
+CPU0/nice10/one worker and the monitored 13 GiB reserve/512 MiB group threshold.
+Do not restart earlier native498 or evaluator holds. No new install/build occurs.
+
+Next implement `from_selection` through the owner, distinguishing inventory from
+spatial/state-dependent selection. Full C1, public C2/M2, T/H/P/shared/consumer,
+full-suite/installed/public/platform/final-pair gates remain pending. #111 stays
+active. Retain exact raw/source/XML/resource/replay and workspace/committed-export/
+publication receipts under `.molsyssuite/site-region-111-20261114/`, owner #50,
+review 2026-11-21; remove only owned retired exports. Direct `[skip ci]` push is
+authorized, manual remote CI is not dispatched, and skipped CI is not a pass.
 
 ### Finite C1 facts received in the client environment — 2026-11-14
 

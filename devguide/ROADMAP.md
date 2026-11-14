@@ -23,11 +23,28 @@ The roadmap defines direction and gates, not dates.
 
 ## Current operational plan
 
-Current work is **#116 corrected and #746's finite facts received in the client
-environment; public C1 native projection and C2 placement remain pending**. #112 has native
+Current work is **bounded public C1 atom/group projection and historical replay
+source-received; C1 selection and public C2 placement remain pending**. #112 has native
 contact/surface/ionic/H-R2 source receiving and resolved #113/#114; its P cases await
 PeptideMT #60, with shared disposition and unyt construction separately owned.
 Neither interface nor all-consumer receiving is a global BindingSite prerequisite.
+
+### Public C1 native membership projection — 2026-11-14
+
+[The first native region profile](binding_site_region.md) delivers actual
+`BindingSite.resolve_region`/`region_from_dict`, with explicit source/target maps,
+group expansion, structure/state scope, partial coverage and generated identity.
+765 complete selected tests pass per normal/pm-fs policy, including 70 new controls;
+the actual JSON passes a fresh-process replay with molecular queries blocked.
+This completes a bounded C1 slice, not full C1/M2 or current binding assessment.
+
+Next implement the accepted `from_selection` route through MolSysMT and qualify
+inventory versus spatial/state-dependent selection. Preserve all existing
+scientific inputs and held native498/evaluator populations. Remote/full-suite/
+installed/public/platform evidence remains missing. CPU0/nice10/one-worker cells
+have no interruption; exact closure and #50 custody are in the contract and
+`.molsyssuite/site-region-111-20261114/`, review 2026-11-21. Existing 0.1.0 stays
+unchanged; this uses `[skip ci]` without manual remote CI.
 
 ### Finite C1 facts received in the client environment — 2026-11-14
 

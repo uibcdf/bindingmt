@@ -135,7 +135,7 @@ applicable documentation/resource checks run after final edits in the workspace
 and fresh committed export; the export is retired. #50 reviews this task on
 2026-11-21. No original held selection is automatically restarted.
 
-## Next implementation boundary
+## Original implementation boundary at owner receiving
 
 The finite P0m dependency is ready for the admitted operations. Implement the
 real public C1 native atom/group region projection and its detached versioned
@@ -153,3 +153,18 @@ foreign conversions, broader source/native/installed/platform/final-pair receivi
 shared agreements and actual consumer adoption retain their separate gates.
 No public `resolve_region` stub or local molecular algorithm is added by this
 receiving increment.
+
+## Consumer operation delivered after receiving — 2026-11-14
+
+[The actual bounded C1 implementation](binding_site_region.md) now uses these
+owner facts through `BindingSite.resolve_region`, including group expansion,
+atom/group/structure correspondence, selected state checks and complete/partial
+coverage. Its saved-result reader admits historical data without molecular
+queries. Actual MolSysMT extraction/permutation/generation feeds independently
+asserted BindingMT outputs, rather than merely copying the owner's assertions
+into a report. The 70 new public controls and 765 complete selected tests pass
+per normal/pm-fs policy; actual saved JSON passes a fresh-process Pint/unyt reader
+with molecular operations blocked. No provider source/native bytes change, no
+new provider gap is observed, and broader ABI/build/installed/platform and shared/
+consumer acceptance remain unclaimed. Full C1 selection/addressed work and public
+C2/M2 are still pending. #111 owns this implementation; #746 remains resolved.
