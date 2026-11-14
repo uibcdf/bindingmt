@@ -23,11 +23,30 @@ The roadmap defines direction and gates, not dates.
 
 ## Current operational plan
 
-Current work is **bounded public C1 atom/group projection and historical replay
-source-received; C1 selection and public C2 placement remain pending**. #112 has native
+Current work is **bounded C1 selection snapshots and native region/replay
+source-received; expression resource-error identity awaits MolSysMT #756,
+and public C2 placement remains pending**. #112 has native
 contact/surface/ionic/H-R2 source receiving and resolved #113/#114; its P cases await
 PeptideMT #60, with shared disposition and unyt construction separately owned.
 Neither interface nor all-consumer receiving is a global BindingSite prerequisite.
+
+### C1 native selection snapshots — 2026-11-14
+
+[The first selection profile](binding_site_selection.md) delivers
+`BindingSite.from_selection`, separate Site 0.4 admission and projection of its
+fixed atom/group membership through existing region results. Structural inventory
+needs no frame; one explicit occurrence admits state/spatial expressions via
+MolSysMT. Preserve captured query/state/counts; do not rerun a rule after edits.
+846 complete selected cases pass per normal/pm-fs policy, plus actual saved
+Site/region fresh-process replay. Original fixtures/producers and native bytes
+are unchanged; all owned cells terminate without a new resource interruption.
+
+MolSysMT #756 owns confirmed MemoryError/OS ENOMEM reclassification in expression
+evaluation; original identity is not qualified there. Next receive that correction
+and settle the public C2 placement/assurance profile. Richer addressed/ensemble,
+T/H/P/shared/consumer and broader delivery gates remain pending. Raw and final
+receipts retain #50 custody in `.molsyssuite/site-selection-111-20261114/`, review
+2026-11-21. No tag/package or remote CI; earlier heavy holds remain unretried.
 
 ### Public C1 native membership projection — 2026-11-14
 

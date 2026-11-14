@@ -387,6 +387,25 @@ def _layout(site, request, observations, correspondence):
         'Selected source and target state positions must agree.',
     )
     requested_state = request['chemical_state']
+    if 'selection' in view['payload']:
+        captured = view['payload']['selection']
+        for axis in ('n_atoms', 'n_groups', 'n_chemical_states'):
+            _require(
+                source[axis] == captured['observations'][axis],
+                'molecular_system',
+                'Original source axis counts contradict the captured selection.',
+            )
+        if captured['effective']['mode'] == 'single_structure':
+            _require(
+                source['n_structures'] == captured['observations']['n_structures'],
+                'molecular_system',
+                'Original source structure count contradicts the captured selection.',
+            )
+        _require(
+            view['payload']['selection']['effective']['chemical_state_index'] == state,
+            'chemical_state',
+            'Captured selection requires its original state position; projection does not reevaluate it.',
+        )
     if requested_state is not None and requested_state != 'structure':
         _require(
             requested_state == state,

@@ -30,7 +30,34 @@ Read [development/onboarding](DEVELOPMENT.md) for setup and code navigation.
 [PRE_STABILIZATION_PLAN.md](PRE_STABILIZATION_PLAN.md) owns the full product
 requirements; this file explains how to resume without recovering chat history.
 
-### Resume here: public native region projection — 2026-11-14
+### Resume here: native selection snapshot — 2026-11-14
+
+[The implemented C1 selection profile](binding_site_selection.md) supplies
+`BindingSite.from_selection` on the original resident MolSys with caller source
+descriptor. It delegates inventory/one-structure atom/group queries to MolSysMT,
+stores fixed experimental Site 0.4 and composes existing region projection.
+Typed historical reading preserves captured query/context without molecular
+queries; later projection does not reevaluate the predicate or infer binding.
+Captured source counts and state must agree. Old records/fixtures/producers,
+existing native file, source tag 0.1.0 and environment are unchanged.
+
+846 complete selected cases pass per normal/pm-fs policy, plus actual saved
+Site/region fresh-process Pint/unyt replay. MolSysMT #756 owns the confirmed
+resource-error reclassification inside expression selection; end-to-end original
+identity remains unqualified. Next receive that correction when available and
+admit public C2 placement/assurance. Richer addressed/ensemble, T/H/P/shared/
+consumer/full-suite/installed/public/platform/final-pair gates stay separate.
+
+All cells remain serial CPU0/nice10/one worker with monitored 13 GiB reserve and
+512 MiB owned-group threshold. No new resource interruption; old native498 and
+evaluator holds remain unretried/unqualified. Initial setter/source-drift probe
+failures stay recorded and are not folded into final counts. Retain exact
+source/probe/XML/resource/saved-JSON/replay/workspace/committed-export/publication
+receipts in `.molsyssuite/site-selection-111-20261114/`, owner #50, review
+2026-11-21. Remove only retired owned exports. Direct `[skip ci]` push remains
+authorized; no manual remote CI is dispatched and no remote pass is inferred.
+
+### Earlier checkpoint: public native region projection — 2026-11-14
 
 [The delivered C1 slice](binding_site_region.md) implements public
 `BindingSite.resolve_region` on original native atom/group membership, optional

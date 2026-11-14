@@ -137,6 +137,19 @@ or general identity framework. Its typed reader queries no molecular source.
 The initial profile does not calculate coordinates, geometry, contacts or
 binding, and does not replace remaining C1 selection or C2 placement work.
 
+The subsequent [native selection snapshot](binding_site_selection.md) implements
+C1's `from_selection` in `core/site.py`/`_private/site_selection.py`, with explicit
+separate Site 0.4 admission in `site_records.py`. A resident Topology/ChemicalStates
+composition omits Structures for inventory selection; an explicit single
+occurrence supplies the full MolSys for structure-dependent selection. Public
+MolSysMT alone parses/evaluates the expression. BindingMT checks owned captured
+query/state/count/member relationships, freezes membership and preserves the
+existing immutable lifecycle; no source snapshot or new molecular class appears.
+Region projection enforces captured source counts/state and never reruns the
+predicate. Historical readers perform no molecular queries. MolSysMT #756 owns
+the reproduced expression resource-error identity gap; no workaround is copied
+into this consumer. Public C2/current-finding and richer C1 work remain separate.
+
 The [elementary geometry profile](binding_site_geometry.md) adds explicit sealed
 length quantities and an owned dimensionless orientation kind through the same
 public site lifecycle. `_private/site_geometry.py` validates only declared

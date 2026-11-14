@@ -1,5 +1,30 @@
 # BindingMT Development Guide
 
+### Native selection snapshots delivered — 2026-11-14
+
+`BindingSite.from_selection` now delegates inventory/one-structure atom/group
+selection to MolSysMT and returns fixed experimental Site 0.4 membership.
+[The delivered selection profile](binding_site_selection.md) retains the query,
+effective source/state scope and owner provenance, with typed historical replay
+and captured state/count checks in `resolve_region`. Inventory omits Structures
+entirely; spatial queries need one explicit occurrence and a bounded pair square.
+No predicate is rerun by saved-record reading or subsequent region projection.
+
+**846 complete selected cases pass per normal/pm-fs policy**, including 81
+selection cases. Actual saved Site/region JSON also receives fresh-process
+Pint/unyt admission. [MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756)
+owns a reproduced resource-error reclassification in expression selection;
+end-to-end original error identity is pending, rather than locally unwrapped.
+Normal selection works; this is a bounded C1 slice, not full plan acceptance.
+
+Next receive #756 when corrected and admit the public C2 placement/assurance
+profile. Richer addressed/ensemble, T/H/P/shared/consumer/full-suite/installed/
+public/platform/final-pair gates remain pending. Keep earlier heavy holds intact.
+Exact source/XML/resource/probe/replay/gate/export/publication receipts retain
+#50 custody in `.molsyssuite/site-selection-111-20261114/`, review 2026-11-21.
+No tag/package/install/build/manual remote CI is performed; skipped CI is missing
+remote evidence. Dated earlier checkpoints retain their original populations.
+
 ### Public native BindingSite region projection — 2026-11-14
 
 `BindingSite.resolve_region` now projects native source atom/group membership

@@ -7,7 +7,7 @@ Open proposals following [`reporting_protocol.md`](../reporting_protocol.md).
 ### Active (2)
 
 - [`binding_interface_public_contract.md`](binding_interface_public_contract.md) — [#112](https://github.com/uibcdf/bindingmt/issues/112) — Deliver native contacts, surfaces, ionic H0/H1 and H-R2 annotation; PISA deferred, unyt/P and shared receiving pending. *(active, reproduced)*
-- [`binding_site_public_contract.md`](binding_site_public_contract.md) — [#111](https://github.com/uibcdf/bindingmt/issues/111) — Deliver BindingSite declarations and bounded native region projection with historical replay; retain explicit selection, placement and owner receiving gates. *(active, reproduced)*
+- [`binding_site_public_contract.md`](binding_site_public_contract.md) — [#111](https://github.com/uibcdf/bindingmt/issues/111) — Deliver native BindingSite selection snapshots and region/replay; retain provider resource-identity, placement and broader owner receiving gates. *(active, reproduced)*
 
 ### Partial (15)
 

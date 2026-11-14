@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Recorded: 2026-11-11. Work-plan revision **2, reviewed**.
-Status: **admitted M1/internal C2 and bounded public C1 region/replay received; C1 selection and public C2/M2 placement pending**.
+Status: **admitted M1/internal C2 and bounded C1 selection/region/replay received; resource identity awaits MolSysMT #756; public C2/M2 placement pending**.
 This plan turns the [audited design](binding_site_design.md) and its
 [worked handoffs](binding_site_review.md) into independently reviewable increments.
 It records work order and acceptance; only the dated delivered profiles below are implemented.
@@ -172,7 +172,7 @@ permission to publish partial enforcement or a callable stub.
 | P0t/h/p | Inputs offered, not yet received | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
 | B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
 | B2 | Static 0.1/0.2/0.3 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
-| C1 | Bounded public native region/replay received; selection/addressed workflows pending | Qualified direct projection and the explicit selection route on the admitted MolSys/state scope. |
+| C1 | Bounded native selection/region/replay received; #756 identity and richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
 | C2 | Internal static geometry/recipe received; public placement/assurance pending, molecular use also needs C1 | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
 | T0 | Pending B2/TopoMT profile and input | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
@@ -336,7 +336,15 @@ as proof that the implementation emitted those records.
 
 ## 8. C1: direct molecular region projection
 
-**Delivered bounded native membership profile:**
+**Latest delivered selection increment:**
+[the actual native snapshot contract](binding_site_selection.md) implements
+`from_selection`, typed Site 0.4 historical reading and captured source-count/state
+admission in region projection. 846 complete selected cases pass per normal/pm-fs
+policy; actual saved Site/region JSON receives fresh-process Pint/unyt admission.
+MolSysMT #756 retains the reproduced expression resource-identity gap. Richer
+addressed/ensemble scope and public C2/M2 keep separate gates.
+
+**Earlier delivered bounded native membership profile:**
 [the actual public projection contract](binding_site_region.md), source-received
 2026-11-14 with 70 new controls and 765 complete selected cases per normal/pm-fs
 policy. It implements direct/original and explicitly mapped derived atom/group
@@ -836,3 +844,30 @@ inventory versus spatial/state-dependent selection policy and retained
 declaration. Keep richer addressed/geometry inclusion separate. Public C2/M2,
 T/H/P/shared/consumer/full-suite/installed/public/platform/final-pair gates remain
 pending. #111 remains active; no package/tag or manual remote CI is dispatched.
+
+## Native selection snapshot source increment — 2026-11-14
+
+[The delivered selection contract](binding_site_selection.md) adds
+`BindingSite.from_selection` through public resident MolSysMT inventory or one
+explicit source occurrence. Separate experimental Site 0.4 retains fixed
+atom/group membership, query/syntax/element, effective source/state scope, owner
+provenance and budgets. Historical reading/region projection never rerun the
+predicate; projection checks captured original counts/state. Existing Site
+profiles, scientific fixtures/producers, environment and native bytes are intact.
+
+846 complete selected cases pass per normal/pm-fs policy, including 81 selection
+cases, plus actual saved Site/region fresh-process Pint/unyt replay with molecular
+routes blocked. [MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756) owns
+reproduced MemoryError/OS ENOMEM reclassification in expression evaluation; this
+probe is defect evidence, not passing end-to-end resource identity. No local
+unwrapping/selector workaround is introduced. Initial setter/source-drift probes
+remain unqualified; complete final source populations and all raw receipts are
+separate. No new resource interruption occurs; existing heavy holds are unretried.
+Six workspace/fresh committed-export checks and source/XML/resource/probe/replay/
+publication receipts retain #50 custody in
+`.molsyssuite/site-selection-111-20261114/`, review 2026-11-21.
+
+Next receive #756 and admit the public C2 placement/assurance profile before its
+implementation. Richer addressed/ensemble, T/H/P/shared/consumer/full-suite/
+installed/public/platform/final-pair gates remain pending. #111 stays active;
+0.1.0, package publication and missing remote CI evidence remain unchanged.

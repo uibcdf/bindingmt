@@ -69,7 +69,7 @@ class BindingSite(_InterfaceRecordIO):
         _require(
             experimental is True,
             'experimental',
-            'Opt in to experimental site 0.1/0.2/0.3.',
+            'Opt in to experimental site 0.1/0.2/0.3/0.4.',
         )
         snapshot = json_copy(record, 'record')
         validate(snapshot)
@@ -162,26 +162,50 @@ class BindingSite(_InterfaceRecordIO):
 
     @classmethod
     def _from_members(
-        cls, source, indices, element, name, role, structures, states, extensions
+        cls,
+        source,
+        indices,
+        element,
+        name,
+        role,
+        structures,
+        states,
+        extensions,
+        *,
+        captured_selection=None,
     ):
         source = source_record(source)
         _require(text(role), 'role', 'Declare a membership role string.')
-        capability(role == 'declared_members', 'site membership role')
+        selected = captured_selection is not None
+        capability(
+            role == ('selected_members' if selected else 'declared_members'),
+            'site membership role',
+        )
+        payload = membership_payload(indices, element)
+        if selected:
+            payload.update(
+                resolution={'state': 'resolved', 'cause': 'captured_selection'},
+                selection=captured_selection,
+            )
         views = [
             {
                 'key': 'membership',
                 'kind': 'molecular_membership',
                 'role': role,
                 'scope': scope_record(source['id'], structures, states),
-                'payload': membership_payload(indices, element),
+                'payload': payload,
             }
         ]
         record = _record(
             source,
             'Candidate association region; binding support unknown',
             {
-                'kind': 'explicit_source_membership',
-                'rule': 'exact_listed_indices',
+                'kind': 'evaluated_source_selection'
+                if selected
+                else 'explicit_source_membership',
+                'rule': 'fixed_evaluated_membership'
+                if selected
+                else 'exact_listed_indices',
                 'element': element,
             },
             name,
@@ -190,7 +214,9 @@ class BindingSite(_InterfaceRecordIO):
             extensions,
             views,
         )
-        record['format_version'] = '0.2'
+        record['format_version'] = '0.4' if selected else '0.2'
+        if selected:
+            record['producer'] = _producer('from_selection')
         record = json_copy(record, 'record')
         record['content_sha256'] = _digest(record)
         return cls(record, experimental=True)
@@ -245,6 +271,68 @@ class BindingSite(_InterfaceRecordIO):
             structure_indices,
             chemical_state_indices,
             extensions,
+        )
+
+    @classmethod
+    @signal(tags=['api', 'site', 'selection'])
+    @arg_digest(config='bindingmt._argdigest')
+    def from_selection(
+        cls,
+        molecular_system,
+        selection='all',
+        *,
+        source,
+        element='atom',
+        syntax='MolSysMT',
+        structure_indices=None,
+        chemical_state=None,
+        name=None,
+        role='selected_members',
+        extensions=None,
+        max_source_atoms=100000,
+        max_structure_occurrences=4096,
+        max_dense_pairs=1000000,
+    ):
+        """Capture fixed atom/group membership selected by public MolSysMT.
+
+        Without a structure, query the resident topology/chemical inventory;
+        coordinate-requiring expressions need one explicit source structure.
+        None state means reference for inventory, structure association otherwise.
+        Source association and consistent inputs are caller preconditions. The
+        experimental 0.4 Site preserves evaluated context, not a live rule or
+        a binding finding. See ``devguide/binding_site_selection.md``.
+        """
+        from bindingmt._private.site_selection import capture, request_record
+
+        source = source_record(source)
+        capability(role == 'selected_members', 'selected site membership role')
+        _require(name is None or text(name), 'name', 'Use a nonempty name or None.')
+        if extensions is not None:
+            extensions = json_copy(extensions, 'extensions')
+        request = request_record(
+            selection,
+            element,
+            syntax,
+            structure_indices,
+            chemical_state,
+            max_source_atoms=max_source_atoms,
+            max_structure_occurrences=max_structure_occurrences,
+            max_dense_pairs=max_dense_pairs,
+        )
+        indices, captured = capture(molecular_system, request)
+        structures = request['structure_indices']
+        return cls._from_members(
+            source,
+            indices,
+            element,
+            name,
+            role,
+            structures,
+            None
+            if structures is None
+            else [captured['effective']['chemical_state_index']],
+            extensions,
+            captured_selection=captured,
         )
 
     @property
@@ -585,6 +673,8 @@ class BindingSite(_InterfaceRecordIO):
                 'frame': payload['frame'],
                 'placement_assurance': 'not_assessed',
             }
+        if molecular and 'selection' in payload:
+            report['selection_capture'] = payload['selection']
         return report
 
     def describe(self):

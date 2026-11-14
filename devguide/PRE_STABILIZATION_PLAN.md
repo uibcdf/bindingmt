@@ -21,8 +21,31 @@ than treating the skipped push as passing.
 
 Owner: [BindingMT #73](https://github.com/uibcdf/bindingmt/issues/73).
 Accepted maintainer objective: 2026-11-06, [BMT-046](DECISIONS.md#bmt-046--deliver-the-complete-functional-objective-before-stabilization).
-Status: **active; bounded public C1 native region/replay source-received; C1 selection, public C2/M2 and #112 P/shared receiving remain pending**.
+Status: **active; bounded C1 native selection/region/replay received; expression resource identity awaits MolSysMT #756; public C2/M2 and #112 P/shared receiving remain pending**.
 Inspected starting source: `530a4cf`.
+
+### Native C1 selection and fixed meaning — 2026-11-14
+
+[The delivered selection snapshot](binding_site_selection.md) adds
+`from_selection` through public MolSysMT on resident inventory or one explicitly
+selected structure. Separate Site 0.4 preserves original query, effective state,
+scope and provenance; typed historical admission/region projection never rerun
+the predicate. Captured source counts/state must agree at projection. Existing
+records, original fixtures/producers, environment and native bytes are intact.
+
+846 complete selected cases pass per normal/pm-fs policy: 81 new selection,
+70 region, 195 earlier site, 463 lower-resource software and 37 argument/bootstrap.
+Actual saved Site/region JSON receives a separate Pint/unyt fresh-process reader
+with molecular routes blocked. MolSysMT #756 owns a reproduced exception-identity
+gap under synthetic memory errors; this probe is defect evidence, not a pass.
+No consumer workaround, full C1/M2, remote/full-suite/installed/public/platform
+or final-pair acceptance is claimed. Existing heavy holds are not rerun.
+
+Next receive #756's correction and admit the public C2 placement profile before
+implementing it. Exact source/probe/XML/resource/replay/workspace/committed-export/
+publication receipts retain #50 custody under
+`.molsyssuite/site-selection-111-20261114/`, review 2026-11-21. #111 stays active;
+no new tag/package/build/install or manual remote CI is performed.
 
 ### Public C1 native region and historical replay — 2026-11-14
 

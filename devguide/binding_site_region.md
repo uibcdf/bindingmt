@@ -221,8 +221,14 @@ map/axis/parent/state observations, not every possible molecular attribute.
 Historical valid data can be consistently reauthored and resealed; integrity
 checks are not authentication or a fresh molecular assessment.
 
-Next implement `from_selection` through MolSysMT and qualify inventory versus
-spatial/state-dependent selection and retained declarations. C1's richer
+The subsequent [native selection snapshot](binding_site_selection.md) now
+implements `from_selection` and Site 0.4. Region projection requires captured
+source atom/group/state counts and the selected state position to agree;
+single-structure capture also checks the original structure count. It projects
+fixed members without rerunning the predicate. The later selection population's
+846 cases per policy and saved Site/region replay are distinct from this original
+765-case receiving; original records/producers stay unchanged. MolSysMT #756
+retains the expression resource-error identity gap. C1's richer
 addressed resolution, public C2/M2, placement/current-finding, T/H/P and shared/
 consumer/full-suite/installed/public/platform/final-pair acceptance keep separate
 gates. No heavy held population is automatically restarted. This bounded C1

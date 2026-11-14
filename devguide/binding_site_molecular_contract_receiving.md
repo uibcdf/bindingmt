@@ -168,3 +168,16 @@ with molecular operations blocked. No provider source/native bytes change, no
 new provider gap is observed, and broader ABI/build/installed/platform and shared/
 consumer acceptance remain unclaimed. Full C1 selection/addressed work and public
 C2/M2 are still pending. #111 owns this implementation; #746 remains resolved.
+
+## Native selection consumer added — 2026-11-14
+
+[The subsequent snapshot factory](binding_site_selection.md) now exercises public
+MolSysMT selection on resident topology/chemistry inventory without Structures,
+and on one explicit source structure for state/spatial expressions. The bounded
+81-case module and complete 846-case normal/pm-fs source selection pass; actual
+saved Site/region records also pass a fresh-process reader. #746 remains resolved.
+Resource-error probes additionally expose [MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756),
+where expression selection wraps MemoryError/OS ENOMEM into a parse ArgumentError.
+That separate gap retains its owner; the consumer does not patch or unwrap it.
+The new feature uses the unchanged qualified source/native context, not a new
+provider ABI/build/installed/public/platform or shared-consumer acceptance.

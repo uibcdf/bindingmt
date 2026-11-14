@@ -213,10 +213,10 @@ def validate(record):
     )
     _require(
         record['format'] == 'bindingmt.binding_site'
-        and record['format_version'] in ('0.1', '0.2', '0.3')
+        and record['format_version'] in ('0.1', '0.2', '0.3', '0.4')
         and record['experimental'] is True,
         'format_version',
-        'Explicit experimental bindingmt.binding_site version 0.1, 0.2 or 0.3 is required.',
+        'Explicit experimental bindingmt.binding_site version 0.1, 0.2, 0.3 or 0.4 is required.',
     )
     _require(
         text(record['record_id']), 'record_id', 'Declare a nonempty record identity.'
@@ -241,9 +241,9 @@ def validate(record):
         'Admit one source view or an unevaluated definition.',
     )
     _require(
-        record['format_version'] not in ('0.2', '0.3') or len(views) == 1,
+        record['format_version'] not in ('0.2', '0.3', '0.4') or len(views) == 1,
         'views',
-        'Experimental 0.2/0.3 requires one explicit membership or geometry view.',
+        'Experimental 0.2/0.3/0.4 requires one explicit membership or geometry view.',
     )
     for view in views:
         keys(view, {'key', 'kind', 'role', 'scope', 'payload'}, 'view')
@@ -255,14 +255,14 @@ def validate(record):
         _require(
             (record['format_version'] == '0.1' and view['kind'] == 'residue_annotation')
             or (
-                record['format_version'] == '0.2'
+                record['format_version'] in ('0.2', '0.4')
                 and view['kind'] == 'molecular_membership'
             )
             or (
                 record['format_version'] == '0.3' and view['kind'] in ('sphere', 'box')
             ),
             'format_version',
-            'Residues require 0.1, source-index membership 0.2 and geometry 0.3.',
+            'Residues require 0.1, declared membership 0.2, geometry 0.3 and selected membership 0.4.',
         )
         _require(
             view['key']
@@ -279,6 +279,25 @@ def validate(record):
             validate_geometry(view['kind'], payload, view['scope'])
             continue
         if view['kind'] == 'molecular_membership':
+            if record['format_version'] == '0.4':
+                from bindingmt._private.site_selection import validate_capture
+
+                capability(
+                    view['role'] == 'selected_members', 'selected site view role'
+                )
+                keys(
+                    payload,
+                    {
+                        'element',
+                        'index_space',
+                        'source_indices',
+                        'resolution',
+                        'selection',
+                    },
+                    'payload',
+                )
+                validate_capture(payload, view['scope'])
+                continue
             capability(view['role'] == 'declared_members', 'site view role')
             keys(
                 payload,

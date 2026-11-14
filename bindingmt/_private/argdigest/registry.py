@@ -651,6 +651,8 @@ ARGUMENT_DIGESTERS = {
     'address_space': _optional_string('address_space'),
     'residues': _declaration_value,
     'role': _optional_string('role'),
+    'element': _optional_string('element'),
+    'syntax': _optional_string('syntax'),
     'chemical_state_indices': _declaration_value,
     'claim': _optional_string('claim'),
     'criterion': _mapping('criterion'),

@@ -1,12 +1,12 @@
 ---
-summary: Deliver BindingSite declarations and bounded native region projection with historical replay; retain explicit selection, placement and owner receiving gates.
+summary: Deliver native BindingSite selection snapshots and region/replay; retain provider resource-identity, placement and broader owner receiving gates.
 issue: uibcdf/bindingmt#111
 status: active
 opened: 2026-11-11
 closed:
 verification: reproduced
 area: [architecture, public-api, interoperability]
-guard: tests/test_site_region.py
+guard: tests/test_site_selection.py
 normative:
 blocked_by: []
 supersedes: []
@@ -334,3 +334,30 @@ Next complete C1's explicit selection route through the owner. Richer addressed
 resolution, public C2/M2, T/H/P/shared/consumer/full-suite/installed/public/platform/
 final-pair gates remain pending. #111 stays active; source tag 0.1.0, publication
 state and missing remote CI evidence are unchanged.
+
+## Native selection snapshot source increment — 2026-11-14
+
+[The delivered selection contract](../binding_site_selection.md) adds
+`BindingSite.from_selection` through public resident MolSysMT inventory or one
+explicit source occurrence. Separate experimental Site 0.4 retains fixed
+atom/group membership, query/syntax/element, effective source/state scope, owner
+provenance and budgets. Historical reading/region projection never rerun the
+predicate; projection checks captured original counts/state. Existing Site
+profiles, scientific fixtures/producers, environment and native bytes are intact.
+
+846 complete selected cases pass per normal/pm-fs policy, including 81 selection
+cases, plus actual saved Site/region fresh-process Pint/unyt replay with molecular
+routes blocked. [MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756) owns
+reproduced MemoryError/OS ENOMEM reclassification in expression evaluation; this
+probe is defect evidence, not passing end-to-end resource identity. No local
+unwrapping/selector workaround is introduced. Initial setter/source-drift probes
+remain unqualified; complete final source populations and all raw receipts are
+separate. No new resource interruption occurs; existing heavy holds are unretried.
+Six workspace/fresh committed-export checks and source/XML/resource/probe/replay/
+publication receipts retain #50 custody in
+`.molsyssuite/site-selection-111-20261114/`, review 2026-11-21.
+
+Next receive #756 and admit the public C2 placement/assurance profile before its
+implementation. Richer addressed/ensemble, T/H/P/shared/consumer/full-suite/
+installed/public/platform/final-pair gates remain pending. #111 stays active;
+0.1.0, package publication and missing remote CI evidence remain unchanged.
