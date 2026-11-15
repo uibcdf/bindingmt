@@ -4,7 +4,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 
 <!-- generated: devguide_index -->
 
-### Resolved (89)
+### Resolved (90)
 
 - [`add_displaced_search_domain_control_to_1iep_validation.md`](add_displaced_search_domain_control_to_1iep_validation.md) — [#15](https://github.com/uibcdf/bindingmt/issues/15) — Add displaced-search-domain control to 1IEP validation *(resolved, measured)*
 - [`audit_coordinate_record_admission.md`](audit_coordinate_record_admission.md) — [#90](https://github.com/uibcdf/bindingmt/issues/90) — Offline coordinate audits disagree with the existing pose-record admission. *(resolved, reproduced)*
@@ -85,6 +85,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 - [`returned_vina_poses_lack_a_verified_map_to_source_ligand_atoms.md`](returned_vina_poses_lack_a_verified_map_to_source_ligand_atoms.md) — [#8](https://github.com/uibcdf/bindingmt/issues/8) — Returned Vina poses lack a verified map to source ligand atoms *(resolved, asserted)*
 - [`scientific_record_readers_ignore_schema_versions.md`](scientific_record_readers_ignore_schema_versions.md) — [#27](https://github.com/uibcdf/bindingmt/issues/27) — Validate scientific record schema versions before reconstruction *(resolved, measured)*
 - [`scoring_geometry_masks_resource_errors.md`](scoring_geometry_masks_resource_errors.md) — [#107](https://github.com/uibcdf/bindingmt/issues/107) — Preserve allocation exceptions while projecting prepared scoring geometry. *(resolved, measured)*
+- [`site_interface_walkthrough.md`](site_interface_walkthrough.md) — [#118](https://github.com/uibcdf/bindingmt/issues/118) — Connect the existing Site, resolved region, native interface observations and historical readers in a copyable source example. *(resolved, reproduced)*
 - [`source_based_ci_omits_biopython.md`](source_based_ci_omits_biopython.md) — [#11](https://github.com/uibcdf/bindingmt/issues/11) — Source-based CI omits Biopython needed by the scientific test stack. *(resolved, reproduced)*
 - [`stochastic_redocking_ci_expectations.md`](stochastic_redocking_ci_expectations.md) — [#46](https://github.com/uibcdf/bindingmt/issues/46) — Portable evaluation CI assumes recovery from a low-budget stochastic search. *(resolved, measured)*
 - [`summarize_redocking.md`](summarize_redocking.md) — [#39](https://github.com/uibcdf/bindingmt/issues/39) — Summarize compatible redocking evaluations with explicit failure denominators. *(resolved, measured)*

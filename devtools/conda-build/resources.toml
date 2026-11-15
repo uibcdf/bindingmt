@@ -3383,3 +3383,23 @@ stage-as = "tests/data/site_domain_geometry_compat/0835648/revised.json"
 path = "tests/data/site_domain_geometry_compat/0835648/sphere.json"
 sha256 = "18eac6372a70739caeeba916d3c31cd5ded3c5dc2dee60c81a94557eaccee38e"
 stage-as = "tests/data/site_domain_geometry_compat/0835648/sphere.json"
+
+[[installed_tests.support.files]]
+source = "bmt_test_support/build_site_interface_input.py"
+target = "bmt_test_support/build_site_interface_input.py"
+sha256 = "0f6698d94caf087986d241a2999bec1cb0e99c7737d1f9b22862dc8a0cbfc39d"
+
+[[installed_tests.support.files]]
+source = "examples/site_interface/walkthrough.py"
+target = "bmt_test_support/site_interface/walkthrough.py"
+sha256 = "7418d40c3eb6643cdf191057c5b062d02567816dc1249c6a942ab7a44d8a02cc"
+
+[[installed_tests.support.files]]
+source = "examples/site_interface/source.h5msm"
+target = "bmt_test_support/site_interface/source.h5msm"
+sha256 = "eb3174c05f4a9ab0a562eeb1fb151e3ca17c4e149af49ceb74de965613babe4d"
+
+[[installed_tests.support.files]]
+source = "examples/site_interface/case.json"
+target = "bmt_test_support/site_interface/case.json"
+sha256 = "35d37782fce1180df2304bc88329a8be16fbdb66cfd02c67b975cf6f5fa4d507"

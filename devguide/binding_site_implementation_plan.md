@@ -695,6 +695,15 @@ calculation is commissioned by this implementation plan.
 
 ## 16. Next actionable checkpoint
 
+The [copyable Site-to-interface walkthrough](../examples/site_interface/README.md)
+is delivered under [#118](archive/site_interface_walkthrough.md), using the
+existing native APIs without adding an orchestration facade. Its frozen
+three-structure control and 17 source/17 SDK-staged support cases qualify that
+finite example, including positive/zero observations and source-free history.
+This user-facing composition does not complete the independent T/H/P or shared
+receiving gates below. Next review actual usage and admit the first ready owner
+case through its existing issue.
+
 This is the current work order as of 2026-11-15. The dated delivery sections below
 retain their historical populations, sources and original next actions.
 

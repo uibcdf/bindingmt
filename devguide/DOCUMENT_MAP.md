@@ -10,6 +10,8 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [../examples/site_interface/README.md](../examples/site_interface/README.md) | How do I copy/run the current native Site/region/contact/burial workflow and read its history without molecular input? |
+| [archive/site_interface_walkthrough.md](archive/site_interface_walkthrough.md) | Which frozen source, exact providers and 17-case source/staged-support controls qualify #118, with what limits and custody? |
 | [archive/interface_participant_selection_scope.md](archive/interface_participant_selection_scope.md) | How do contact/burial/ionic participant selectors honor the actual frame/state, with which positive/empty, refusal and historical-read controls? |
 | [binding_site_owner_receiving.md](binding_site_owner_receiving.md) | What finite T/H/P inputs are requested, which native profiles are already delivered, and what should happen when an owner case becomes ready? |
 | [binding_site_geometry_application.md](binding_site_geometry_application.md) | Which declared sphere/box placement, caller frame assumptions and actual normalized/payload checks are source-received, and with what limits? |

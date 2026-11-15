@@ -1,0 +1,85 @@
+{
+  "case": "bindingmt-authored-site-interface-v1",
+  "scope": "Four-ion software/input-consistency control; no biological claim.",
+  "source": {
+    "file": "source.h5msm",
+    "sha256": "eb3174c05f4a9ab0a562eeb1fb151e3ca17c4e149af49ceb74de965613babe4d",
+    "bytes": 133184,
+    "n_atoms": 4,
+    "n_structures": 3,
+    "structure_chemical_state_indices": [
+      0,
+      1,
+      1
+    ],
+    "parent_sha256": "75ed110abb15515ed33806cdd03d9958eb231b3fbe2427dec0ffbc70aa287d1b"
+  },
+  "recipe": {
+    "site_selection": "formal_charge>0",
+    "partner_selection": "formal_charge<0",
+    "contact_cutoff": "0.3 nm",
+    "probe_radius": "0.14 nm",
+    "n_sphere_points": 240
+  },
+  "expected": [
+    {
+      "structure": 0,
+      "state": 0,
+      "region": [
+        1
+      ],
+      "partner": [
+        0
+      ],
+      "pairs": [
+        [
+          1,
+          0
+        ]
+      ],
+      "footprint": [
+        1
+      ],
+      "burial": "positive"
+    },
+    {
+      "structure": 1,
+      "state": 1,
+      "region": [
+        2
+      ],
+      "partner": [
+        3
+      ],
+      "pairs": [
+        [
+          2,
+          3
+        ]
+      ],
+      "footprint": [
+        2
+      ],
+      "burial": "positive"
+    },
+    {
+      "structure": 2,
+      "state": 1,
+      "region": [
+        2
+      ],
+      "partner": [
+        3
+      ],
+      "pairs": [],
+      "footprint": [],
+      "burial": "zero"
+    }
+  ],
+  "producer": {
+    "bindingmt_base_commit": "47090f8af425896e9e243047bcac537ebd2c68b3",
+    "molsysmt_commit": "6deb0200cd7e384128eded46caaf751a57e65bc6",
+    "molsysmt_version": "0.23.0+904.gff25f1202",
+    "authoring_program_sha256": "0f6698d94caf087986d241a2999bec1cb0e99c7737d1f9b22862dc8a0cbfc39d"
+  }
+}

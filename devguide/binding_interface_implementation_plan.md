@@ -1361,6 +1361,15 @@ This plan triggers no manual remote CI, tag or release.
 
 ## 17. Next actionable checkpoint
 
+The [copyable Site-to-interface walkthrough](../examples/site_interface/README.md)
+is delivered under [#118](archive/site_interface_walkthrough.md), using the
+existing native APIs without adding an orchestration facade. Its frozen
+three-structure control and 17 source/17 SDK-staged support cases qualify that
+finite example, including positive/zero observations and source-free history.
+This user-facing composition does not complete the independent T/H/P or shared
+receiving gates below. Next review actual usage and admit the first ready owner
+case through its existing issue.
+
 The first P0a/D1/D2 data profile is delivered through `characterize_interface`
 and immutable `BindingInterface`, with experimental 0.1 records and explicit
 receiver opt-in. Its [contract/evidence](binding_interface_data_core.md) records

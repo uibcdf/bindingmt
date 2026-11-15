@@ -1,5 +1,29 @@
 # Roadmap
 
+## Runnable Site/interface workflow — 2026-11-15
+
+[The copyable walkthrough](../examples/site_interface/README.md) now connects
+captured BindingSite membership, its resolved region, actual native MolSysMT
+contacts/burial, the observed footprint and saved-history reading. Three frozen
+structures distinguish a state-driven region change from completed-zero
+observations on the same region. Existing APIs and scientific definitions stay
+unchanged; these experimental source capabilities postdate the `0.1.0` tag.
+
+[#118's delivery record](archive/site_interface_walkthrough.md) retains exact
+source/input/provider/native identities. **17 source cases and the same 17
+SDK-staged support cases pass**, including Pint/pm-fs/unyt, copied CLI, positive
+and empty cold reading, captured-scope refusal and calculation/save failures.
+Support trees/imports retire; this is not installed/public/full-suite evidence.
+Six workspace/fresh committed-export checks, reporting guards and import-origin
+checks pass. Serial monitored cells have no new resource interruption; original
+heavy holds remain unretried. Raw #50 custody is
+`.molsyssuite/site-interface-walkthrough-20261115/`, review 2026-11-22.
+
+Next review the example's user experience and receive the first ready finite
+T/H/P owner case. #111/#112/#30 and TopoMT #199, PharmacophoreMT #226 and PeptideMT
+#60 retain their own scope/status. No provider update, tag/package/release or
+manual remote CI; skipped CI is not a pass.
+
 ## Interface participant frame/state correction — 2026-11-15
 
 [#117's source correction](archive/interface_participant_selection_scope.md) now
@@ -91,6 +115,9 @@ transformed/ensemble placement and owner receiving remain pending**. #112 has na
 contact/surface/ionic/H-R2 source receiving and resolved #113/#114; its P cases await
 PeptideMT #60, with shared disposition and unyt construction separately owned.
 Neither interface nor all-consumer receiving is a global BindingSite prerequisite.
+The [copyable native workflow](../examples/site_interface/README.md) is delivered
+under #118; next use it for concrete user review while finite owner inputs are
+received through their existing issues.
 
 ### Declared sphere/box native placement — 2026-11-15
 

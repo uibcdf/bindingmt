@@ -1,5 +1,10 @@
 # BindingMT quickstart
 
+For native site and interface characterization, start with the separate
+[BindingSite-to-BindingInterface walkthrough](examples/site_interface/README.md).
+It needs no prepared docking inputs or docking engine and demonstrates the
+current experimental source APIs. The workflow below covers prepared docking.
+
 This source milestone supports a declared small-molecule state, a rigid receptor
 and an explicit physical search box. Start with prepared PDBQT inputs. For raw
 molecular inputs, first follow the [explicit preparation walkthrough](devguide/validation/installed_3ptb_preparation.md)
