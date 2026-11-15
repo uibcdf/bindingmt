@@ -1,6 +1,7 @@
 """Frozen selection snapshots keep owner semantics and explicit chemical scope."""
 
 import errno
+import importlib
 import json
 from copy import deepcopy
 
@@ -366,6 +367,100 @@ def test_direct_owner_query_errors_keep_original_identity(source, monkeypatch, f
     with pytest.raises(type(failure)) as caught:
         make(source)
     assert caught.value is failure
+
+
+@pytest.mark.parametrize('mode', ['inventory', 'single_structure'])
+@pytest.mark.parametrize('element', ['atom', 'group'])
+@pytest.mark.parametrize('failed_call', [1, 2])
+@pytest.mark.parametrize('kind', ['memory', 'enomem', 'interrupt', 'exit'])
+def test_actual_expression_boundary_preserves_original_failure(
+    source, monkeypatch, mode, element, failed_call, kind
+):
+    # Instrument only the owner's evaluator, leaving both public APIs intact.
+    # Inject exceptions instead of inducing allocation pressure or real signals.
+    selector = importlib.import_module('molsysmt.basic.selector')
+    original = selector._dict_select['MolSysMT']
+    failure = {
+        'memory': MemoryError('synthetic expression capacity'),
+        'enomem': OSError(errno.ENOMEM, 'synthetic expression capacity'),
+        'interrupt': KeyboardInterrupt('synthetic expression interrupt'),
+        'exit': SystemExit(19),
+    }[kind]
+    cause = RuntimeError('original expression cause')
+    failure.__cause__ = cause
+    failure.add_note('Original expression note')
+    calls = 0
+
+    def injected(*args, **kwargs):
+        nonlocal calls
+        calls += 1
+        if calls == failed_call:
+            raise failure
+        return original(*args, **kwargs)
+
+    monkeypatch.setitem(selector._dict_select, 'MolSysMT', injected)
+    options = (
+        {'structure_indices': 1, 'chemical_state': 'structure'}
+        if mode == 'single_structure'
+        else {'chemical_state': 1}
+    )
+    with pytest.raises(type(failure)) as caught:
+        make(source, 'atom_index>=0', element=element, **options)
+    assert calls == failed_call
+    assert caught.value is failure
+    assert caught.value.__cause__ is cause
+    assert caught.value.__notes__ == ['Original expression note']
+
+
+@pytest.mark.parametrize('mode', ['inventory', 'single_structure'])
+@pytest.mark.parametrize('kind', ['memory', 'enomem'])
+def test_actual_pandas_evaluation_resource_failure_reaches_public_site(
+    source, monkeypatch, mode, kind
+):
+    failure = (
+        MemoryError('synthetic dataframe capacity')
+        if kind == 'memory'
+        else OSError(errno.ENOMEM, 'synthetic dataframe capacity')
+    )
+    calls = []
+
+    def injected(frame, expression, *args, **kwargs):
+        calls.append(expression)
+        raise failure
+
+    monkeypatch.setattr(pd.DataFrame, 'query', injected)
+    options = {'structure_indices': 1} if mode == 'single_structure' else {}
+    with pytest.raises(type(failure)) as caught:
+        make(source, 'atom_name=="a"', **options)
+    assert len(calls) == 1
+    assert caught.value is failure
+    assert caught.value.__cause__ is None
+
+
+@pytest.mark.parametrize('mode', ['inventory', 'single_structure'])
+@pytest.mark.parametrize('element', ['atom', 'group'])
+@pytest.mark.parametrize('kind', ['value', 'syntax', 'other_oserror'])
+def test_actual_expression_parse_failures_retain_owner_diagnostic(
+    source, monkeypatch, mode, element, kind
+):
+    selector = importlib.import_module('molsysmt.basic.selector')
+    failure = {
+        'value': ValueError('synthetic invalid expression'),
+        'syntax': SyntaxError('synthetic invalid expression'),
+        'other_oserror': OSError(errno.ENOENT, 'synthetic parser input missing'),
+    }[kind]
+    calls = []
+
+    def injected(*args, **kwargs):
+        calls.append(args)
+        raise failure
+
+    monkeypatch.setitem(selector._dict_select, 'MolSysMT', injected)
+    options = {'structure_indices': 1} if mode == 'single_structure' else {}
+    with pytest.raises(OwnerArgumentError) as caught:
+        make(source, 'atom_index>=0', element=element, **options)
+    assert len(calls) == 1
+    assert caught.value.__cause__ is failure
 
 
 def test_changed_result_during_capture_refuses(source, monkeypatch):

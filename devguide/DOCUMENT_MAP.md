@@ -11,7 +11,8 @@ making a bounded contribution.
 | Document | Primary question |
 | --- | --- |
 | [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which 1070-case evidence and remaining owner gates? |
-| [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, which 846-case controls pass, and why is MolSysMT #756 still needed? |
+| [binding_site_topomt_receiving.md](binding_site_topomt_receiving.md) | Which exact saved TopoMT case is proposed, what owner admission is requested, and what remains before T0/T1? |
+| [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, how does exact MolSysMT #756 receiving extend the selected qualification to 1118 cases per unit policy? |
 | [binding_site_region.md](binding_site_region.md) | Which bounded public C1 native atom/group projections and saved-result reader are delivered, with which maps/coverage/state/trust limits and 765-case normal/pm-fs qualification? |
 | [binding_interface_peptide_receiving.md](binding_interface_peptide_receiving.md) | What exact P1/P2/P3 inputs does PeptideMT #60 own, which existing API/map/environment limits apply, and what is still pending before consumer adoption? |
 | [archive/redocking_summary_receiving_controls.md](archive/redocking_summary_receiving_controls.md) | How are original evaluator identities/hashes preserved, which complete summary controls pass, and which broader evaluator attempt was interrupted? |

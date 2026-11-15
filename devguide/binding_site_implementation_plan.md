@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Recorded: 2026-11-11. Work-plan revision **2, reviewed**.
-Status: **admitted M1 and first native C1/C2/M2 source/control profile received; richer placement/owner receiving and MolSysMT #756 identity remain pending**.
+Status: **admitted M1 and first native C1/C2/M2 source/control profile received; MolSysMT #756 identity received; richer placement/owner receiving remain pending**.
 This plan turns the [audited design](binding_site_design.md) and its
 [worked handoffs](binding_site_review.md) into independently reviewable increments.
 It records work order and acceptance; only the dated delivered profiles below are implemented.
@@ -172,9 +172,9 @@ permission to publish partial enforcement or a callable stub.
 | P0t/h/p | Inputs offered, not yet received | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
 | B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
 | B2 | Declarations 0.1/0.2/0.3 and selection snapshot 0.4 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
-| C1 | Bounded native selection/region/replay received; #756 identity and richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
+| C1 | Bounded native selection/region/replay and #756 resource identity received; richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
 | C2 | Native fixed-membership application and final-payload admission source-received; saved-geometry/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
-| T0 | Pending B2/TopoMT profile and input | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
+| T0 | Exact saved case proposed; owner input/profile admission pending | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
 | H | Offered source/policy pending | One bounded native hypothesis and association workflow with owner controls. |
 | P | Offered consumer specification pending | Supplied/absent effective-input controls with declared information origins. |
@@ -468,6 +468,10 @@ adapter route. Reading a saved BindingSite or inspecting an owner reference
 needs no TopoMT or original engine. Unsupported
 geometry/map operations remain explicit; the first adapter is not a plugin
 framework, new topographic engine or mandatory reverse dependency.
+
+The [exact Pocketeer source/bundle candidate](binding_site_topomt_receiving.md)
+now makes the owner input request concrete. It is inspected, not runtime-received
+or owner-admitted; obtain its finite dispositions before implementing the adapter.
 
 **T0 exit:** an admitted public record is imported, inspected and saved/read
 without owner-output mutation or new engine credit; center-only/unavailable-map
@@ -912,3 +916,30 @@ before T0/T1 adapter work; receive MolSysMT #756 when its correction is availabl
 Raw source/XML/resource/reader/gate/export/publication receipts retain #50 custody
 in `.molsyssuite/site-application-111-20261114/`, review 2026-11-21. No new tag,
 package, install/build or manual remote CI; skipped CI is not a remote pass.
+
+## MolSysMT selection resource errors received — 2026-11-14
+
+[The exact-source client receiving](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
+now qualifies original MemoryError/OS ENOMEM identity through actual public
+`BindingSite.from_selection`, including evaluator failures on initial capture
+and consistency recheck, inventory/one structure and atom/group output. Ordinary
+parser errors retain owner diagnostics and causes; process controls retain
+identity. No cause-unwrapping workaround or selector is added.
+
+The authorized clean MolSysMT update is exactly `6deb0200cd7e384128eded46caaf751a57e65bc6`;
+its only runtime delta is the public selection handler. Existing native 2dbcf13d
+bytes and all other runtime providers remain unchanged. The same 129-case module
+has 20 failures/109 passes on the original source and **129 passes per policy**
+after receiving. The complete selected consumer population is **1118 passing
+cases per normal/pm-fs policy**. Fresh-process saved-history replay and actual
+import/native origins are received separately; no native build or install occurs.
+
+The earlier expression resource-identity gap is received for this bounded
+composition. T0/T1 remains unimplemented: [the proposed exact TopoMT case](binding_site_topomt_receiving.md)
+now identifies an existing source/bundle and requests owner admission of its
+record, maps and intended enclosure. No TopoMT execution or adoption is claimed.
+Next agree that finite input/profile, then implement T0. Broader shared/consumer,
+full-suite/installed/public/platform/native-engine/final-pair gates and old heavy
+holds remain separate. Exact source/XML/resource/replay/candidate/publication
+receipts retain #50 custody in `.molsyssuite/selection-resource-756-20261114/`,
+review 2026-11-21. No new tag/package or manual remote CI; skipped CI is not a pass.

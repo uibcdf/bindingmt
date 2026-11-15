@@ -146,9 +146,11 @@ MolSysMT alone parses/evaluates the expression. BindingMT checks owned captured
 query/state/count/member relationships, freezes membership and preserves the
 existing immutable lifecycle; no source snapshot or new molecular class appears.
 Region projection enforces captured source counts/state and never reruns the
-predicate. Historical readers perform no molecular queries. MolSysMT #756 owns
-the reproduced expression resource-error identity gap; no workaround is copied
-into this consumer. Stronger finding and richer C1/C2 work retain separate gates.
+predicate. Historical readers perform no molecular queries. The subsequent
+[MolSysMT #756 client receiving](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
+qualifies original expression resource-error identity at source 6deb0200 with
+unchanged actual native bytes; no consumer workaround is needed. Stronger finding
+and richer C1/C2 work retain separate gates.
 
 The [elementary geometry profile](binding_site_geometry.md) adds explicit sealed
 length quantities and an owned dimensionless orientation kind through the same

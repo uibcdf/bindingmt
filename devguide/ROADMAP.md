@@ -24,11 +24,38 @@ The roadmap defines direction and gates, not dates.
 ## Current operational plan
 
 Current work is **bounded native C1/C2 selection/application and final-payload
-admission source-received; expression resource-error identity awaits MolSysMT #756;
+admission source-received; expression resource-error identity is received at MolSysMT 6deb0200;
 richer placement and owner receiving remain pending**. #112 has native
 contact/surface/ionic/H-R2 source receiving and resolved #113/#114; its P cases await
 PeptideMT #60, with shared disposition and unyt construction separately owned.
 Neither interface nor all-consumer receiving is a global BindingSite prerequisite.
+
+### MolSysMT selection resource errors received — 2026-11-14
+
+[The exact-source client receiving](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
+now qualifies original MemoryError/OS ENOMEM identity through actual public
+`BindingSite.from_selection`, including evaluator failures on initial capture
+and consistency recheck, inventory/one structure and atom/group output. Ordinary
+parser errors retain owner diagnostics and causes; process controls retain
+identity. No cause-unwrapping workaround or selector is added.
+
+The authorized clean MolSysMT update is exactly `6deb0200cd7e384128eded46caaf751a57e65bc6`;
+its only runtime delta is the public selection handler. Existing native 2dbcf13d
+bytes and all other runtime providers remain unchanged. The same 129-case module
+has 20 failures/109 passes on the original source and **129 passes per policy**
+after receiving. The complete selected consumer population is **1118 passing
+cases per normal/pm-fs policy**. Fresh-process saved-history replay and actual
+import/native origins are received separately; no native build or install occurs.
+
+The earlier expression resource-identity gap is received for this bounded
+composition. T0/T1 remains unimplemented: [the proposed exact TopoMT case](binding_site_topomt_receiving.md)
+now identifies an existing source/bundle and requests owner admission of its
+record, maps and intended enclosure. No TopoMT execution or adoption is claimed.
+Next agree that finite input/profile, then implement T0. Broader shared/consumer,
+full-suite/installed/public/platform/native-engine/final-pair gates and old heavy
+holds remain separate. Exact source/XML/resource/replay/candidate/publication
+receipts retain #50 custody in `.molsyssuite/selection-resource-756-20261114/`,
+review 2026-11-21. No new tag/package or manual remote CI; skipped CI is not a pass.
 
 ### Native C2 application and final-payload checks — 2026-11-14
 

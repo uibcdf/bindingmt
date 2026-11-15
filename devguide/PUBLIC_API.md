@@ -177,9 +177,10 @@ its existing saved-record lifecycle needs explicit experimental opt-in.
 projection checks captured source counts and state and uses fixed members without
 rerunning the predicate. Typed reading does not establish current source or
 predicate applicability. Existing explicit atom/group factories retain 0.2.
-Expression resource-error identity remains pending
-[MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756); the consumer neither
-unwraps causes nor implements a workaround selector. Richer addressed/ensemble
+Expression resource-error identity is received at exact MolSysMT source 6deb0200;
+[the public consumer controls](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
+retain original resource/process-control objects and ordinary parser causes.
+The consumer neither unwraps causes nor implements a workaround selector. Richer addressed/ensemble
 resolution and richer saved-geometry/current-finding placement remain pending.
 The subsequently delivered [native C2 application](binding_site_application.md)
 implements `site.to_search_domain(original_molsys, method='enclosing_box',

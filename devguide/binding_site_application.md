@@ -217,3 +217,15 @@ finding assurance and T/H/P/shared/consumer gates remain separate. Next obtain
 the offered exact saved TopoMT profile/input before implementing T0/T1, and
 receive MolSysMT #756's resource-diagnostic correction when available. No owner
 finding or originating scientific method is silently rerun.
+
+## Subsequent provider receiving — 2026-11-14
+
+The [selection resource correction receiving](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
+updates MolSysMT alone to exact source 6deb0200, with the same native bytes and
+other providers. Its 1118-case normal/pm-fs consumer population includes all 60
+application controls and fresh-process saved application/problem/result/payload
+history. This extends the actual source composition without rewriting this
+original 1070-case population, its producer identities or interrupted attempts.
+The [exact saved TopoMT candidate](binding_site_topomt_receiving.md) now makes the
+next owner input request concrete; T0/T1 implementation and owner admission remain
+pending. No native engine, installed/public/platform or shared acceptance follows.

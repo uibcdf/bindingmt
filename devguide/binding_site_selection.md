@@ -210,3 +210,93 @@ Old recipe/selection bytes and producers are unchanged. Placed saved sphere/box,
 richer addressed/ensemble, stronger finding and shared/consumer delivery retain
 separate gates. MolSysMT #756's expression resource-error identity remains owned
 and unqualified here. Next obtain an exact saved TopoMT input/profile for T0/T1.
+
+## Provider resource correction received — 2026-11-14
+
+This subsequent receiving supersedes the pending resource-diagnostic disposition
+above for the exact development composition below. Original failing probes,
+81/846-case populations, producers and source identities remain historical facts.
+[MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756) is fixed and closed
+at [6deb0200cd7e384128eded46caaf751a57e65bc6](https://github.com/uibcdf/molsysmt/commit/6deb0200cd7e384128eded46caaf751a57e65bc6).
+The [owner guard](https://github.com/uibcdf/molsysmt/blob/6deb0200cd7e384128eded46caaf751a57e65bc6/tests/basic/select/test_resource_failures.py)
+and [owner receiving receipt](https://github.com/uibcdf/molsysmt/blob/6deb0200cd7e384128eded46caaf751a57e65bc6/devtools/data/selection_resource_receiving_756_20261114.json)
+retain the provider's broader supported-evaluator evidence. That owner evidence
+is distinct from these executed BindingMT consumer controls.
+
+### Client regression and observed behavior
+
+`tests/test_site_selection.py` adds 48 controls at the actual public
+`BindingSite.from_selection` boundary. The public MolSysMT selector is left
+intact. Test-only backend injection raises original exception objects on the
+first evaluation or the consistency recheck, for inventory/one structure and
+atom/group output. Resource and process-control exceptions retain object
+identity, original cause and notes. Four further controls instrument the actual
+Pandas evaluator with plain MemoryError/OS ENOMEM, retaining the same object
+and absent original cause. Ordinary ValueError, SyntaxError and other OSError
+failures still yield the owner ArgumentError with the original cause.
+No real memory exhaustion, interrupt signal or process termination is induced.
+Private provider lookup is instrumentation only, not shipped consumer code.
+
+The complete 129-case module on original MolSysMT 27ba3d4c has **20 failures and
+109 passes, exit 1**: all 16 annotated expression resource cases and four actual
+Pandas resource cases fail. Existing normal-path, process-control and parser
+controls pass. This is preserved regression evidence, not qualification.
+After the authorized clean fast-forward, the same unchanged module has
+**129 passes, zero skips/errors/failures, under each normal/pm-fs policy**.
+No BindingMT runtime change or cause-unwrapping workaround is needed.
+
+### Exact receiving composition and limits
+
+BindingMT source base: `c1b1d2017de7eead516fa54cf9f4351b07d7c351`, plus this
+consumer-test/documentation increment. MolSysMT is fast-forwarded from
+`27ba3d4c8d63a6a40a2d77f0190309ff15f4deef` to exact published
+`6deb0200cd7e384128eded46caaf751a57e65bc6`. Its sole runtime difference is
+`molsysmt/basic/select.py`; other changes concern owner documentation, tests and
+developer tools. Its worktree is clean. Other fetched sibling advances remain
+unmerged; PyUnitWizard `cc51c8e600f78f108bc563edd3221bd8788ead86`, ArgDigest
+`7be790b7334e16715fceebbfa8a2b400edf768bb`, SMonitor
+`4a4cd1e415ea57e50c22925c36c2e727772fb3ab` and DepDigest
+`5e93eaff314fe7cddf4eee89842977023b3a8b00` retain the preceding composition.
+
+The actual imported/mapped MolSysMT native file stays at SHA-256
+`2dbcf13d148cb3ae13a5908707fcdd61c75a2de5027e50c566ce07de81bdb038`.
+It differs from the owner's reference binary; this Python-only correction needs
+no replacement/build/install. Fresh-process origins bind actual development
+imports and that mapped path/hash. Neither this measurement nor the provider's
+reference file certifies our binary's builder/source authenticity or whole ABI.
+Existing generated editable-version metadata is retained and hashed separately
+from committed runtime source; exact Git commits identify this receiving.
+
+**1118 complete selected cases pass per policy** on the updated source:
+129 selection, 60 application/final-payload, 70 region, 195 earlier Site,
+463 resource/helper/serialization/internal geometry, 37 arguments/bootstrap and
+164 legacy box/protocol. No case is skipped. These are the same consumer profile
+under two unit policies, not independent full suites. Existing NumPy shape and
+legacy H5MSM warnings remain reported. Runtime/test/resource/provider/native
+hashes match before/after every cell; the compatibility group also binds its
+unchanged bundled alanine H5MSM input. Committed tracked inputs match these bytes;
+unchanged generated local version metadata is recorded separately.
+
+Actual new-run saved domain/problem/empty-result/staged-map history also passes
+fresh-process Pint/unyt admission with no molecular sources and all molecular
+query routes blocked. No optional scientific engine is imported. This is a
+new receiving population, not a rewrite of the preceding C2 evidence.
+
+Cells run serially on CPU6/nice10/one worker, CPU45/wall180, RSS512MiB/AS2GiB,
+with monitored 13 GiB available reserve. Initial RAM is about 48 GiB available,
+interval swap-in/out is zero and memory pressure averages are zero; CPU6 is
+sampled before execution, never treated as reserved. Slurm executables exist,
+but there is no active allocation and the sandbox socket probe cannot establish
+controller availability. These bounded workstation controls claim no Slurm
+reservation. No new resource interruption occurs. Earlier native498/evaluator
+holds remain preserved and are not retried.
+
+Six applicable workspace and fresh committed-export checks pass; the temporary
+export is retired. Source/XML/resource/origins/replay/gate/export/publication
+receipts and original failure remain under #50 custody in
+`.molsyssuite/selection-resource-756-20261114/`, review 2026-11-21.
+The [proposed exact TopoMT case](binding_site_topomt_receiving.md) is read-only
+input inspection, not runtime receiving. Next obtain that owner's finite
+profile admission before T0/T1. Full-suite, hosted CI's separately pinned pair,
+installed/public/platform/native-engine/final-pair and shared/consumer acceptance
+remain unexecuted. No new tag/package/release or manual remote CI is made.
