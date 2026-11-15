@@ -52,7 +52,7 @@ def test_physical_declaration_is_not_membership_or_placement(kind, tmp_path):
         'placement_assurance': 'not_assessed',
     }
     assert site.inspect()['molecular_resolution'] == 'not_performed'
-    assert not site.inspect()['capabilities']['domain_placement']
+    assert site.inspect()['capabilities']['domain_placement']
     assert site.definition['binding_support'] == 'unknown' and site.inspect()[
         'realization_coverage'
     ] == {'state': 'not_requested'}

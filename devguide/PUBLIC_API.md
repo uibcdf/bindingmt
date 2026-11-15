@@ -122,8 +122,9 @@ source-structure occurrence. The detached `geometry` property returns quantities
 in nm using the active quantity form, plus frame/axes; it is None for the earlier
 nongeneric views. These factories emit experimental 0.3; old factories retain
 their own 0.1/0.2 profiles. Geometry membership stays not supplied, binding support
-unknown and placement not assessed. Molecular resolution, domain placement,
-ensemble operations and optional owner receiving remain pending. Shared length
+unknown and placement not assessed until the explicit operation below. Molecular
+inclusion, transformed/ensemble operations and optional owner receiving retain
+their separate profiles. Shared length
 admission and saved-box reading preserve original OS/resource failures; see
 [#115](archive/length_quantity_oserror.md).
 
@@ -134,6 +135,18 @@ refuses numerical backend export. Plain boxes and selection recipes keep their
 existing behavior. No public `BindingSite.to_search_domain` or successful molecular
 placement is delivered by this substep; that route still requires its actual
 input/assurance/check-use receiving.
+
+The [declared-geometry application](binding_site_geometry_application.md) now
+extends `to_search_domain` with explicit `frame_id` and methods `sphere_enclosure`
+or `axis_aligned_box`. The caller associates that saved Cartesian frame with the
+original native source; matching names are not alignment evidence. The operation
+captures the whole selected source frame, checks the actual normalized input and
+requires its actual problem at numerical export. It selects no geometric atom
+membership and does not require receptor atoms inside the box. Original frame
+changes require explicit recapture, while historical geometry remains readable.
+Vina staging also checks directly retained original atoms, written coordinates
+and effective rounded-box enclosure. The bounded first profile, prepared-frame
+retention restriction and unsupported richer assurances are in the linked contract.
 
 Molecular input normalization propagates the original `MemoryError` and
 `OSError(errno.ENOMEM)` rather than calling them invalid input. Other OS/provider

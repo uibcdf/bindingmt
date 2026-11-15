@@ -119,8 +119,13 @@ def test_backend_projection_refuses_unplaced_geometry_without_mutation(name):
             route()
         assert 'placement' in error.value.extra['capability']
         assert domain.to_dict() == before
-    with pytest.raises(CapabilityMismatchError):
-        site(name).to_search_domain(object(), method='sphere_enclosure', padding='0 nm')
+    with pytest.raises(ArgumentError) as error:
+        site(name).to_search_domain(
+            object(),
+            method='sphere_enclosure' if name == 'sphere' else 'axis_aligned_box',
+            padding='0 nm',
+        )
+    assert error.value.extra['arg_name'] == 'frame_id'
 
 
 @pytest.mark.parametrize(

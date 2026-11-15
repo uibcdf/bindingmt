@@ -318,9 +318,9 @@ class DockingProblem:
         self._search_domain_application = None
         if isinstance(search_domain, BoxRegion):
             recipe = search_domain.derivation
-            if (
-                recipe is not None
-                and recipe.get('format') == 'bindingmt.site_domain_application'
+            if recipe is not None and recipe.get('format') in (
+                'bindingmt.site_domain_application',
+                'bindingmt.site_geometry_application',
             ):
                 from bindingmt._private.site_application import (
                     validate_problem_application,

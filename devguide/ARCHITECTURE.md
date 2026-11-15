@@ -181,6 +181,16 @@ separate from broader build/installed/platform qualification.
 
 ## Current source map
 
+The [native declared-geometry application](binding_site_geometry_application.md)
+adds `_private/site_geometry_application.py` to the existing dispatch. It wraps
+unchanged offline geometry with explicit caller frame association, whole native
+selected-frame capture, actual normalization/use checks and separate typed
+historical receipts. The shared `site_application.py` owns actual preparation/
+writer-map/byte checks for both profiles. Native input uses the public MolSys
+class gate, avoiding generic adapter discovery for an unsupported object. No
+molecular inclusion/alignment kernel or source observer is introduced; a named
+frame is an explicit caller association, not an inferred coordinate registration.
+
 The [bounded native C2 application](binding_site_application.md) now composes
 public C1/coordinate queries with existing BoxRegion point/bounds construction.
 `_private/site_application.py` owns application record checks and actual

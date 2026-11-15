@@ -2,7 +2,9 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Admission: 2026-11-13 before implementation. Status: implemented/source-received
-C2 internal geometry slice; public placement application pending.
+C2 internal unplaced geometry slice. A subsequent separately typed
+[native geometry application](binding_site_geometry_application.md) is now
+source-received; this original offline recipe remains unplaced.
 Base: `08356484a6e30ab173fb0b123ae9c6b8b652f30b`.
 
 ## Work commissioned and public boundary
@@ -200,3 +202,15 @@ Old recipe/selection bytes and producers are unchanged. Placed saved sphere/box,
 richer addressed/ensemble, stronger finding and shared/consumer delivery retain
 separate gates. MolSysMT #756's expression resource-error identity remains owned
 and unqualified here. Next obtain an exact saved TopoMT input/profile for T0/T1.
+
+## Subsequent declared-geometry placement — 2026-11-15
+
+[The original-native sphere/axis-aligned profile](binding_site_geometry_application.md)
+now supplies explicit caller frame association, full selected-frame capture,
+actual normalized/staged-input checks and ordinary saved-history propagation.
+It reuses the unchanged offline geometry recipe in a separately typed application;
+old unplaced recipes keep their original assurance/refusal. The 1191-case per-policy
+source/control qualification includes 73 added application controls and preserves
+all earlier frozen inputs/producers. Molecular inclusion, independent target/
+transform, partial prepared-frame retention, ensembles and current-finding
+assurance retain separate gates; this is not complete shared/consumer adoption.

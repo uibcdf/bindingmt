@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Recorded: 2026-11-11. Work-plan revision **2, reviewed**.
-Status: **admitted M1 and first native C1/C2/M2 source/control profile received; MolSysMT #756 identity received; richer placement/owner receiving remain pending**.
+Status: **admitted M1 and first native C1/C2/M2 source/control profile received; MolSysMT #756 identity received; native sphere/axis-aligned placement received; transformed/ensemble/owner receiving remain pending**.
 This plan turns the [audited design](binding_site_design.md) and its
 [worked handoffs](binding_site_review.md) into independently reviewable increments.
 It records work order and acceptance; only the dated delivered profiles below are implemented.
@@ -173,7 +173,7 @@ permission to publish partial enforcement or a callable stub.
 | B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
 | B2 | Declarations 0.1/0.2/0.3 and selection snapshot 0.4 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
 | C1 | Bounded native selection/region/replay and #756 resource identity received; richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
-| C2 | Native fixed-membership application and final-payload admission source-received; saved-geometry/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
+| C2 | Native membership and declared sphere/axis-aligned placement source-received; transformed/ensemble/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
 | T0 | Public saved-reader readiness received; owner admission pending TopoMT #199 | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
 | H | Offered source/policy pending | One bounded native hypothesis and association workflow with owner controls. |
@@ -390,6 +390,11 @@ outcomes. Case R's map/state expectations are demonstrated by actual API output,
 not copied into a successful report as authored assertions.
 
 ## 9. C2: explicit search-domain application
+
+**Subsequent declared-geometry profile:** [native sphere/axis-aligned placement](binding_site_geometry_application.md)
+now passes its original-frame capture, actual normalized/staged-input checks and
+historical replay. It explicitly requires caller frame association and retains
+unsupported transforms/partial prepared-frame/stronger assurance.
 
 **Latest delivered bounded native profile:** [the actual application contract](binding_site_application.md)
 receives fixed-membership enclosure, actual normalized-source/use admission and
@@ -969,3 +974,35 @@ source/resource/reader/publication receipts retain #50 custody under
 `.molsyssuite/topomt-case-111-20261115/`, review 2026-11-22. Prior 1118-case
 receiving and old heavy holds retain their exact scopes. No new tag/package,
 provider edit/install/build, native calculation or manual remote CI is performed.
+
+## Declared sphere/box native placement — 2026-11-15
+
+[The admitted and delivered profile](binding_site_geometry_application.md) now
+applies original-frame spheres and axis-aligned boxes through public
+`to_search_domain(..., frame_id=...)`. Frame association is an explicit caller
+precondition, not inferred alignment. Capture/check the whole selected native
+source frame and actual normalized receptor, preserving source 2/local 0 and
+state/subset maps. Final owner-written PDBQT positions and the rounded engine
+box are checked before Vina's constructor; receptor containment is not required.
+
+**1191 selected cases pass per normal/pm-fs policy**, including 73 added
+application controls. The application module is qualified in disjoint 63/70-case
+selectors after one preserved RSS interruption; no interrupted progress is a
+pass and resource limits stay unchanged. Eight separate same-problem staged-
+payload/empty-result controls and fresh Pint/unyt source-free readers pass.
+The actual previous reader refuses the new recipe; temporary exports retire.
+This is bounded source/control evidence, not native docking, complete placement,
+shared/consumer adoption or broader full-suite/installed/public/platform gates.
+
+The first prepared-frame profile requires all normalized original atoms to
+survive directly with unchanged positions; generated atoms remain explicitly
+mapped. Source edits require explicit placement recapture; saved shapes/history
+stay readable. Independent targets/transforms, oriented geometry, partial frame
+retention, ensembles and stronger findings remain unsupported. Next receive
+TopoMT #199 before T0; PeptideMT #60 retains its separate handoff.
+
+Five provider heads/native 2dbcf13d bytes stay unchanged. Exact source/XML/input/
+resource/reader/publication receipts retain #50 custody under
+`.molsyssuite/geometry-placement-111-20261115/`, review 2026-11-22. Six workspace/
+fresh committed-export checks pass. No new tag/package, provider edit/install/
+build or manual remote CI; original heavy holds remain unretried.

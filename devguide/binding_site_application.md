@@ -229,3 +229,15 @@ original 1070-case population, its producer identities or interrupted attempts.
 The [exact saved TopoMT candidate](binding_site_topomt_receiving.md) now makes the
 next owner input request concrete; T0/T1 implementation and owner admission remain
 pending. No native engine, installed/public/platform or shared acceptance follows.
+
+## Subsequent declared-geometry placement — 2026-11-15
+
+[The original-native sphere/axis-aligned profile](binding_site_geometry_application.md)
+now supplies explicit caller frame association, full selected-frame capture,
+actual normalized/staged-input checks and ordinary saved-history propagation.
+It reuses the unchanged offline geometry recipe in a separately typed application;
+old unplaced recipes keep their original assurance/refusal. The 1191-case per-policy
+source/control qualification includes 73 added application controls and preserves
+all earlier frozen inputs/producers. Molecular inclusion, independent target/
+transform, partial prepared-frame retention, ensembles and current-finding
+assurance retain separate gates; this is not complete shared/consumer adoption.

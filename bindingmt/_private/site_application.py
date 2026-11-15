@@ -114,6 +114,15 @@ def _box_from_bounds(record):
 
 def validate_derivation(record, center, lengths):
     """Admit historical data; source authenticity/positions need actual use checks."""
+    if (
+        isinstance(record, dict)
+        and record.get('format') == 'bindingmt.site_geometry_application'
+    ):
+        from bindingmt._private.site_geometry_application import (
+            validate_derivation as validate,
+        )
+
+        return validate(record, center, lengths)
     from bindingmt.core.site import BindingSite
 
     record = json_copy(record, 'derivation')
@@ -262,10 +271,33 @@ def derive(
     context_policy,
     max_source_atoms,
     max_structure_occurrences,
+    frame_id=None,
 ):
     from bindingmt.core.search_domain import BoxRegion, _point_bounds
     from bindingmt.core.site import _producer
 
+    if len(site.views) == 1 and site.views[0]['kind'] in ('sphere', 'box'):
+        from bindingmt._private.site_geometry_application import derive as place
+
+        return place(
+            site,
+            molecular_system,
+            method=method,
+            view=view,
+            structure_index=structure_index,
+            chemical_state=chemical_state,
+            expansion=expansion,
+            padding=padding,
+            frame_id=frame_id,
+            assurance_scope=assurance_scope,
+            context_policy=context_policy,
+            max_source_atoms=max_source_atoms,
+            max_structure_occurrences=max_structure_occurrences,
+        )
+    _supported(
+        frame_id is None,
+        'membership enclosure without an independent declared geometry frame',
+    )
     _supported(method == 'enclosing_box', 'native membership enclosure method')
     _supported(
         assurance_scope == 'placed_geometry',
@@ -350,6 +382,16 @@ def derive(
 
 def validate_problem_application(problem, domain, *, checkpoint='problem_construction'):
     """Recheck actual source and normalized receptor immediately before use."""
+    recipe = domain.derivation
+    if (
+        isinstance(recipe, dict)
+        and recipe.get('format') == 'bindingmt.site_geometry_application'
+    ):
+        from bindingmt._private.site_geometry_application import (
+            validate_problem_application as validate,
+        )
+
+        return validate(problem, domain, checkpoint=checkpoint)
     import molsysmt as msm
 
     from bindingmt.core.problem import DockingProblem
@@ -497,12 +539,18 @@ def validate_staged_receptor(problem, prepared, exported, payload, backend_box):
     use = validate_problem_application(
         problem, problem.search_domain, checkpoint='backend_export'
     )
+    recipe = problem.search_domain.derivation
+    geometric = recipe['format'] == 'bindingmt.site_geometry_application'
     _require(
         isinstance(prepared, PreparedReceptor),
         'receptor',
         'Require the actual native prepared receptor export.',
     )
-    limit = problem.search_domain.derivation['region']['request']['max_source_atoms']
+    limit = (
+        recipe['request']['max_source_atoms']
+        if geometric
+        else recipe['region']['request']['max_source_atoms']
+    )
     _require(
         0 < prepared.n_atoms <= limit,
         'receptor',
@@ -550,18 +598,28 @@ def validate_staged_receptor(problem, prepared, exported, payload, backend_box):
         'receptor',
         'Writer axis must match the prepared atom count.',
     )
+    checked_local = (
+        use['checked_local_atom_indices']
+        if geometric
+        else use['support_local_atom_indices']
+    )
+    checked_source = (
+        use['checked_source_atom_indices']
+        if geometric
+        else use['support_source_atom_indices']
+    )
     prepared_atoms = [
-        int(preparation_map['source_to_output_atom_indices'][i])
-        for i in use['support_local_atom_indices']
+        int(preparation_map['source_to_output_atom_indices'][i]) for i in checked_local
     ]
     written_atoms = [
-        int(combined['source_to_output_atom_indices'][i])
-        for i in use['support_local_atom_indices']
+        int(combined['source_to_output_atom_indices'][i]) for i in checked_local
     ]
     _require(
         all(i >= 0 for i in prepared_atoms + written_atoms),
         'receptor',
-        'Preparation omitted a fixed support atom; representative identity is insufficient.',
+        'Preparation omitted a checked original atom; direct frame identity is required.'
+        if geometric
+        else 'Preparation omitted a fixed support atom; representative identity is insufficient.',
     )
     native_positions = _positions(exported.molecular_system, prepared_atoms, 0)
     _require(
@@ -610,6 +668,43 @@ def validate_staged_receptor(problem, prepared, exported, payload, backend_box):
         'backend_box',
         'The actual rounded engine box differs from the checked application.',
     )
+    if geometric:
+        from bindingmt._private.site_geometry_application import validate_numeric_box
+
+        expected_written = np.asarray(
+            [
+                [float(format(float(v), '.3f')) for v in row]
+                for row in puw.get_value(
+                    puw.quantity(native_positions, 'nm'), to_unit='angstrom'
+                )
+            ]
+        )
+        _require(
+            np.allclose(
+                points[0], expected_written, rtol=8 * np.finfo(float).eps, atol=0
+            ),
+            'receptor',
+            'Written receptor positions differ from the checked frame at owner PDBQT precision.',
+        )
+        validate_numeric_box(recipe, center, size)
+        return {
+            'format': 'bindingmt.site_geometry_payload_use',
+            'format_version': '0.1',
+            'experimental': True,
+            'application_ref': use['application_ref'],
+            'receptor_payload_sha256': payload_sha,
+            'normalized_to_pdbqt_atom_map': _descriptor(combined),
+            'checked_source_atom_indices': checked_source,
+            'checked_normalized_atom_indices': checked_local,
+            'checked_pdbqt_atom_indices': written_atoms,
+            'backend_box': json_copy(backend_box, 'backend_box'),
+            'guarantee': 'checked original frame positions; effective box encloses declared geometry',
+            'frame_association': 'caller_precondition',
+            'written_coordinate_policy': 'owner three-decimal angstrom formatting with binary64 representation roundoff',
+            'membership': 'not_requested',
+            'chemical_equivalence': 'not_assessed',
+            'current_finding': 'not_assessed',
+        }
     _require(
         (points[0] >= center - size / 2).all()
         and (points[0] <= center + size / 2).all(),

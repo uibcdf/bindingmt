@@ -1,5 +1,5 @@
 ---
-summary: Qualify public saved TopoMT reader readiness; receive finite input/view agreement in TopoMT 199 before its BindingSite adapter.
+summary: Deliver native sphere and axis-aligned placement with actual frame/payload checks; retain transform, stronger-assurance and owner receiving gates.
 issue: uibcdf/bindingmt#111
 status: active
 opened: 2026-11-11
@@ -445,3 +445,35 @@ source/resource/reader/publication receipts retain #50 custody under
 `.molsyssuite/topomt-case-111-20261115/`, review 2026-11-22. Prior 1118-case
 receiving and old heavy holds retain their exact scopes. No new tag/package,
 provider edit/install/build, native calculation or manual remote CI is performed.
+
+## Declared sphere/box native placement — 2026-11-15
+
+[The admitted and delivered profile](../binding_site_geometry_application.md) now
+applies original-frame spheres and axis-aligned boxes through public
+`to_search_domain(..., frame_id=...)`. Frame association is an explicit caller
+precondition, not inferred alignment. Capture/check the whole selected native
+source frame and actual normalized receptor, preserving source 2/local 0 and
+state/subset maps. Final owner-written PDBQT positions and the rounded engine
+box are checked before Vina's constructor; receptor containment is not required.
+
+**1191 selected cases pass per normal/pm-fs policy**, including 73 added
+application controls. The application module is qualified in disjoint 63/70-case
+selectors after one preserved RSS interruption; no interrupted progress is a
+pass and resource limits stay unchanged. Eight separate same-problem staged-
+payload/empty-result controls and fresh Pint/unyt source-free readers pass.
+The actual previous reader refuses the new recipe; temporary exports retire.
+This is bounded source/control evidence, not native docking, complete placement,
+shared/consumer adoption or broader full-suite/installed/public/platform gates.
+
+The first prepared-frame profile requires all normalized original atoms to
+survive directly with unchanged positions; generated atoms remain explicitly
+mapped. Source edits require explicit placement recapture; saved shapes/history
+stay readable. Independent targets/transforms, oriented geometry, partial frame
+retention, ensembles and stronger findings remain unsupported. Next receive
+TopoMT #199 before T0; PeptideMT #60 retains its separate handoff.
+
+Five provider heads/native 2dbcf13d bytes stay unchanged. Exact source/XML/input/
+resource/reader/publication receipts retain #50 custody under
+`.molsyssuite/geometry-placement-111-20261115/`, review 2026-11-22. Six workspace/
+fresh committed-export checks pass. No new tag/package, provider edit/install/
+build or manual remote CI; original heavy holds remain unretried.

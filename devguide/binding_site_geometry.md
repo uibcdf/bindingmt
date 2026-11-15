@@ -8,9 +8,10 @@ Status: implemented and source-received B1/B2 static geometry profile.
 Add `BindingSite.from_sphere(source=..., center=..., radius=..., frame=...)` and
 `from_box(source=..., center=..., lengths=..., frame=..., axes=None)`. Retain
 name, declared structure/state scope, optional extensions and immutable evidence/
-definition operations. Molecular resolution, atom inclusion and domain placement
-keep their C1/C2 gates; this increment implements no application stub or molecular
-coordinate capture. Geometry belongs to the site, not to a second trajectory.
+definition operations. Atom inclusion and richer molecular profiles retain their
+C1/C2 gates. [Explicit native geometry placement](binding_site_geometry_application.md)
+is now received separately; this declaration increment remains data-only and
+implements no application stub or molecular coordinate capture. Geometry belongs to the site, not to a second trajectory.
 
 Require finite explicit length quantities: center shape `(3,)`, radius positive
 scalar and full box edge lengths positive shape `(3,)`. Writer normalization is
@@ -51,7 +52,9 @@ package/source tag remains 0.1.0.
 Inspection reports declared geometry and frame separately from molecular
 membership, which remains not supplied. Molecular resolution/placement stay
 unperformed, realization coverage not requested and binding support unknown.
-The geometry property is None for nongeometric profiles. Derivations retain
+Placement capability is now conditional for spheres and identity-axis boxes;
+inspection alone still supplies no placement assurance. Oriented boxes retain
+unavailable placement. The geometry property is None for nongeometric profiles. Derivations retain
 the original format, geometry, exact claim references and observations.
 
 ## Checks and limits
@@ -174,3 +177,15 @@ with its own 500-case software receiving and explicit broader native resource
 interruption. These do not change the original geometry populations, supply
 molecular placement or complete public C2/M2. Next qualify the actual client
 source/native profile and implement its real region result.
+
+## Subsequent declared-geometry placement — 2026-11-15
+
+[The original-native sphere/axis-aligned profile](binding_site_geometry_application.md)
+now supplies explicit caller frame association, full selected-frame capture,
+actual normalized/staged-input checks and ordinary saved-history propagation.
+It reuses the unchanged offline geometry recipe in a separately typed application;
+old unplaced recipes keep their original assurance/refusal. The 1191-case per-policy
+source/control qualification includes 73 added application controls and preserves
+all earlier frozen inputs/producers. Molecular inclusion, independent target/
+transform, partial prepared-frame retention, ensembles and current-finding
+assurance retain separate gates; this is not complete shared/consumer adoption.

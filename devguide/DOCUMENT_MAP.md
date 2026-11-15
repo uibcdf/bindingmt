@@ -10,6 +10,7 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [binding_site_geometry_application.md](binding_site_geometry_application.md) | Which declared sphere/box placement, caller frame assumptions and actual normalized/payload checks are source-received, and with what limits? |
 | [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which 1070-case evidence and remaining owner gates? |
 | [binding_site_topomt_receiving.md](binding_site_topomt_receiving.md) | Which exact saved TopoMT reader controls pass, what finite agreement does TopoMT #199 own, and what remains before T0/T1? |
 | [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, how does exact MolSysMT #756 receiving extend the selected qualification to 1118 cases per unit policy? |

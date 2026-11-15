@@ -564,6 +564,7 @@ class BindingSite(_InterfaceRecordIO):
         context_policy='require_match',
         max_source_atoms=100000,
         max_structure_occurrences=4096,
+        frame_id=None,
     ):
         """Enclose fixed native membership and retain actual-input use conditions.
 
@@ -572,7 +573,11 @@ class BindingSite(_InterfaceRecordIO):
         retains its Site/projection, geometry and exact position witness. Its
         use requires the actual DockingProblem and checks source and normalized
         receptor positions. It asserts no current binding finding.
-        See ``devguide/binding_site_application.md`` for the admitted profile.
+        Declared spheres/axis-aligned boxes also admit their named geometry
+        method and explicit ``frame_id`` associating the saved frame with the
+        original source. This caller association is not an inferred alignment.
+        See ``devguide/binding_site_application.md`` and
+        ``devguide/binding_site_geometry_application.md`` for admitted profiles.
         """
         from bindingmt._private.site_application import derive
 
@@ -589,6 +594,7 @@ class BindingSite(_InterfaceRecordIO):
             context_policy=context_policy,
             max_source_atoms=max_source_atoms,
             max_structure_occurrences=max_structure_occurrences,
+            frame_id=frame_id,
         )
 
     def _derive(self, record, kind, reason):
@@ -710,6 +716,13 @@ class BindingSite(_InterfaceRecordIO):
             },
         }
         if geometric:
+            report['capabilities']['domain_placement'] = record['views'][0][
+                'kind'
+            ] == 'sphere' or self.geometry['axes'].tolist() == [
+                [1.0, 0.0, 0.0],
+                [0.0, 1.0, 0.0],
+                [0.0, 0.0, 1.0],
+            ]
             report['geometry'] = {
                 'state': 'declared',
                 'kind': record['views'][0]['kind'],

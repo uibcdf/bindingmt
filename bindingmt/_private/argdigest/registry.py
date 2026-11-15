@@ -709,6 +709,7 @@ ARGUMENT_DIGESTERS = {
     'claim_status': _optional_string('claim_status'),
     'assurance_scope': _optional_string('assurance_scope'),
     'method': _optional_string('method'),
+    'frame_id': _optional_string('frame_id'),
     'context_policy': _optional_string('context_policy'),
     'extensions': _optional_mapping('extensions'),
     'experimental': _boolean('experimental'),

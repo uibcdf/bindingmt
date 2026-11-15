@@ -36,9 +36,9 @@ def _descriptor(value):
 
 def _validate_derivation(record, center, lengths):
     """Validate a declared recipe and its binding to the current box geometry."""
-    if (
-        isinstance(record, dict)
-        and record.get('format') == 'bindingmt.site_domain_application'
+    if isinstance(record, dict) and record.get('format') in (
+        'bindingmt.site_domain_application',
+        'bindingmt.site_geometry_application',
     ):
         from bindingmt._private.site_application import validate_derivation
 
@@ -438,9 +438,9 @@ class BoxRegion(SearchDomain):
         """
         # Reject stale attribution before submitting a derived box to an engine.
         recipe = self.derivation
-        if (
-            recipe is not None
-            and recipe.get('format') == 'bindingmt.site_domain_application'
+        if recipe is not None and recipe.get('format') in (
+            'bindingmt.site_domain_application',
+            'bindingmt.site_geometry_application',
         ):
             from bindingmt._private.site_application import validate_problem_application
 

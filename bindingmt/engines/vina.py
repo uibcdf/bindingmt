@@ -124,9 +124,9 @@ class _VinaTimings:
 def _vina_box(search_domain: Any, problem=None) -> tuple[list[float], list[float]]:
     """Project a physical search domain to stable Vina input numbers in Å."""
     recipe = getattr(search_domain, 'derivation', None)
-    if (
-        isinstance(recipe, dict)
-        and recipe.get('format') == 'bindingmt.site_domain_application'
+    if isinstance(recipe, dict) and recipe.get('format') in (
+        'bindingmt.site_domain_application',
+        'bindingmt.site_geometry_application',
     ):
         box = search_domain.to_backend_box(unit='angstrom', problem=problem)
     elif hasattr(search_domain, 'to_backend_box'):
@@ -461,9 +461,9 @@ class VinaBackend(DockingBackend):
         primary_error = None
         try:
             site_recipe = getattr(problem.search_domain, 'derivation', None)
-            if (
-                isinstance(site_recipe, dict)
-                and site_recipe.get('format') == 'bindingmt.site_domain_application'
+            if isinstance(site_recipe, dict) and site_recipe.get('format') in (
+                'bindingmt.site_domain_application',
+                'bindingmt.site_geometry_application',
             ):
                 staged = self._stage_inputs(
                     receptor,

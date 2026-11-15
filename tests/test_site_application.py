@@ -73,7 +73,7 @@ def domain(source, indices=(4, 1, 3), **options):
 
 def problem(source, box, **options):
     return bmt.DockingProblem(
-        source, MINIMAL_LIG_PDBQT, box, receptor_structure_index=2, **options
+        source, MINIMAL_LIG_PDBQT, box, **{'receptor_structure_index': 2, **options}
     )
 
 
@@ -383,8 +383,9 @@ def test_detached_receipt_and_empty_result_keep_historical_provenance(source, tm
     )
 
 
+@pytest.mark.parametrize('profile', ['membership', 'geometry'])
 def test_actual_public_vina_path_refuses_stale_input_before_preparation(
-    source, monkeypatch
+    source, monkeypatch, profile
 ):
     import importlib.abc
     import sys
@@ -393,7 +394,9 @@ def test_actual_public_vina_path_refuses_stale_input_before_preparation(
 
     from bindingmt.engines import vina as backend
 
-    p = problem(source, domain(source))
+    p = problem(
+        source, domain(source) if profile == 'membership' else placed_geometry(source)
+    )
     msm.set(
         p.receptor_molsys,
         selection=[1],
@@ -658,8 +661,9 @@ def test_replacing_a_valid_application_needs_a_new_problem(source):
 
 
 @pytest.mark.parametrize('edit_prepared', [False, True])
+@pytest.mark.parametrize('profile', ['membership', 'geometry'])
 def test_public_backend_reaches_engine_only_after_actual_staged_admission(
-    source, monkeypatch, edit_prepared
+    source, monkeypatch, edit_prepared, profile
 ):
     import sys
     from types import SimpleNamespace
@@ -669,7 +673,9 @@ def test_public_backend_reaches_engine_only_after_actual_staged_admission(
     from bindingmt._private import site_application
     from bindingmt.engines import vina as backend
 
-    p = problem(source, domain(source))
+    p = problem(
+        source, domain(source) if profile == 'membership' else placed_geometry(source)
+    )
     receptor = prepared_control(p)
     if edit_prepared:
         receptor.coordinates[1] += puw.quantity([0.1, 0.0, 0.0], 'nm')
@@ -678,6 +684,11 @@ def test_public_backend_reaches_engine_only_after_actual_staged_admission(
 
     def checked(*args, **kwargs):
         result = original(*args, **kwargs)
+        assert result['format'] == (
+            'bindingmt.site_domain_payload_use'
+            if profile == 'membership'
+            else 'bindingmt.site_geometry_payload_use'
+        )
         admitted.append(result)
         return result
 
@@ -705,3 +716,553 @@ def test_public_backend_reaches_engine_only_after_actual_staged_admission(
     with pytest.raises(ArgumentError if edit_prepared else EngineReached):
         bmt.dock(p, bmt.VinaProtocol(cpu=1, seed=1, allow_provisional_preparation=True))
     assert bool(admitted) is not edit_prepared
+
+
+GEOMETRY_FRAME = {
+    'id': 'original-cartesian',
+    'coordinate_policy': 'cartesian',
+    'pbc': False,
+}
+
+
+def geometric_site(kind='sphere', *, scoped=True, center='[30,40,50] nm', **options):
+    parameters = dict(
+        source=SOURCE,
+        center=center,
+        frame=GEOMETRY_FRAME,
+        structure_indices=[2] if scoped else None,
+        chemical_state_indices=[1] if scoped else None,
+    )
+    parameters.update(options)
+    if kind == 'sphere':
+        return bmt.BindingSite.from_sphere(radius='0.5 nm', **parameters)
+    return bmt.BindingSite.from_box(lengths='[1,2,3] nm', **parameters)
+
+
+def placed_geometry(source, kind='sphere', **options):
+    method = 'sphere_enclosure' if kind == 'sphere' else 'axis_aligned_box'
+    parameters = dict(method=method, frame_id=GEOMETRY_FRAME['id'], padding='0.2 nm')
+    parameters.update(options)
+    return geometric_site(kind).to_search_domain(source, **parameters)
+
+
+@pytest.mark.parametrize(
+    'kind,lengths', [('sphere', [1.4, 1.4, 1.4]), ('box', [1.4, 2.4, 3.4])]
+)
+def test_geometric_placement_encloses_shape_without_molecular_membership(
+    source, kind, lengths
+):
+    site = geometric_site(kind)
+    assert site.inspect()['capabilities']['domain_placement']
+    box = site.to_search_domain(
+        source,
+        method='sphere_enclosure' if kind == 'sphere' else 'axis_aligned_box',
+        frame_id=GEOMETRY_FRAME['id'],
+        padding='0.2 nm',
+    )
+    p = problem(source, box, receptor_selection=[4, 1, 3])
+    assert box.derivation['format'] == 'bindingmt.site_geometry_application'
+    assert box.derivation['geometry']['site'] == site.to_dict()
+    assert box.derivation['assurance']['membership'] == 'not_requested'
+    assert box.derivation['assurance']['frame_association'] == 'caller_precondition'
+    use = p.search_domain_application
+    assert use['format'] == 'bindingmt.site_geometry_use'
+    assert use['source_structure_index'] == 2 and use['normalized_structure_index'] == 0
+    assert use['checked_source_atom_indices'] == [1, 3, 4]
+    assert use['checked_local_atom_indices'] == [0, 1, 2]
+    exported = box.to_backend_box(unit='nm', problem=p)
+    np.testing.assert_allclose(exported['center'], [30, 40, 50])
+    np.testing.assert_allclose(exported['lengths'], lengths)
+    # The entire receptor is outside the declared box; no inclusion rule is invented.
+    assert not any(
+        box.contains(point) for point in msm.get(p.receptor_molsys, coordinates=True)[0]
+    )
+
+
+@pytest.mark.parametrize('kind', ['sphere', 'box'])
+def test_geometric_problem_result_roundtrip_preserves_history_and_actual_checks(
+    source, kind, tmp_path
+):
+    box = placed_geometry(source, kind)
+    p = problem(source, box, receptor_selection=[4, 1, 3])
+    saved = p.to_dict()
+    assert (
+        bmt.DockingProblem.from_dict(
+            saved, receptor=source, partner=MINIMAL_LIG_PDBQT
+        ).to_dict()
+        == saved
+    )
+    result = bmt.DockingResult([], problem_info=saved).to_dict()
+    assert bmt.DockingResult.from_dict(result).to_dict() == result
+    (tmp_path / 'geometry-box.json').write_text(
+        json.dumps(box.to_dict(), sort_keys=True)
+    )
+    (tmp_path / 'geometry-problem.json').write_text(json.dumps(saved, sort_keys=True))
+    (tmp_path / 'geometry-result.json').write_text(json.dumps(result, sort_keys=True))
+    with pytest.raises(ArgumentError):
+        bmt.BoxRegion.from_dict(box.to_dict()).to_backend_box()
+
+
+@pytest.mark.parametrize('location', ['source', 'normalized'])
+def test_geometric_context_edits_require_explicit_recapture(source, location):
+    box = placed_geometry(source)
+    p = problem(source, box)
+    system = source if location == 'source' else p.receptor_molsys
+    structure = 2 if location == 'source' else 0
+    msm.set(
+        system,
+        selection=[5],
+        structure_indices=[structure],
+        coordinates=puw.quantity([[[100, 100, 100]]], 'nm'),
+    )
+    with pytest.raises(ArgumentError):
+        box.to_backend_box(problem=p)
+    assert bmt.BoxRegion.from_dict(box.to_dict()).derivation == box.derivation
+    if location == 'source':
+        recaptured = placed_geometry(source)
+        assert recaptured.derivation['record_id'] != box.derivation['record_id']
+        assert (
+            recaptured.to_backend_box(problem=problem(source, recaptured))['unit']
+            == 'angstrom'
+        )
+
+
+def test_geometric_unselected_frame_edit_does_not_change_captured_frame(source):
+    box = placed_geometry(source)
+    p = problem(source, box)
+    msm.set(
+        source,
+        selection=[5],
+        structure_indices=[0],
+        coordinates=puw.quantity([[[100, 100, 100]]], 'nm'),
+    )
+    assert box.to_backend_box(problem=p)['unit'] == 'angstrom'
+
+
+@pytest.mark.parametrize('kind', ['sphere', 'box'])
+def test_geometric_actual_staged_payload_keeps_frame_without_receptor_containment(
+    source, kind, tmp_path
+):
+    from bindingmt.engines import vina as backend
+
+    p = problem(source, placed_geometry(source, kind), receptor_selection=[4, 1, 3])
+    center, size = backend._vina_box(p.search_domain, problem=p)
+    owned = []
+    try:
+        staged = object.__new__(bmt.VinaBackend)._stage_inputs(
+            prepared_control(p, retained=[2, 0, 1]),
+            MINIMAL_LIG_PDBQT,
+            bmt.VinaProtocol(cpu=1),
+            owned,
+            application_problem=p,
+            application_box={'center': center, 'size': size, 'unit': 'angstrom'},
+        )
+        receipt = staged['artifacts']['receptor']['site_domain_application']
+        assert receipt['format'] == 'bindingmt.site_geometry_payload_use'
+        assert receipt['checked_pdbqt_atom_indices'] == [1, 2, 0]
+        assert receipt['membership'] == 'not_requested'
+        assert (
+            receipt['receptor_payload_sha256']
+            == staged['artifacts']['receptor']['sha256']
+        )
+        (tmp_path / 'geometry-payload.json').write_text(
+            json.dumps(receipt, sort_keys=True)
+        )
+    finally:
+        backend._cleanup_staged_files(owned)
+
+
+@pytest.mark.parametrize('frame_id', [None, '', 'different', True, 1])
+def test_geometric_frame_association_is_required_and_explicit(source, frame_id):
+    with pytest.raises(ArgumentError):
+        placed_geometry(source, frame_id=frame_id)
+
+
+@pytest.mark.parametrize(
+    'options',
+    [
+        {'method': 'enclosing_box'},
+        {'view': 'missing'},
+        {'expansion': 'listed_atoms'},
+        {'assurance_scope': 'current_finding'},
+        {'context_policy': 'declared_frame'},
+    ],
+)
+def test_geometric_unsupported_meanings_are_not_silently_weakened(source, options):
+    with pytest.raises(CapabilityMismatchError):
+        placed_geometry(source, **options)
+
+
+@pytest.mark.parametrize(
+    'options',
+    [
+        {'structure_index': 0},
+        {'structure_index': 3},
+        {'chemical_state': 0},
+        {'chemical_state': 2},
+        {'max_source_atoms': 5},
+        {'max_structure_occurrences': 2},
+    ],
+)
+def test_geometric_contradictory_scope_or_budget_refuses(source, options):
+    with pytest.raises(ArgumentError):
+        placed_geometry(source, **options)
+
+
+def test_geometric_independent_and_unknown_state_declarations_get_actual_context(
+    source,
+):
+    site = geometric_site(scoped=False)
+    with pytest.raises(ArgumentError):
+        site.to_search_domain(
+            source, method='sphere_enclosure', frame_id=GEOMETRY_FRAME['id']
+        )
+    placed = site.to_search_domain(
+        source,
+        method='sphere_enclosure',
+        frame_id=GEOMETRY_FRAME['id'],
+        structure_index=2,
+    )
+    assert placed.derivation['geometry']['site'] == site.to_dict()
+    assert placed.derivation['observation']['chemical_state_index'] == 1
+    unknown = geometric_site(chemical_state_indices=None)
+    placed = unknown.to_search_domain(
+        source, method='sphere_enclosure', frame_id=GEOMETRY_FRAME['id']
+    )
+    assert placed.derivation['geometry']['site']['views'][0]['scope'][
+        'chemical_state_indices'
+    ] == [None]
+    assert placed.to_backend_box(problem=problem(source, placed))['unit'] == 'angstrom'
+
+
+@pytest.mark.parametrize('form', ['pint', 'unyt'])
+@pytest.mark.parametrize('kind', ['sphere', 'box'])
+def test_geometric_application_preserves_unit_policy_and_cross_form_history(
+    source, form, kind
+):
+    with puw.context(default_form=form, standard_units=['pm', 'fs']):
+        before = puw.configure.report()
+        box = placed_geometry(source, kind)
+        p = problem(source, box)
+        assert bmt.BoxRegion.from_dict(box.to_dict()).derivation == box.derivation
+        np.testing.assert_allclose(
+            box.to_backend_box(problem=p)['center'], [300, 400, 500]
+        )
+        assert puw.configure.report() == before
+
+
+@pytest.mark.parametrize('unit', ['nm', 'pm', 'angstrom'])
+def test_geometric_actual_native_units_keep_original_and_normalized_witnesses(
+    source, unit
+):
+    source.structures.coordinates = puw.convert(
+        source.structures.coordinates
+        + puw.quantity([0.123456789, 0.234567891, 0.345678912], 'nm'),
+        to_unit=unit,
+    )
+    box = placed_geometry(source)
+    assert box.to_backend_box(problem=problem(source, box))['center'] == (
+        300.0,
+        400.0,
+        500.0,
+    )
+
+
+@pytest.mark.parametrize('location', ['source', 'normalized'])
+def test_geometric_actual_known_state_changes_refuse(source, location):
+    box = placed_geometry(source)
+    p = problem(source, box)
+    system = source if location == 'source' else p.receptor_molsys
+    msm.set(
+        system,
+        structure_chemical_state_index=[0, 1, 0] if location == 'source' else [0],
+    )
+    with pytest.raises(ArgumentError):
+        box.to_backend_box(problem=p)
+
+
+@pytest.mark.parametrize(
+    'option', [{'receptor_structure_index': 1}, {'receptor_structure_index': 0}]
+)
+def test_geometric_problem_cannot_replace_original_structure_with_local_frame(
+    source, option
+):
+    with pytest.raises(ArgumentError):
+        problem(source, placed_geometry(source), **option)
+
+
+@pytest.mark.parametrize(
+    'path,value',
+    [
+        (('format_version',), '2.0'),
+        (('experimental',), False),
+        (('record_id',), 'invalid'),
+        (('request', 'frame_id'), 'different'),
+        (('request', 'assurance_scope'), 'current_finding'),
+        (('request', 'context_policy'), 'declared_frame'),
+        (('observation', 'structure_index'), True),
+        (('observation', 'chemical_state_index'), True),
+        (('observation', 'n_atoms'), True),
+        (('request', 'max_source_atoms'), 0),
+        (('positions_sha256',), 'bad'),
+        (('assurance', 'frame_association'), 'verified'),
+        (('assurance', 'membership'), 'resolved'),
+        (('consumer_binding', 'normalized_structure_index'), 1),
+        (('producer', 'operation'), 'new_execution'),
+    ],
+)
+def test_geometric_typed_historical_reader_refuses_resealed_false_relationships(
+    source, path, value
+):
+    record = placed_geometry(source).to_dict()
+    recipe = record['derivation']
+    cursor = recipe
+    for field in path[:-1]:
+        cursor = cursor[field]
+    cursor[path[-1]] = value
+    recipe['content_sha256'] = _digest(recipe)
+    with pytest.raises(ArgumentError):
+        bmt.BoxRegion.from_dict(record)
+
+
+def test_geometric_reader_integrity_is_not_source_authentication(source):
+    saved = placed_geometry(source).to_dict()
+    recipe = saved['derivation']
+    recipe['positions_sha256'] = '0' * 64
+    recipe['content_sha256'] = _digest(recipe)
+    recovered = bmt.BoxRegion.from_dict(saved)
+    with pytest.raises(ArgumentError):
+        problem(source, recovered)
+
+
+@pytest.mark.parametrize('edit', ['missing', 'changed', 'boolean'])
+def test_geometric_record_reconstruction_requires_exact_construction_receipt(
+    source, edit
+):
+    p = problem(source, placed_geometry(source))
+    saved = p.to_dict()
+    if edit == 'missing':
+        del saved['search_domain_application']
+    elif edit == 'boolean':
+        saved['search_domain_application']['chemical_state_index'] = True
+    else:
+        saved['search_domain_application']['frame_id'] = 'different'
+    with pytest.raises(ArgumentError):
+        bmt.DockingProblem.from_dict(saved, receptor=source, partner=MINIMAL_LIG_PDBQT)
+
+
+def test_geometric_replacement_application_needs_a_new_problem(source):
+    box = placed_geometry(source)
+    p = problem(source, box)
+    box._set_derivation(placed_geometry(source).derivation)
+    with pytest.raises(ArgumentError):
+        box.to_backend_box(problem=p)
+
+
+@pytest.mark.parametrize('kind', ['sphere', 'box'])
+def test_geometric_backend_rounding_needs_padding_without_hidden_enlargement(
+    source, kind
+):
+    from bindingmt.engines import vina as backend
+
+    site = geometric_site(kind, center='[0.123456789,0.234567891,0.345678912] nm')
+    method = 'sphere_enclosure' if kind == 'sphere' else 'axis_aligned_box'
+    for padding, accept in [('0 nm', False), ('0.000001 nm', True)]:
+        box = site.to_search_domain(
+            source, method=method, frame_id=GEOMETRY_FRAME['id'], padding=padding
+        )
+        p = problem(source, box)
+        center, size = backend._vina_box(box, problem=p)
+        owned = []
+
+        def stage():
+            return object.__new__(bmt.VinaBackend)._stage_inputs(
+                prepared_control(p),
+                MINIMAL_LIG_PDBQT,
+                bmt.VinaProtocol(cpu=1),
+                owned,
+                application_problem=p,
+                application_box={'center': center, 'size': size, 'unit': 'angstrom'},
+            )
+
+        try:
+            if accept:
+                assert (
+                    stage()['artifacts']['receptor']['site_domain_application'][
+                        'backend_box'
+                    ]['center']
+                    == center
+                )
+            else:
+                with pytest.raises(ArgumentError) as caught:
+                    stage()
+                assert caught.value.extra['arg_name'] == 'backend_box'
+        finally:
+            backend._cleanup_staged_files(owned)
+
+
+@pytest.mark.parametrize('edit', ['move', 'omit'])
+def test_geometric_actual_prepared_original_atoms_must_keep_the_frame(source, edit):
+    from bindingmt.engines import vina as backend
+
+    p = problem(source, placed_geometry(source))
+    receptor = prepared_control(p, retained=[0, 1, 2, 3, 4] if edit == 'omit' else None)
+    if edit == 'move':
+        receptor.coordinates[5] += puw.quantity([0.1, 0, 0], 'nm')
+    center, size = backend._vina_box(p.search_domain, problem=p)
+    owned = []
+    try:
+        with pytest.raises(ArgumentError) as caught:
+            object.__new__(bmt.VinaBackend)._stage_inputs(
+                receptor,
+                MINIMAL_LIG_PDBQT,
+                bmt.VinaProtocol(cpu=1),
+                owned,
+                application_problem=p,
+                application_box={'center': center, 'size': size, 'unit': 'angstrom'},
+            )
+        assert caught.value.extra['arg_name'] == 'receptor'
+    finally:
+        backend._cleanup_staged_files(owned)
+
+
+def test_geometric_generated_atoms_are_explicit_without_original_identity(source):
+    from bindingmt.engines import vina as backend
+
+    p = problem(source, placed_geometry(source))
+    original = prepared_control(p)
+    receptor = bmt.PreparedReceptor(
+        state_id='authored-generated',
+        atom_names=[*original.atom_names, 'GEN'],
+        group_names=['LIG'] * 7,
+        group_ids=[1] * 7,
+        coordinates=puw.quantity(
+            np.vstack(
+                [puw.get_value(original.coordinates, to_unit='nm'), [99.0, 99.0, 99.0]]
+            ),
+            'nm',
+        ),
+        atom_types=['C'] * 7,
+        charges=[0.0] * 7,
+        metadata={
+            'molecular_projection': {
+                'schema': 'molsysmt.atom_map@1',
+                'n_source_atoms': 6,
+                'n_output_atoms': 7,
+                'source_to_output_atom_indices': list(range(6)),
+                'output_to_source_atom_indices': [*range(6), -1],
+            }
+        },
+    )
+    center, size = backend._vina_box(p.search_domain, problem=p)
+    owned = []
+    try:
+        staged = object.__new__(bmt.VinaBackend)._stage_inputs(
+            receptor,
+            MINIMAL_LIG_PDBQT,
+            bmt.VinaProtocol(cpu=1),
+            owned,
+            application_problem=p,
+            application_box={'center': center, 'size': size, 'unit': 'angstrom'},
+        )
+        receipt = staged['artifacts']['receptor']['site_domain_application']
+        assert receipt['checked_pdbqt_atom_indices'] == list(range(6))
+        assert (
+            receipt['normalized_to_pdbqt_atom_map']['output_to_source_atom_indices'][-1]
+            == -1
+        )
+    finally:
+        backend._cleanup_staged_files(owned)
+
+
+def test_geometric_written_positions_are_checked_even_with_a_consistent_payload_hash(
+    source, monkeypatch
+):
+    import hashlib
+    from dataclasses import replace
+
+    from bindingmt.engines import vina as backend
+
+    p = problem(source, placed_geometry(source))
+    writer = backend.export_pdbqt
+
+    def changed(*args, **kwargs):
+        exported = writer(*args, **kwargs)
+        lines = exported.text.splitlines(keepends=True)
+        for i, line in enumerate(lines):
+            if line.startswith(('ATOM  ', 'HETATM')):
+                lines[i] = line[:30] + f'{float(line[30:38]) + 1:8.3f}' + line[38:]
+                break
+        text = ''.join(lines)
+        mapping = dict(exported.atom_map)
+        mapping['payload_sha256'] = hashlib.sha256(text.encode()).hexdigest()
+        return replace(exported, text=text, atom_map=mapping)
+
+    monkeypatch.setattr(backend, 'export_pdbqt', changed)
+    center, size = backend._vina_box(p.search_domain, problem=p)
+    owned = []
+    try:
+        with pytest.raises(ArgumentError) as caught:
+            object.__new__(bmt.VinaBackend)._stage_inputs(
+                prepared_control(p),
+                MINIMAL_LIG_PDBQT,
+                bmt.VinaProtocol(cpu=1),
+                owned,
+                application_problem=p,
+                application_box={'center': center, 'size': size, 'unit': 'angstrom'},
+            )
+        assert caught.value.extra['arg_name'] == 'receptor'
+    finally:
+        backend._cleanup_staged_files(owned)
+
+
+@pytest.mark.parametrize(
+    'failure',
+    [
+        MemoryError('synthetic'),
+        OSError(errno.ENOMEM, 'synthetic'),
+        KeyboardInterrupt(),
+        SystemExit(3),
+    ],
+)
+def test_geometric_native_coordinate_query_preserves_resource_and_control_identity(
+    source, monkeypatch, failure
+):
+    get = msm.get
+
+    def injected(*args, **kwargs):
+        if kwargs.get('coordinates'):
+            raise failure
+        return get(*args, **kwargs)
+
+    monkeypatch.setattr(msm, 'get', injected)
+    with pytest.raises(type(failure)) as caught:
+        placed_geometry(source)
+    assert caught.value is failure
+
+
+def test_geometric_valid_frame_name_does_not_make_a_fileless_object_native(
+    source, monkeypatch
+):
+    def forbidden(*args, **kwargs):
+        pytest.fail('A native-only placement requested generic form discovery')
+
+    monkeypatch.setattr(msm, 'get_form', forbidden)
+    with pytest.raises(CapabilityMismatchError) as caught:
+        geometric_site().to_search_domain(
+            object(), method='sphere_enclosure', frame_id=GEOMETRY_FRAME['id']
+        )
+    assert caught.value.extra['engine'] == 'bindingmt.site_geometry_application'
+
+
+def test_geometric_frame_association_does_not_change_membership_api_semantics(source):
+    with pytest.raises(CapabilityMismatchError):
+        domain(source, frame_id=GEOMETRY_FRAME['id'])
+
+
+def test_geometric_coordinate_assurance_does_not_claim_chemical_equivalence(source):
+    box = placed_geometry(source)
+    p = problem(source, box)
+    msm.set(source, chemical_state=1, formal_charge=[1, 0, 0, 0, 0, 0])
+    assert box.to_backend_box(problem=p)['unit'] == 'angstrom'
+    assert box.derivation['assurance']['chemical_equivalence'] == 'not_assessed'
