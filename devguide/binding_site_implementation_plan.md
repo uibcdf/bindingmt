@@ -174,7 +174,7 @@ permission to publish partial enforcement or a callable stub.
 | B2 | Declarations 0.1/0.2/0.3 and selection snapshot 0.4 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
 | C1 | Bounded native selection/region/replay and #756 resource identity received; richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
 | C2 | Native fixed-membership application and final-payload admission source-received; saved-geometry/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
-| T0 | Exact saved case proposed; owner input/profile admission pending | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
+| T0 | Public saved-reader readiness received; owner admission pending TopoMT #199 | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
 | H | Offered source/policy pending | One bounded native hypothesis and association workflow with owner controls. |
 | P | Offered consumer specification pending | Supplied/absent effective-input controls with declared information origins. |
@@ -470,8 +470,9 @@ geometry/map operations remain explicit; the first adapter is not a plugin
 framework, new topographic engine or mandatory reverse dependency.
 
 The [exact Pocketeer source/bundle candidate](binding_site_topomt_receiving.md)
-now makes the owner input request concrete. It is inspected, not runtime-received
-or owner-admitted; obtain its finite dispositions before implementing the adapter.
+now has public-reader readiness under both unit policies. This is not adapter
+receiving or owner admission; obtain [TopoMT #199](https://github.com/uibcdf/topomt/issues/199)'s
+finite dispositions before implementing the adapter.
 
 **T0 exit:** an admitted public record is imported, inspected and saved/read
 without owner-output mutation or new engine credit; center-only/unavailable-map
@@ -943,3 +944,28 @@ full-suite/installed/public/platform/native-engine/final-pair gates and old heav
 holds remain separate. Exact source/XML/resource/replay/candidate/publication
 receipts retain #50 custody in `.molsyssuite/selection-resource-756-20261114/`,
 review 2026-11-21. No new tag/package or manual remote CI; skipped CI is not a pass.
+
+## Public TopoMT saved-reader readiness — 2026-11-15
+
+[The exact saved candidate](binding_site_topomt_receiving.md#executed-public-reader-readiness--2026-11-15)
+now passes actual public load/save/recover and changed-context refusal under
+nm/ps and pm/fs. Original identities, rich fields, geometry/quantities and input
+bytes survive. The first record has 84 `pocket_residue_atoms`, distinct from
+32 sphere-defining lining points and 44 alpha spheres. Historical absent
+attribution stays explicit; no original engine is imported or executed.
+
+[TopoMT #199](https://github.com/uibcdf/topomt/issues/199) now owns the finite
+input/view/attribution admission request, published with explicit maintainer
+authorization and cross-linked to #111. The adapter and complete T0/T1 workflow
+remain unimplemented; next receive those owner dispositions and admit T0.
+This source-reader readiness is independent of wider shared/consumer adoption.
+
+Final reader source is TopoMT c83ab219 (runtime unchanged from c972b13d), with
+MolSysMT 6deb0200 and unchanged actual native 2dbcf13d. Every final source/input
+snapshot is stable. Serial CPU6/nice10/one worker, monitored 13GiB reserve and
+bounded CPU/RSS/AS/wall checks have no resource interruption; original temporary
+files retire. Six workspace/fresh committed-export checks pass. Raw programs,
+source/resource/reader/publication receipts retain #50 custody under
+`.molsyssuite/topomt-case-111-20261115/`, review 2026-11-22. Prior 1118-case
+receiving and old heavy holds retain their exact scopes. No new tag/package,
+provider edit/install/build, native calculation or manual remote CI is performed.

@@ -1,8 +1,10 @@
 # BindingSite: proposed first saved TopoMT receiving case
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
-Profile review: 2026-11-14. **Candidate identified by read-only artifact/source
-inspection; owner admission, adapter implementation and execution are pending.**
+Profile review: 2026-11-14; public-reader readiness: 2026-11-15.
+**Public saved recovery/resave and changed-context refusal pass under both unit
+policies. Owner admission remains [TopoMT #199](https://github.com/uibcdf/topomt/issues/199);
+the BindingMT adapter and complete T0/T1 workflow remain unimplemented.**
 
 This makes the input request in the [implementation plan](binding_site_implementation_plan.md#10-t-one-complete-saved-topomt-receiving-workflow)
 concrete. It follows [TopoMT's reviewed offer](https://github.com/uibcdf/bindingmt/issues/111#issuecomment-6814170065).
@@ -50,12 +52,99 @@ not rank biological relevance. Obtain membership and geometry from public
 recovery; the manifest counts and raw sphere indices cannot supply a BindingMT
 atom map.
 
-All outer manifest member lengths/hashes and inner artifact hashes were checked
+During the initial read-only inspection on 2026-11-14, all outer manifest member
+lengths/hashes and inner artifact hashes were checked
 by ZIP/JSON inspection. No TopoMT import, molecular conversion, source recovery
-or BindingMT adapter has been executed for this candidate. Hashes bind bytes;
+or BindingMT adapter was executed during that initial inspection. Hashes bind bytes;
 they do not establish the meaning or applicability of a finding. The tracked
 generated-version edit in the TopoMT development checkout is preserved. Any
 future runtime receiving records that exact worktree and actual import origins.
+
+## Executed public-reader readiness — 2026-11-15
+
+The small client check now uses the actual public MolSysMT loader and
+`topomt.load_provider_output`, followed by public `output.save` and recovery.
+It does not introduce a BindingMT import adapter or claim owner profile admission.
+The unchanged full source has 745 atoms and two structures; recovery restores
+source frame 1/reference state 0 and the original run/selection context.
+
+| Recovered public record | Role | Source members | Member points | Lining points | Alpha spheres |
+| --- | --- | --- | --- | --- | --- |
+| `pocketeer:0` | `pocket_residue_atoms` | 84 | 84 | 32 | 44 |
+| `pocketeer:1` | `pocket_residue_atoms` | 109 | 109 | 32 | 46 |
+
+The public member population includes atoms of associated residues. The lining
+view separately contains the union of sphere-defining atoms. Neither is the
+alpha-sphere support or an inferred closed volume. The proposed first member
+enclosure must name its 84-member view and role; it cannot silently use the
+32 lining points or promise to enclose every sphere. The public measurements
+are `volume` and `score`, with their original definitions/units retained.
+
+Both nm/ps and pm/fs policies pass positive load/save/load, rich record fields,
+geometry, quantities, original identities and input-coordinate comparisons.
+There are four successful public recoveries and two expected refusals, not a
+new pytest suite. Run/artifact/metadata identity is exact. Physical floating
+replay uses 8 binary64 epsilons relative, zero absolute tolerance, accounting
+only for unit-conversion roundoff; it is not a method-accuracy tolerance.
+
+Moving original selected detector-input atom 45 by 0.1 nm in an independent
+source copy, outside the first record's exported membership, causes the public
+reader to refuse with ValueError under both policies. Original source positions
+and source/bundle file hashes remain unchanged. This exercises the owner's
+full-input context check, not a claim that unchanged lining alone proves a
+current finding. Source compatibility and permanent current applicability
+remain separate obligations for any future BindingMT application.
+
+Historical `output.attribution` is None in this archive and remains None after
+resave/recovery. No bibliography is invented, and positive preserved-citation
+coverage is not established by this case. TopoMT #199 asks whether this explicit
+absence is admissible or an attributed saved case should be supplied.
+
+### Exact source, guards and limits
+
+Final executed TopoMT reader source is
+`c83ab219c205a89a74ef8a8b6778fb10a89a371f`, publicly published. Another TopoMT
+work session advanced its documentation between attempts; its runtime package
+bytes and the frozen archive are unchanged from c972b13d. Every completed cell
+has identical before/after source/head/worktree/native/input snapshots. The
+tracked generated-version edit is preserved and hashed, with actual import
+origins bound to the development checkout. BindingMT performs no provider edit,
+merge, build, installation or native replacement.
+
+MolSysMT remains `6deb0200cd7e384128eded46caaf751a57e65bc6`, PyUnitWizard
+`cc51c8e600f78f108bc563edd3221bd8788ead86`, ArgDigest
+`7be790b7334e16715fceebbfa8a2b400edf768bb`, SMonitor
+`4a4cd1e415ea57e50c22925c36c2e727772fb3ab`, DepDigest
+`5e93eaff314fe7cddf4eee89842977023b3a8b00` and the inspected Ackredit checkout
+`0bb26ecb42edcfc0984469ff20c9ff93f8fd7f56`. Actual import paths and the mapped
+MolSysMT native SHA-256
+`2dbcf13d148cb3ae13a5908707fcdd61c75a2de5027e50c566ce07de81bdb038`
+are recorded. This receives only the measured reader/source operations, not
+native build authenticity, complete ABI or every current upstream revision.
+
+The final check permits no originating-engine import, child process or network
+call during recovery. Resolve Python's harmless platform probe before enabling
+those guards. CPU6/nice10/one worker, CPU45/wall180, RSS512MiB/AS2GiB and monitored
+reserve13GiB apply to the process and heavy descendants. Final sampled peak is
+below 310 MiB; minimum available RAM stays above 45 GiB. No new resource
+interruption occurs; earlier native498/evaluator holds remain unretried.
+Slurm availability is not established by the sandbox socket probe, and no active
+allocation/reservation is claimed. Temporary source/bundle/resave files retire.
+
+Initial attempts preserve a premature process guard blocking Python platform
+detection, a private comparison helper misreading a plain string as a quantity,
+and overstrict equality for cross-policy binary64 geometry. They are harness
+failures, not TopoMT defects or successful full receiving. A narrower earlier
+load/resave check passes separately; only the complete final cell supplies the
+rich replay, refusal and actual native-origin account above.
+
+Six applicable workspace and fresh committed-export checks pass, and the export
+is retired. Raw attempts/programs/source hashes/resource/origin/replay and
+publication/readback receipts retain #50 custody in
+`.molsyssuite/topomt-case-111-20261115/`, review 2026-11-22. No new scientific
+execution, tag/package/release, hosted/full-suite/installed/public/platform or
+shared/consumer adoption is inferred. Prior 1118-case receiving remains at its
+original source and is not repeated or relabelled as this new reader check.
 
 ## Agreement requested from TopoMT
 
@@ -126,7 +215,9 @@ evidence and never resumes the earlier native498/evaluator holds. Shared
 agreement, actual consumer adoption and installed/public/platform/native-engine
 qualification retain their independent owners.
 
-Next: obtain the four owner dispositions above in #111, then admit and implement
+Next: obtain the four owner dispositions above in [TopoMT #199](https://github.com/uibcdf/topomt/issues/199),
+linked to BindingMT #111, then admit and implement
 the selected T0 slice. No provider defect or new missing kernel is alleged by
-this input request. Read-only inspection receipts retain #50 custody under
-`.molsyssuite/selection-resource-756-20261114/`, review 2026-11-21.
+this input request. The original read-only inspection retains its prior #50 custody under
+`.molsyssuite/selection-resource-756-20261114/`, review 2026-11-21. The subsequent
+public-reader attempts have the separate custody/review above.

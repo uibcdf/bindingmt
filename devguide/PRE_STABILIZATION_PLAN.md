@@ -24,6 +24,31 @@ Accepted maintainer objective: 2026-11-06, [BMT-046](DECISIONS.md#bmt-046--deliv
 Status: **active; first native C1/C2/M2 source/control profile received; expression resource identity received at MolSysMT 6deb0200; richer placement and #112 P/shared receiving remain pending**.
 Inspected starting source: `530a4cf`.
 
+### Public TopoMT saved-reader readiness — 2026-11-15
+
+[The exact saved candidate](binding_site_topomt_receiving.md#executed-public-reader-readiness--2026-11-15)
+now passes actual public load/save/recover and changed-context refusal under
+nm/ps and pm/fs. Original identities, rich fields, geometry/quantities and input
+bytes survive. The first record has 84 `pocket_residue_atoms`, distinct from
+32 sphere-defining lining points and 44 alpha spheres. Historical absent
+attribution stays explicit; no original engine is imported or executed.
+
+[TopoMT #199](https://github.com/uibcdf/topomt/issues/199) now owns the finite
+input/view/attribution admission request, published with explicit maintainer
+authorization and cross-linked to #111. The adapter and complete T0/T1 workflow
+remain unimplemented; next receive those owner dispositions and admit T0.
+This source-reader readiness is independent of wider shared/consumer adoption.
+
+Final reader source is TopoMT c83ab219 (runtime unchanged from c972b13d), with
+MolSysMT 6deb0200 and unchanged actual native 2dbcf13d. Every final source/input
+snapshot is stable. Serial CPU6/nice10/one worker, monitored 13GiB reserve and
+bounded CPU/RSS/AS/wall checks have no resource interruption; original temporary
+files retire. Six workspace/fresh committed-export checks pass. Raw programs,
+source/resource/reader/publication receipts retain #50 custody under
+`.molsyssuite/topomt-case-111-20261115/`, review 2026-11-22. Prior 1118-case
+receiving and old heavy holds retain their exact scopes. No new tag/package,
+provider edit/install/build, native calculation or manual remote CI is performed.
+
 ### MolSysMT selection resource errors received — 2026-11-14
 
 [The exact-source client receiving](binding_site_selection.md#provider-resource-correction-received--2026-11-14)
