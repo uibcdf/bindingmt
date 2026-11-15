@@ -746,6 +746,70 @@ def placed_geometry(source, kind='sphere', **options):
     return geometric_site(kind).to_search_domain(source, **parameters)
 
 
+@pytest.mark.parametrize('kind', ['object', 'path', 'mapping', 'domains'])
+@pytest.mark.parametrize('profile', ['membership', 'geometry'])
+def test_native_admission_application_capture_refuses_foreign_source(
+    source, monkeypatch, kind, profile
+):
+    foreign = {
+        'object': object(),
+        'path': 'not-loaded.h5msm',
+        'mapping': {'coordinates': []},
+        'domains': [source.topology, source.chemical_states],
+    }[kind]
+
+    def forbidden(*args, **kwargs):
+        pytest.fail('Native-only capture attempted foreign form discovery or queries')
+
+    for name in ['get_form', 'get', 'select', 'convert', 'extract']:
+        monkeypatch.setattr(msm, name, forbidden)
+    with pytest.raises(CapabilityMismatchError) as caught:
+        (domain if profile == 'membership' else placed_geometry)(foreign)
+    assert caught.value.extra['capability'] == (
+        'resident native MolSys'
+        if profile == 'membership'
+        else 'original resident native geometry source'
+    )
+
+
+@pytest.mark.parametrize('kind', ['object', 'path', 'mapping', 'domains'])
+@pytest.mark.parametrize('profile', ['membership', 'geometry'])
+@pytest.mark.parametrize('location', ['original', 'normalized'])
+def test_native_admission_application_export_refuses_foreign_replacement(
+    source, monkeypatch, kind, profile, location
+):
+    box = (domain if profile == 'membership' else placed_geometry)(source)
+    actual = problem(source, box)
+    foreign = {
+        'object': object(),
+        'path': 'not-loaded.h5msm',
+        'mapping': {'coordinates': []},
+        'domains': [source.topology, source.chemical_states],
+    }[kind]
+    original = msm.get_form
+
+    def native_only(value):
+        if value is foreign:
+            pytest.fail('Native-only export attempted foreign form discovery')
+        return original(value)
+
+    monkeypatch.setattr(msm, 'get_form', native_only)
+    setattr(
+        actual, '_receptor' if location == 'original' else '_receptor_molsys', foreign
+    )
+    with pytest.raises(CapabilityMismatchError) as caught:
+        box.to_backend_box(problem=actual)
+    assert caught.value.extra['capability'] == (
+        'original resident native receptor'
+        if profile == 'membership' and location == 'original'
+        else 'actual native normalized receptor'
+        if profile == 'membership'
+        else 'original resident native geometry source'
+        if location == 'original'
+        else 'actual normalized native receptor'
+    )
+
+
 @pytest.mark.parametrize(
     'kind,lengths', [('sphere', [1.4, 1.4, 1.4]), ('box', [1.4, 2.4, 3.4])]
 )

@@ -88,6 +88,27 @@ def make(source, selection='all', **options):
     return bmt.BindingSite.from_selection(source, selection, source=SOURCE, **options)
 
 
+@pytest.mark.parametrize('kind', ['object', 'path', 'mapping', 'domains'])
+def test_native_admission_selection_refuses_foreign_inputs_without_discovery(
+    source, monkeypatch, kind
+):
+    foreign = {
+        'object': object(),
+        'path': 'not-loaded.h5msm',
+        'mapping': {'coordinates': []},
+        'domains': [source.topology, source.chemical_states],
+    }[kind]
+
+    def forbidden(*args, **kwargs):
+        pytest.fail('Native-only selection attempted foreign form discovery or queries')
+
+    for name in ['get_form', 'get', 'select', 'convert', 'extract']:
+        monkeypatch.setattr(msm, name, forbidden)
+    with pytest.raises(CapabilityMismatchError) as caught:
+        make(foreign)
+    assert caught.value.extra['capability'] == 'resident native selection source'
+
+
 @pytest.mark.parametrize(
     'query,expected',
     [

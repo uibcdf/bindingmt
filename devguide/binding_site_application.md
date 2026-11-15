@@ -241,3 +241,65 @@ source/control qualification includes 73 added application controls and preserve
 all earlier frozen inputs/producers. Molecular inclusion, independent target/
 transform, partial prepared-frame retention, ensembles and current-finding
 assurance retain separate gates; this is not complete shared/consumer adoption.
+
+## Native-only admission correction — 2026-11-15
+
+Owner remains [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
+The native-only selection, region and membership-application routes now check the
+public `molsysmt.native.MolSys` class before molecular queries on an unsupported
+input. They no longer ask generic form discovery whether a foreign object,
+filename, mapping or composed-domain list is a native source. The same gate
+applies to a region's independent target and to the original/normalized receptor
+at actual member-box export. The declared-geometry route already has this gate.
+Existing catalogued capability diagnostics and native molecular operations remain;
+DockingProblem's general supported-format normalization is outside this change.
+
+This is a consumer admission correction, not a defect in MolSysMT's deliberately
+general format detector or a replacement for its molecular selection/geometry.
+Inputs outside this bounded native profile are refused before their form adapters
+are explored. Supported molecular work still calls public MolSysMT. There is no
+new format resolver, parser, conversion fallback, quantity/schema or dependency.
+
+The 36 new public-operation controls cover four foreign input kinds across
+selection, source/target region projection, member/declared-geometry capture and
+original/normalized application export. Negative probes stop at an instrumented
+foreign-discovery boundary; they do not reproduce expensive adapter loading.
+On original runtime source `a473f45e3692e4f370f7383cf15243ebae7ad626`, the corrected
+probe has 24 failures and 12 already-passing geometry controls. After the change,
+all 36 pass. An initial probe mistakenly reads diagnostic `context` instead of
+`extra`; its 12 harness errors are retained separately, not provider defects.
+
+**368 cases pass per normal/pm-fs policy** in the complete affected populations:
+selection 133, region 78, application 157. The application module uses disjoint
+87/70-case selectors; their node union and absence of overlap are verified.
+No final failures/errors/skips occur. The original 1191-case qualification remains
+at its preceding source; it is not relabelled as a newly executed full population.
+Before/after runtime/test/resource/provider/native hashes agree. Existing NumPy
+shape warnings in application controls remain visible. No serialized bytes or
+frozen helper/data input changes; existing historical-read controls pass within
+the selected modules. Actual source import origins and mapped native identity are
+checked separately. There is no original engine or scientific-method execution.
+
+The unchanged source closure is MolSysMT `6deb0200cd7e384128eded46caaf751a57e65bc6`,
+PyUnitWizard `cc51c8e600f78f108bc563edd3221bd8788ead86`, ArgDigest
+`7be790b7334e16715fceebbfa8a2b400edf768bb`, SMonitor
+`4a4cd1e415ea57e50c22925c36c2e727772fb3ab` and DepDigest
+`5e93eaff314fe7cddf4eee89842977023b3a8b00`; actual mapped MolSysMT native SHA-256
+is `2dbcf13d148cb3ae13a5908707fcdd61c75a2de5027e50c566ce07de81bdb038`.
+Fetched newer provider commits remain unmerged/unqualified for this consumer-only
+correction. Generated editable-version metadata remains separately hashed.
+No source install, provider edit, native replacement or build occurs.
+
+Serial CPU6/nice10/one-worker cells retain reserve13GiB/RSS512MiB/AS2GiB/
+CPU45s/wall180s supervision. No new resource interruption occurs, and old heavy
+holds are not retried. Slurm executables exist; the sandbox socket probe cannot
+establish controller availability, and no allocation is claimed. Six workspace
+and fresh committed-export checks pass; the export retires. Raw probe/final XML,
+source/resource/origin and publication receipts keep #50 custody under
+`.molsyssuite/native-site-admission-111-20261115/`, review 2026-11-22.
+
+TopoMT #199 and PeptideMT #60 still await owner replies at this checkpoint.
+Next receive TopoMT's finite dispositions before T0; retain separate H/P/shared/
+consumer and full-suite/hosted/installed/public/platform/native-engine/final-pair
+gates. #111 stays open. No tag/package/release or manual remote CI occurs;
+skipped CI is not a pass.

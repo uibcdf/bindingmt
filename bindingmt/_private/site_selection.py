@@ -266,9 +266,10 @@ def validate_capture(payload, scope):
 
 def capture(molecular_system, request):
     import molsysmt as msm
+    from molsysmt.native import MolSys
 
     capability(
-        msm.get_form(molecular_system) == 'molsysmt.MolSys',
+        isinstance(molecular_system, MolSys),
         'resident native selection source',
     )
 

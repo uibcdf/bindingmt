@@ -563,9 +563,9 @@ def _projection(view, expansion, axes, mapping, groups, observations, request):
 
 
 def _counts_from_source(msm, molecular_system, request):
-    _supported(
-        msm.get_form(molecular_system) == 'molsysmt.MolSys', 'resident native MolSys'
-    )
+    from molsysmt.native import MolSys
+
+    _supported(isinstance(molecular_system, MolSys), 'resident native MolSys')
     counts = {
         name: _index(msm.get(molecular_system, **{name: True}), name)
         for name in _COUNTS

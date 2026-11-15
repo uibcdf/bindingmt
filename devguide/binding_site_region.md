@@ -246,3 +246,11 @@ Old recipe/selection bytes and producers are unchanged. Placed saved sphere/box,
 richer addressed/ensemble, stronger finding and shared/consumer delivery retain
 separate gates. MolSysMT #756's expression resource-error identity remains owned
 and unqualified here. Next obtain an exact saved TopoMT input/profile for T0/T1.
+
+## Subsequent native-only input admission — 2026-11-15
+
+The [shared correction and focused receiving](binding_site_application.md#native-only-admission-correction--2026-11-15)
+now reject foreign inputs through the public MolSys class before generic form
+discovery. Molecular queries and historical formats remain provider-owned and
+unchanged. The 368-case affected population has separate exact-source evidence;
+earlier complete populations retain their original scope.

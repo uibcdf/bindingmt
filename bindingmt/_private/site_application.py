@@ -393,6 +393,7 @@ def validate_problem_application(problem, domain, *, checkpoint='problem_constru
 
         return validate(problem, domain, checkpoint=checkpoint)
     import molsysmt as msm
+    from molsysmt.native import MolSys
 
     from bindingmt.core.problem import DockingProblem
     from bindingmt.core.search_domain import BoxRegion
@@ -426,7 +427,7 @@ def validate_problem_application(problem, domain, *, checkpoint='problem_constru
         'The exported domain must be the application assigned to this problem.',
     )
     _supported(
-        msm.get_form(problem.receptor) == 'molsysmt.MolSys',
+        isinstance(problem.receptor, MolSys),
         'original resident native receptor',
     )
     current = _current_region(record, problem.receptor)
@@ -458,7 +459,7 @@ def validate_problem_application(problem, domain, *, checkpoint='problem_constru
     local_atoms = [source_to_local[atom] for atom in atoms]
     normalized = problem.receptor_molsys
     _supported(
-        msm.get_form(normalized) == 'molsysmt.MolSys',
+        isinstance(normalized, MolSys),
         'actual native normalized receptor',
     )
     _require(

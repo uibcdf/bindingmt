@@ -1,5 +1,25 @@
 # New-machine development handoff
 
+## Native-only input admission corrected — 2026-11-15
+
+[The admission correction and exact evidence](binding_site_application.md#native-only-admission-correction--2026-11-15)
+now reject foreign objects/formats before discovery on native-only selection,
+region source/target and original/normalized member-box export. Declared geometry
+already uses the same public MolSys class gate. General DockingProblem format
+normalization and all owner molecular operations retain their contracts.
+
+**368 complete affected cases pass per normal/pm-fs policy**, including 36 new
+controls; the original-source negative probe has 24 failures/12 passes. This is
+new focused evidence, not a rerun of the preceding 1191-case population. Sources,
+frozen inputs and actual native 2dbcf13d stay fixed; no new resource interruption
+occurs. Six workspace/fresh committed-export checks pass. Raw attempts and exact
+receipts retain #50 custody in `.molsyssuite/native-site-admission-111-20261115/`,
+review 2026-11-22. No provider merge/install/build, tag or manual remote CI.
+
+TopoMT #199 and PeptideMT #60 still await owner replies. Next receive the finite
+TopoMT agreement before T0; other H/P/shared/consumer and broader delivery gates
+remain pending. No original engine or scientific-method execution is claimed.
+
 ## Central identity and guide receiving — 2026-11-11
 
 MolSysSuite #190 publishes the continuing BindingMT registry at

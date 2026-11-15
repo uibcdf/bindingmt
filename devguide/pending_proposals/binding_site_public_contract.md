@@ -1,5 +1,5 @@
 ---
-summary: Deliver native sphere and axis-aligned placement with actual frame/payload checks; retain transform, stronger-assurance and owner receiving gates.
+summary: Reject foreign inputs before discovery on native-only routes; retain delivered placement and pending owner receiving gates.
 issue: uibcdf/bindingmt#111
 status: active
 opened: 2026-11-11
@@ -477,3 +477,14 @@ resource/reader/publication receipts retain #50 custody under
 `.molsyssuite/geometry-placement-111-20261115/`, review 2026-11-22. Six workspace/
 fresh committed-export checks pass. No new tag/package, provider edit/install/
 build or manual remote CI; original heavy holds remain unretried.
+
+## Native-only input admission corrected — 2026-11-15
+
+[The implemented correction and exact evidence](../binding_site_application.md#native-only-admission-correction--2026-11-15)
+cover selection, source/target projection and original/normalized application
+export. The public MolSys class gate prevents unnecessary foreign form discovery
+while preserving molecular owner calls and existing capability diagnostics.
+The complete affected populations pass 368 cases per unit policy, including 36
+new controls; earlier 1191-case receiving keeps its original source. No shared
+format changes or provider defect is alleged. TopoMT #199 and PeptideMT #60 still
+await replies; #111 and wider receiving/delivery gates remain open.

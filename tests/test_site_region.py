@@ -51,6 +51,34 @@ def site(element='atom', indices=(5, 1, 2), **options):
     )(source=SOURCE, **{f'{element}_indices': list(indices)}, **options)
 
 
+@pytest.mark.parametrize('kind', ['object', 'path', 'mapping', 'domains'])
+@pytest.mark.parametrize('location', ['source', 'target'])
+def test_native_admission_region_refuses_foreign_axes_without_discovery(
+    source, monkeypatch, kind, location
+):
+    foreign = {
+        'object': object(),
+        'path': 'not-loaded.h5msm',
+        'mapping': {'coordinates': []},
+        'domains': [source.topology, source.chemical_states],
+    }[kind]
+    original = msm.get_form
+
+    def native_only(value):
+        if value is foreign:
+            pytest.fail('Native-only projection attempted foreign form discovery')
+        return original(value)
+
+    monkeypatch.setattr(msm, 'get_form', native_only)
+    with pytest.raises(CapabilityMismatchError) as caught:
+        site().resolve_region(
+            foreign if location == 'source' else source,
+            target=foreign if location == 'target' else None,
+            structure_index=0,
+        )
+    assert caught.value.extra['capability'] == 'resident native MolSys'
+
+
 def derived(source):
     subset = msm.extract(source, selection=[5, 1, 2], structure_indices=[2, 0, 2])
     first = dict(

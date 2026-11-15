@@ -312,3 +312,11 @@ rerun of the 1118-case population or complete native/platform acceptance.
 The different unchanged client/reference native files stay explicit. No further
 resource-control repetition is requested. Separate storage/final-pair/publication
 questions and held evaluations retain their owners.
+
+## Subsequent native-only input admission — 2026-11-15
+
+The [shared correction and focused receiving](binding_site_application.md#native-only-admission-correction--2026-11-15)
+now reject foreign inputs through the public MolSys class before generic form
+discovery. Molecular queries and historical formats remain provider-owned and
+unchanged. The 368-case affected population has separate exact-source evidence;
+earlier complete populations retain their original scope.

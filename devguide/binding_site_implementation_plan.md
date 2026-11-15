@@ -1006,3 +1006,13 @@ resource/reader/publication receipts retain #50 custody under
 `.molsyssuite/geometry-placement-111-20261115/`, review 2026-11-22. Six workspace/
 fresh committed-export checks pass. No new tag/package, provider edit/install/
 build or manual remote CI; original heavy holds remain unretried.
+
+## Native-only input admission corrected — 2026-11-15
+
+The [bounded consumer correction](binding_site_application.md#native-only-admission-correction--2026-11-15)
+applies the already-admitted native profile before foreign form discovery on
+selection, source/target projection and actual member-box export. The complete
+affected population has 368 passing cases per policy, including 36 new controls;
+prior 1191-case receiving retains its original source. No data format, molecular
+operation or shared contract changes. T0 still awaits TopoMT #199; PeptideMT #60
+and the other first-profile receiving gates retain their independent ownership.

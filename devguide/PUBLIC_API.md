@@ -9,6 +9,10 @@ The declaration/persistence and first native Cartesian contact profiles are
 delivered under their own explicit scope. Future operations are not advertised
 as implemented exports by the naming transition.
 
+The current BindingSite selection/projection/application profile requires resident
+MolSysMT MolSys inputs. Foreign formats are explicitly refused before their
+discovery; general DockingProblem input normalization has its separate contract.
+
 ## Choose an operation
 
 | Need | Public route | Work performed |
