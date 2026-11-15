@@ -10,10 +10,11 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [binding_site_owner_receiving.md](binding_site_owner_receiving.md) | What finite T/H/P inputs are requested, which native profiles are already delivered, and what should happen when an owner case becomes ready? |
 | [binding_site_geometry_application.md](binding_site_geometry_application.md) | Which declared sphere/box placement, caller frame assumptions and actual normalized/payload checks are source-received, and with what limits? |
-| [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which 1070-case evidence and remaining owner gates? |
+| [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which original and subsequent native-admission evidence and remaining owner gates? |
 | [binding_site_topomt_receiving.md](binding_site_topomt_receiving.md) | Which exact saved TopoMT reader controls pass, what finite agreement does TopoMT #199 own, and what remains before T0/T1? |
-| [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, how does exact MolSysMT #756 receiving extend the selected qualification to 1118 cases per unit policy? |
+| [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, how do exact MolSysMT #756 receiving and the later native-admission correction retain their independent populations? |
 | [binding_site_region.md](binding_site_region.md) | Which bounded public C1 native atom/group projections and saved-result reader are delivered, with which maps/coverage/state/trust limits and 765-case normal/pm-fs qualification? |
 | [binding_interface_peptide_receiving.md](binding_interface_peptide_receiving.md) | What exact P1/P2/P3 inputs does PeptideMT #60 own, which existing API/map/environment limits apply, and what is still pending before consumer adoption? |
 | [archive/redocking_summary_receiving_controls.md](archive/redocking_summary_receiving_controls.md) | How are original evaluator identities/hashes preserved, which complete summary controls pass, and which broader evaluator attempt was interrupted? |
@@ -27,7 +28,7 @@ making a bounded contribution.
 | [binding_interface_plan_review.md](binding_interface_plan_review.md) | Where are the complete source review, final collaborator dispositions and readiness ledger distinguishing an actionable plan from pending inputs/decisions/runtime evidence? |
 | [binding_interface_design.md](binding_interface_design.md) | How does revision 2 address the #112 follow-ups through analysis-level outcomes, public assurance/fact checks, the exact PISA footprint and independent native/consumer profiles? |
 | [binding_site_membership.md](binding_site_membership.md) | How do atom/group source declarations use experimental 0.2, preserve actual old 0.1 records, and hand off the next molecular-resolution facts to MolSysMT #746? |
-| [binding_site_molecular_contract_receiving.md](binding_site_molecular_contract_receiving.md) | Which exact #746/#750 owner modules pass after the authorized source update with the existing native file, which client controls pass, and what remains before public C1? |
+| [binding_site_molecular_contract_receiving.md](binding_site_molecular_contract_receiving.md) | Which exact #746/#750 owner facts and source/native module checks supply the admitted molecular context for the subsequently implemented C1/C2 operations? |
 | [binding_site_domain_geometry.md](binding_site_domain_geometry.md) | What internal C2 box/sphere derivation is received, how are original sites and quantities preserved, why does unassessed placement refuse backend export, and what remains before public application? |
 | [archive/molecular_input_os_resource_error.md](archive/molecular_input_os_resource_error.md) | How does #116 preserve original ENOMEM and ordinary OS diagnostics, which 500-case receiving passes, and which broader native selection was interrupted? |
 | [binding_site_geometry.md](binding_site_geometry.md) | How are sphere/oriented-box quantities, frames, single-structure scope and wire 0.3 admitted, and what exact M1/source evidence and placement limits apply? |

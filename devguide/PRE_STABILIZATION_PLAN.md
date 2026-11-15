@@ -1,5 +1,25 @@
 # Core and Extended delivery before stabilization
 
+## Finite owner inputs and current work order — 2026-11-15
+
+[The owner-input checkpoint](binding_site_owner_receiving.md) now records the
+precise H request in PharmacophoreMT #226 and the supplied/absent BindingSite P
+clarification in PeptideMT #60. TopoMT #199 still owns the four T dispositions.
+These are published requests, not received inputs or implemented interoperability.
+
+[Plan section 16](binding_site_implementation_plan.md#16-next-actionable-checkpoint)
+and the status matrix now distinguish delivered C1/C2/M1/M2 from pending T/H/P/
+shared adoption; old instructions to implement already-delivered operations are
+replaced. Interface H0/H1 and P1/P2/P3 retain their different scopes. Next receive
+whichever finite owner case becomes ready, admit its profile and qualify its
+actual public route. One unavailable branch does not block another ready one.
+
+Documentation/coordination only: no runtime/tests/schema/dependency changes,
+scientific execution, new tag/package or manual remote CI. Prior 368/1191-case
+populations keep their original sources. Six workspace/fresh committed-export
+checks pass; export retired. Source/resource/inventory/publication receipts keep
+#50 custody in `.molsyssuite/site-owner-handoffs-111-20261115/`, review 2026-11-22.
+
 ## Native-only input admission corrected — 2026-11-15
 
 [The admission correction and exact evidence](binding_site_application.md#native-only-admission-correction--2026-11-15)

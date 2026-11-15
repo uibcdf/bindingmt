@@ -1,5 +1,5 @@
 ---
-summary: Reject foreign inputs before discovery on native-only routes; retain delivered placement and pending owner receiving gates.
+summary: Track published finite T/H/P owner requests and the corrected current work order; retain delivered native profiles and pending shared receiving.
 issue: uibcdf/bindingmt#111
 status: active
 opened: 2026-11-11
@@ -488,3 +488,14 @@ The complete affected populations pass 368 cases per unit policy, including 36
 new controls; earlier 1191-case receiving keeps its original source. No shared
 format changes or provider defect is alleged. TopoMT #199 and PeptideMT #60 still
 await replies; #111 and wider receiving/delivery gates remain open.
+
+## Finite owner inputs and corrected current work order — 2026-11-15
+
+[The handoff checkpoint](../binding_site_owner_receiving.md) links PharmacophoreMT
+#226 and PeptideMT #60's precise BindingSite clarification alongside TopoMT #199.
+Plan section 16 and its status matrix now describe delivered C1/C2/M1/M2 and the
+actual pending T/H/P/shared work. The Interface four-ion H0/H1 and P1/P2/P3 cases
+are not substituted for regional recognition or the effective supplied/absent
+export pair. No runtime, test, schema, scientific or dependency change occurs.
+Published requests do not supply owner agreement or executed interoperability;
+#111 stays active and the previous source populations keep their identities.

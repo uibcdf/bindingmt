@@ -167,17 +167,17 @@ permission to publish partial enforcement or a callable stub.
 | Increment | Status at this checkpoint | Completion condition |
 | --- | --- | --- |
 | P0a | Static membership/criterion/geometry decisions closed; richer profiles pending | Minimal public operations, identity/version rules, source/structural scope, quantity fields and failure semantics are explicit before B1/B2; later execution evidence is not a precondition for writing the first implementation. |
-| P0m | Finite #746 facts reviewed and small owner modules received in client environment | D2/D5/D6 identify actual public molecular facts, checks and preconditions for each admitted operation. |
+| P0m | Native C1/C2 facts and #756 source receiving delivered at MolSysMT 6deb0200; broader molecular profiles pending | D2/D5/D6 identify actual public molecular facts, checks and preconditions for each admitted operation. |
 | P0s | Pending central coordination | Shared agreements/adoption records are linked; stabilization is limited to the meanings exercised, with remaining owners explicit. |
-| P0t/h/p | Inputs offered, not yet received | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
-| B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
+| P0t/h/p | T reader inputs received, owner admission pending; finite H/P requests published | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
+| B1 | Six static factories plus selection capture/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
 | B2 | Declarations 0.1/0.2/0.3 and selection snapshot 0.4 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
 | C1 | Bounded native selection/region/replay and #756 resource identity received; richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
 | C2 | Native membership and declared sphere/axis-aligned placement source-received; transformed/ensemble/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
 | T0 | Public saved-reader readiness received; owner admission pending TopoMT #199 | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
-| H | Offered source/policy pending | One bounded native hypothesis and association workflow with owner controls. |
-| P | Offered consumer specification pending | Supplied/absent effective-input controls with declared information origins. |
+| H | Finite source/policy request published in [PharmacophoreMT #226](https://github.com/uibcdf/pharmacophoremt/issues/226); receiving pending | One bounded native hypothesis and association workflow with owner controls. |
+| P | Finite supplied/absent case requested in [PeptideMT #60](https://github.com/uibcdf/peptidemt/issues/60#issuecomment-6897985228); actual export receiving pending | Supplied/absent effective-input controls with declared information origins. |
 | A | Pending agreed first-profile evidence | Close the declared initial scope with exact shared disposition; record each consumer's implemented/received/adopted state separately. |
 
 ## 5. P0: coordinate the finite contract and inputs
@@ -447,13 +447,14 @@ problem's chosen molecular structure agrees with the application. Historical
 geometry stays readable when a detector-input change outside lining invalidates
 the stronger applicability claim. No automatic detector rerun occurs.
 
-The [dated internal C2 geometry profile](binding_site_domain_geometry.md) now
-implements the offline substep and preserves its recipe through ordinary records.
-It refuses all backend use pending placement and adds no public application stub.
-The subsequent [native C2 application](binding_site_application.md) receives the
-admitted fixed-membership source/control profile. Public placement for saved
-geometry and stronger assurances above remain pending; internal geometric
-success alone is not M2 completion.
+The [dated internal C2 geometry profile](binding_site_domain_geometry.md) retains
+its offline recipe and unplaced-export refusal. The subsequent
+[native C2 application](binding_site_application.md) receives fixed-membership
+placement, and the [declared sphere/axis-aligned profile](binding_site_geometry_application.md)
+receives original-frame geometry placement with explicit caller frame association.
+These are bounded M2 source/control profiles. Independent-target transforms,
+oriented geometry, ensembles and stronger finding assurance remain pending;
+offline geometric success alone does not supply actual placement evidence.
 
 ## 10. T: one complete saved TopoMT receiving workflow
 
@@ -694,32 +695,32 @@ calculation is commissioned by this implementation plan.
 
 ## 16. Next actionable checkpoint
 
-The [residue/criterion](binding_site_data_core.md), [atom/group](binding_site_membership.md)
-and [sphere/box geometry](binding_site_geometry.md) profiles have local P0a
-contracts and actual public B1/B2 source receiving. Their separate experimental
-0.1/0.2/0.3 records retain their original identities/bytes. M1's admitted
-static/single-view data core is source-received; multi-view/ensemble operations
-and the broader plan remain pending.
+This is the current work order as of 2026-11-15. The dated delivery sections below
+retain their historical populations, sources and original next actions.
 
-The [finite MolSysMT #746 owner offer](binding_site_molecular_contract_receiving.md)
-is reviewed and its small owner modules pass in the actual client environment
-with source 27ba3d4c8 and the existing native file. Implement the real public
-native-MolSys region projection using checked atom directions, explicit group expansion,
-structure-occurrence/state relations and honest missing/contradictory/partial
-outcomes. Preserve known extraction ordering/maps and distinguish empty groups
-from unknown parentage. Counts or labels alone never authenticate common origin.
-No resolution stub is delivered by contract review.
+| Work | Delivered now | Next action / owner |
+| --- | --- | --- |
+| M1 / B1-B2 | Static membership, criterion and sphere/box declarations; fixed selection snapshots; inspection, immutable interpretation and experimental 0.1-0.4 persistence. | Keep broader multi-view/ensemble operations separate from the admitted static core. |
+| C1 | [Native region projection](binding_site_region.md), [selection capture](binding_site_selection.md), original/local maps and MolSysMT #746/#750/#756 receiving. | Use the delivered public methods for each admitted profile; richer addressed and chemical/finding guarantees need their own facts. |
+| C2 / M2 | [Member enclosures](binding_site_application.md), [original-frame sphere/axis-aligned placement](binding_site_geometry_application.md), actual problem/payload checks and saved history. | Independent transforms, oriented geometry, partial prepared-frame retention, ensembles and stronger assurance remain future profiles. |
+| T0/T1 | [Exact saved reader readiness](binding_site_topomt_receiving.md); no BindingMT import adapter yet. | Receive the four dispositions in TopoMT #199, then admit/implement T0 and qualify T1. |
+| H | Reviewed regional recognition/association scope; no accepted native Case H package yet. | Receive [PharmacophoreMT #226](https://github.com/uibcdf/pharmacophoremt/issues/226), admit the exact local association profile, then construct/persist/receive the owner-native workflow. |
+| P | Reviewed supplied/absent information regimes; no actual consumer export receiving. | Receive [PeptideMT #60's BindingSite case](https://github.com/uibcdf/peptidemt/issues/60#issuecomment-6897985228), then test the real effective export boundary under its policy. |
+| P0s / A / M3 | Component design reviews exist; full exercised shared agreement and T/H/P adoption are not established. | Retain exact owner/shared dispositions and separately record each consumer's actual implementation/receiving/adoption. |
 
-The [internal C2 offline geometry substep](binding_site_domain_geometry.md) is now
-source-received. Its full public application still needs the actual problem
-placement/assurance/check-use profile. The independent
-[OS ENOMEM normalization defect #116](archive/molecular_input_os_resource_error.md)
-is now source-corrected with explicit smaller receiving and the broader native
-resource interruption retained under #30. T/H/P need their owner inputs/profiles
-and actual public receiving.
-Preserve separate shared coordination/adoption and #30 installed/public/platform/
-full-suite evidence; no unavailable consumer becomes a global barrier and no
-original evaluator interruption is automatically restarted. #111 stays active.
+The [finite owner-input checkpoint](binding_site_owner_receiving.md) records the
+published requests, exact H/P distinctions and receiving order. Receive whichever
+independent case becomes ready; an unanswered branch is not a global barrier.
+Do not implement a callable stub or substitute arbitrary scientific choices for
+the owner's offered input/policy.
+
+Latest executed native-admission correction is source `36d88d3`: 368 complete
+affected cases pass per unit policy. The preceding 1191-case geometry-placement
+qualification retains source `a473f45`; this documentary update reruns neither.
+Existing formats, frozen inputs/producers and earlier interrupted attempts stay
+intact. #30 full-suite/installed/public/platform/hosted/native-engine/final-pair
+and shared/consumer evidence retain their separate gates. No held calculation is
+automatically restarted. #111 remains active.
 
 ## First coordinate-free B1/B2 source checkpoint — 2026-11-13
 
