@@ -36,6 +36,14 @@ def _descriptor(value):
 
 def _validate_derivation(record, center, lengths):
     """Validate a declared recipe and its binding to the current box geometry."""
+    if (
+        isinstance(record, dict)
+        and record.get('format') == 'bindingmt.site_domain_application'
+    ):
+        from bindingmt._private.site_application import validate_derivation
+
+        validate_derivation(record, center, lengths)
+        return
 
     if (
         isinstance(record, dict)
@@ -313,6 +321,19 @@ def _box_vector_from_record(record, name):
         ) from exc
 
 
+def _point_bounds(points, padding):
+    """Existing point-to-search-box kernel shared by actual box constructors."""
+    raw_pts = puw.get_value(points)
+    min_vals = np.min(raw_pts, axis=0)
+    max_vals = np.max(raw_pts, axis=0)
+    if np.any(min_vals == max_vals) and padding is None:
+        raise ArgumentError(
+            arg_name='points',
+            reason='Points have zero span along at least one axis; provide non-zero padding.',
+        )
+    return puw.quantity(min_vals, 'nm'), puw.quantity(max_vals, 'nm')
+
+
 class BoxRegion(SearchDomain):
     """An orthorhombic (axis-aligned) rectangular box search domain.
 
@@ -399,8 +420,8 @@ class BoxRegion(SearchDomain):
         """For a BoxRegion, the approximation is identically self."""
         return self
 
-    @arg_digest(config='bindingmt._argdigest')
-    def to_backend_box(self, unit: Any = 'angstrom') -> dict[str, Any]:
+    @arg_digest(config='bindingmt._argdigest', native_domain_export=True)
+    def to_backend_box(self, unit: Any = 'angstrom', *, problem=None) -> dict[str, Any]:
         """Convert the box geometry to raw numerical tuples in the requested unit.
 
         This boundary conversion facilitates interfacing with external engines (such as
@@ -410,9 +431,20 @@ class BoxRegion(SearchDomain):
         ``unit`` must be an explicit length-unit string or a unit object supported
         by PyUnitWizard. The returned label retains that representation; ``None``
         cannot label a numerical export. The caller's unit policy is preserved.
+
+        A native site-application recipe also requires its actual ``problem``.
+        Source and normalized inputs are checked again; a historical read alone
+        does not authorize export. Plain boxes do not require problem context.
         """
         # Reject stale attribution before submitting a derived box to an engine.
         recipe = self.derivation
+        if (
+            recipe is not None
+            and recipe.get('format') == 'bindingmt.site_domain_application'
+        ):
+            from bindingmt._private.site_application import validate_problem_application
+
+            validate_problem_application(problem, self, checkpoint='backend_export')
         if (
             recipe is not None
             and recipe.get('format') == 'bindingmt.site_domain_geometry'
@@ -501,19 +533,7 @@ class BoxRegion(SearchDomain):
         name : str, optional
             Identifier for the box region.
         """
-        raw_pts = puw.get_value(points)
-        min_vals = np.min(raw_pts, axis=0)
-        max_vals = np.max(raw_pts, axis=0)
-
-        # Handle flat/single point case
-        if np.any(min_vals == max_vals) and padding is None:
-            raise ArgumentError(
-                arg_name='points',
-                reason='Points have zero span along at least one axis; provide non-zero padding.',
-            )
-
-        min_q = puw.quantity(min_vals, 'nm')
-        max_q = puw.quantity(max_vals, 'nm')
+        min_q, max_q = _point_bounds(points, padding)
         return cls.from_bounds(min_q, max_q, padding=padding, name=name)
 
     @classmethod

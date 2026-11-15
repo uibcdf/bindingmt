@@ -187,3 +187,16 @@ has separate source-only software receiving. The dated owner-wait and next-fix
 statements above retain their original 2026-11-13 scope. Actual client source/
 native qualification and public C1/C2/M2 still need their real operations and
 placement/check-use evidence; the 557-case geometry population is unchanged.
+
+## Native application disposition — 2026-11-14
+
+[The subsequent native C2 application](binding_site_application.md) now delivers
+fixed-membership enclosure with explicit padding, original/source-local frame
+correspondence, construction receipts and actual export/staged-PDBQT checks.
+It reuses this profile rather than rerunning predicates or originating findings.
+The new 1070-case normal/pm-fs qualification includes the original modules and
+60 application controls; historical populations above keep their exact identities.
+Old recipe/selection bytes and producers are unchanged. Placed saved sphere/box,
+richer addressed/ensemble, stronger finding and shared/consumer delivery retain
+separate gates. MolSysMT #756's expression resource-error identity remains owned
+and unqualified here. Next obtain an exact saved TopoMT input/profile for T0/T1.

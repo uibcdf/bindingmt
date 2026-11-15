@@ -23,12 +23,44 @@ The roadmap defines direction and gates, not dates.
 
 ## Current operational plan
 
-Current work is **bounded C1 selection snapshots and native region/replay
-source-received; expression resource-error identity awaits MolSysMT #756,
-and public C2 placement remains pending**. #112 has native
+Current work is **bounded native C1/C2 selection/application and final-payload
+admission source-received; expression resource-error identity awaits MolSysMT #756;
+richer placement and owner receiving remain pending**. #112 has native
 contact/surface/ionic/H-R2 source receiving and resolved #113/#114; its P cases await
 PeptideMT #60, with shared disposition and unyt construction separately owned.
 Neither interface nor all-consumer receiving is a global BindingSite prerequisite.
+
+### Native C2 application and final-payload checks — 2026-11-14
+
+`BindingSite.to_search_domain(..., method="enclosing_box", padding=...)` now
+applies complete native atom/group membership as a Cartesian search box.
+[The delivered profile](binding_site_application.md) preserves the full Site/C1
+projection, bounds, quantities and an exact position witness. DockingProblem
+records source/local frame and support correspondence; original source 2 becomes
+normalized structure 0. Numerical export rechecks original and actual normalized
+inputs. Vina staging additionally checks preparation/writer maps, retained support
+and actual PDBQT bytes inside the actual rounded engine box, before constructing
+the engine. A historical read grants no live placement or binding finding.
+
+**1070 complete selected cases pass per normal/pm-fs policy**, including 60 new
+application controls and 164 existing box/protocol cases. Actual saved history
+passes fresh-process Pint/unyt reading; the actual previous decoder refuses the
+new recipe. Native writer/reader operations and software engine sentinels are
+exercised; no native docking or scientific preparation-method accuracy is run.
+The 120-second interrupted attempt is preserved, not counted. After resource
+review, final complete cells use one less-contended CPU6/nice10/one worker with
+CPU45/wall180, RSS512MiB/AS2GiB and monitored 13GiB reserve. Earlier native498/
+evaluator holds remain unretried. Source/frozen inputs/providers/native bytes
+stay unchanged across the final populations.
+
+This receives a bounded native C2/M2 source/control profile. Placed saved
+sphere/box views, richer addressed/ensemble/stronger finding assurance, T/H/P/
+shared/consumer/full-suite/installed/public/platform/native-engine/final-pair
+acceptance retain their gates. Next obtain the offered exact saved TopoMT input
+before T0/T1 adapter work; receive MolSysMT #756 when its correction is available.
+Raw source/XML/resource/reader/gate/export/publication receipts retain #50 custody
+in `.molsyssuite/site-application-111-20261114/`, review 2026-11-21. No new tag,
+package, install/build or manual remote CI; skipped CI is not a remote pass.
 
 ### C1 native selection snapshots — 2026-11-14
 

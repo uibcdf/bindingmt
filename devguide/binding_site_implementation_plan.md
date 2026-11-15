@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #111](https://github.com/uibcdf/bindingmt/issues/111).
 Recorded: 2026-11-11. Work-plan revision **2, reviewed**.
-Status: **admitted M1/internal C2 and bounded C1 selection/region/replay received; resource identity awaits MolSysMT #756; public C2/M2 placement pending**.
+Status: **admitted M1 and first native C1/C2/M2 source/control profile received; richer placement/owner receiving and MolSysMT #756 identity remain pending**.
 This plan turns the [audited design](binding_site_design.md) and its
 [worked handoffs](binding_site_review.md) into independently reviewable increments.
 It records work order and acceptance; only the dated delivered profiles below are implemented.
@@ -171,9 +171,9 @@ permission to publish partial enforcement or a callable stub.
 | P0s | Pending central coordination | Shared agreements/adoption records are linked; stabilization is limited to the meanings exercised, with remaining owners explicit. |
 | P0t/h/p | Inputs offered, not yet received | Each consumer supplies its relevant source/policy/expected observations; a missing H/P input does not block C1 or T0. |
 | B1 | Six static-profile factories/inspection delivered; richer views pending | Useful public declarations/inspection with meaningful focused tests. |
-| B2 | Static 0.1/0.2/0.3 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
+| B2 | Declarations 0.1/0.2/0.3 and selection snapshot 0.4 source-received; richer profiles pending | Immutable revision and faithful, safe, versioned persistence. |
 | C1 | Bounded native selection/region/replay received; #756 identity and richer addressed scope pending | Qualified direct projection and explicit selection on the admitted MolSys/state scope, with owner failure semantics received. |
-| C2 | Internal static geometry/recipe received; public placement/assurance pending, molecular use also needs C1 | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
+| C2 | Native fixed-membership application and final-payload admission source-received; saved-geometry/stronger assurance pending | Offline geometry and actual problem placement retain distinct checks; normal record propagation and admission are qualified before the public application is received. |
 | T0 | Pending B2/TopoMT profile and input | A real optional public import adapter preserves the received record without rerunning or reinterpreting it. |
 | T1 | Pending T0/C2/owner input | One complete public saved-provider workflow and its refusal controls. |
 | H | Offered source/policy pending | One bounded native hypothesis and association workflow with owner controls. |
@@ -391,6 +391,13 @@ not copied into a successful report as authored assertions.
 
 ## 9. C2: explicit search-domain application
 
+**Latest delivered bounded native profile:** [the actual application contract](binding_site_application.md)
+receives fixed-membership enclosure, actual normalized-source/use admission and
+final receptor PDBQT/rounded-box checks, with 60 new controls and 1070 complete
+selected cases per normal/pm-fs policy. It is a first native C2/M2 source/control
+profile. The richer saved-geometry/current-finding and owner/consumer gates below
+remain open; native docking/installed/public/platform evidence is not inferred.
+
 Implement the accepted public assurance request and first placed-geometry
 profile. Return existing BoxRegion, preserving its current behavior.
 
@@ -438,8 +445,10 @@ the stronger applicability claim. No automatic detector rerun occurs.
 The [dated internal C2 geometry profile](binding_site_domain_geometry.md) now
 implements the offline substep and preserves its recipe through ordinary records.
 It refuses all backend use pending placement and adds no public application stub.
-The public C2 exit and stronger assurances above remain pending; internal
-geometric success is not M2 completion.
+The subsequent [native C2 application](binding_site_application.md) receives the
+admitted fixed-membership source/control profile. Public placement for saved
+geometry and stronger assurances above remain pending; internal geometric
+success alone is not M2 completion.
 
 ## 10. T: one complete saved TopoMT receiving workflow
 
@@ -871,3 +880,35 @@ Next receive #756 and admit the public C2 placement/assurance profile before its
 implementation. Richer addressed/ensemble, T/H/P/shared/consumer/full-suite/
 installed/public/platform/final-pair gates remain pending. #111 stays active;
 0.1.0, package publication and missing remote CI evidence remain unchanged.
+
+## Native C2 application and final-payload checks — 2026-11-14
+
+`BindingSite.to_search_domain(..., method="enclosing_box", padding=...)` now
+applies complete native atom/group membership as a Cartesian search box.
+[The delivered profile](binding_site_application.md) preserves the full Site/C1
+projection, bounds, quantities and an exact position witness. DockingProblem
+records source/local frame and support correspondence; original source 2 becomes
+normalized structure 0. Numerical export rechecks original and actual normalized
+inputs. Vina staging additionally checks preparation/writer maps, retained support
+and actual PDBQT bytes inside the actual rounded engine box, before constructing
+the engine. A historical read grants no live placement or binding finding.
+
+**1070 complete selected cases pass per normal/pm-fs policy**, including 60 new
+application controls and 164 existing box/protocol cases. Actual saved history
+passes fresh-process Pint/unyt reading; the actual previous decoder refuses the
+new recipe. Native writer/reader operations and software engine sentinels are
+exercised; no native docking or scientific preparation-method accuracy is run.
+The 120-second interrupted attempt is preserved, not counted. After resource
+review, final complete cells use one less-contended CPU6/nice10/one worker with
+CPU45/wall180, RSS512MiB/AS2GiB and monitored 13GiB reserve. Earlier native498/
+evaluator holds remain unretried. Source/frozen inputs/providers/native bytes
+stay unchanged across the final populations.
+
+This receives a bounded native C2/M2 source/control profile. Placed saved
+sphere/box views, richer addressed/ensemble/stronger finding assurance, T/H/P/
+shared/consumer/full-suite/installed/public/platform/native-engine/final-pair
+acceptance retain their gates. Next obtain the offered exact saved TopoMT input
+before T0/T1 adapter work; receive MolSysMT #756 when its correction is available.
+Raw source/XML/resource/reader/gate/export/publication receipts retain #50 custody
+in `.molsyssuite/site-application-111-20261114/`, review 2026-11-21. No new tag,
+package, install/build or manual remote CI; skipped CI is not a remote pass.

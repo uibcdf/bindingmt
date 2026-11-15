@@ -25,9 +25,9 @@ def _capability(condition, name):
         raise CapabilityMismatchError(capability=name, engine=FORMAT)
 
 
-def _quantity(value, field, shape, *, sign=None):
+def _quantity(value, field, shape, *, sign=None, fields=FIELDS):
     quantity = QuantityRecord.from_dict(value).to_quantity(
-        field=FIELDS[field], unit='nm', dimensionality={'[L]': 1}, form='pint'
+        field=fields[field], unit='nm', dimensionality={'[L]': 1}, form='pint'
     )
     values = np.asarray(puw.get_value(quantity, to_unit='nm'))
     _require(
@@ -41,13 +41,13 @@ def _quantity(value, field, shape, *, sign=None):
     return values
 
 
-def _sealed(values, field):
+def _sealed(values, field, *, fields=FIELDS):
     return QuantityRecord.from_quantity(
-        puw.quantity(values, 'nm', form='pint'), field=FIELDS[field]
+        puw.quantity(values, 'nm', form='pint'), field=fields[field]
     ).to_dict()
 
 
-def _padding(value):
+def _padding(value, *, fields=FIELDS):
     from bindingmt.core.search_domain import _ensure_length_quantity
 
     if value is None:
@@ -59,7 +59,7 @@ def _padding(value):
         'padding',
         'Use a finite nonnegative scalar length, or None for no enlargement.',
     )
-    return _sealed(float(values), 'padding'), float(values)
+    return _sealed(float(values), 'padding', fields=fields), float(values)
 
 
 def _geometry(site, method, view, padding):

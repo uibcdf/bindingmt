@@ -29,24 +29,24 @@ See [the identity/scope decision](archive/rename_bindingmt.md). New
 integrations remain reviewed independently under #109/#110. Generic chemistry,
 numerical methods, recording and scheduling keep their suite/platform owners.
 
-## Binding-site contract study (draft)
+## Binding-site contract and implementation
 
-[#111](pending_proposals/binding_site_public_contract.md) is a maintainer-requested
-[revision-2 design review](binding_site_design.md) before implementation. It proposes
+[#111](pending_proposals/binding_site_public_contract.md) owns the maintainer-requested
+[revision-2 design](binding_site_design.md), reviewed before implementation. It proposes
 a declaration independent of SearchDomain, with structural scope, per-structure
 realizations and ensemble associations. Ordinary coordinates remain MolSys-owned;
 direct region/domain applications keep context checks, scientific evidence and
-effective inputs explicit. Proposed classes, schema and integration behavior are absent
-from the current source map; sibling review/adoption and implementation remain
-separate steps.
+effective inputs explicit. The delivered source profiles below are narrower than
+the complete proposal; sibling review, shared adoption and wider implementation
+retain separate gates.
 
 The [contribution audit and receiving sketches](binding_site_review.md) make
 the proposed source/view/claim references, native consumer associations and
 effective-input boundaries concrete. Its synthetic JSON specimens are design
 material, not runtime schema/adapter qualification or new installed resources.
 The [implementation/work plan](binding_site_implementation_plan.md) records the
-authorized next increments and their admission/receiving dependencies. It is
-planning evidence; the source map below still contains no BindingSite runtime.
+authorized increments, admission/receiving dependencies and dated actual evidence.
+The source map below identifies the implemented BindingSite runtime.
 
 ## Binding-interface characterization
 
@@ -135,7 +135,7 @@ target and explicit group/structure maps retain distinct axes. The detached
 result is an experimental Mapping, not another molecular class, source snapshot
 or general identity framework. Its typed reader queries no molecular source.
 The initial profile does not calculate coordinates, geometry, contacts or
-binding, and does not replace remaining C1 selection or C2 placement work.
+binding; subsequent selection and native C2 increments compose with it below.
 
 The subsequent [native selection snapshot](binding_site_selection.md) implements
 C1's `from_selection` in `core/site.py`/`_private/site_selection.py`, with explicit
@@ -148,7 +148,7 @@ existing immutable lifecycle; no source snapshot or new molecular class appears.
 Region projection enforces captured source counts/state and never reruns the
 predicate. Historical readers perform no molecular queries. MolSysMT #756 owns
 the reproduced expression resource-error identity gap; no workaround is copied
-into this consumer. Public C2/current-finding and richer C1 work remain separate.
+into this consumer. Stronger finding and richer C1/C2 work retain separate gates.
 
 The [elementary geometry profile](binding_site_geometry.md) adds explicit sealed
 length quantities and an owned dimensionless orientation kind through the same
@@ -178,6 +178,20 @@ receiving precedes the bounded public BindingSite projection above and remains
 separate from broader build/installed/platform qualification.
 
 ## Current source map
+
+The [bounded native C2 application](binding_site_application.md) now composes
+public C1/coordinate queries with existing BoxRegion point/bounds construction.
+`_private/site_application.py` owns application record checks and actual
+source/normalized/staged-payload admission. The factored bounds code remains in
+`core/search_domain.py`; it is the existing search-box kernel. DockingProblem
+retains a historical construction receipt and original/local correspondence;
+numeric export and Vina staging recheck actual inputs. The owner writer supplies
+one receptor payload/map, and public PDBQTFileHandler reads the actual submitted
+positions. No local molecular serializer, parser, matcher or source mutation
+framework appears. Representation containment and numerical source agreement
+are distinct from chemistry/current-finding/engine scientific guarantees.
+Old unplaced geometry, legacy boxes and experimental new native applications
+have independent discriminators/readers and retain their original meanings.
 
 The following paths are implemented entry points, reviewed for the
 [2026-11-06 handoff](MACHINE_HANDOFF.md). Public exports in

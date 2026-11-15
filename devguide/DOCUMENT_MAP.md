@@ -10,6 +10,7 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which 1070-case evidence and remaining owner gates? |
 | [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, which 846-case controls pass, and why is MolSysMT #756 still needed? |
 | [binding_site_region.md](binding_site_region.md) | Which bounded public C1 native atom/group projections and saved-result reader are delivered, with which maps/coverage/state/trust limits and 765-case normal/pm-fs qualification? |
 | [binding_interface_peptide_receiving.md](binding_interface_peptide_receiving.md) | What exact P1/P2/P3 inputs does PeptideMT #60 own, which existing API/map/environment limits apply, and what is still pending before consumer adoption? |

@@ -121,9 +121,15 @@ class _VinaTimings:
         }
 
 
-def _vina_box(search_domain: Any) -> tuple[list[float], list[float]]:
+def _vina_box(search_domain: Any, problem=None) -> tuple[list[float], list[float]]:
     """Project a physical search domain to stable Vina input numbers in Å."""
-    if hasattr(search_domain, 'to_backend_box'):
+    recipe = getattr(search_domain, 'derivation', None)
+    if (
+        isinstance(recipe, dict)
+        and recipe.get('format') == 'bindingmt.site_domain_application'
+    ):
+        box = search_domain.to_backend_box(unit='angstrom', problem=problem)
+    elif hasattr(search_domain, 'to_backend_box'):
         box = search_domain.to_backend_box(unit='angstrom')
     else:
         box = search_domain.as_box_approximation().to_backend_box(unit='angstrom')
@@ -334,7 +340,7 @@ class VinaBackend(DockingBackend):
             timings.end_phase('validation')
 
         # Extract search box parameters in Angstroms
-        center, box_size = _vina_box(problem.search_domain)
+        center, box_size = _vina_box(problem.search_domain, problem=problem)
         if timings is not None:
             timings.end_phase('search_domain_projection')
 
@@ -454,9 +460,27 @@ class VinaBackend(DockingBackend):
         result = None
         primary_error = None
         try:
-            staged = self._stage_inputs(
-                receptor, partner, protocol, temp_files_to_remove
-            )
+            site_recipe = getattr(problem.search_domain, 'derivation', None)
+            if (
+                isinstance(site_recipe, dict)
+                and site_recipe.get('format') == 'bindingmt.site_domain_application'
+            ):
+                staged = self._stage_inputs(
+                    receptor,
+                    partner,
+                    protocol,
+                    temp_files_to_remove,
+                    application_problem=problem,
+                    application_box={
+                        'center': center,
+                        'size': box_size,
+                        'unit': 'angstrom',
+                    },
+                )
+            else:
+                staged = self._stage_inputs(
+                    receptor, partner, protocol, temp_files_to_remove
+                )
             receptor_file = staged['receptor_file']
             partner_file = staged['partner_file']
             partner_string = staged['partner_string']
@@ -715,9 +739,25 @@ class VinaBackend(DockingBackend):
 
         return score_prepared(self, problem, protocol, pose, score_name)
 
-    def _stage_inputs(self, receptor, partner, protocol, temp_files):
+    def _stage_inputs(
+        self,
+        receptor,
+        partner,
+        protocol,
+        temp_files,
+        *,
+        application_problem=None,
+        application_box=None,
+    ):
         """Snapshot the exact bytes submitted to docking or scoring."""
-        receptor_file = self._resolve_receptor_path(receptor, temp_files)
+        receptor_export = None
+        if application_problem is not None:
+            receptor_export = export_pdbqt(receptor, ligand=False)
+            receptor_file = _stage_pdbqt_bytes(
+                receptor_export.text.encode('utf-8'), temp_files
+            )
+        else:
+            receptor_file = self._resolve_receptor_path(receptor, temp_files)
         partner_export = None
         if isinstance(partner, PreparedLigand):
             partner_export = export_pdbqt(partner, ligand=True)
@@ -756,6 +796,18 @@ class VinaBackend(DockingBackend):
                 'sha256': hashlib.sha256(partner_pdbqt).hexdigest(),
             },
         }
+        if application_problem is not None:
+            from bindingmt._private.site_application import validate_staged_receptor
+
+            backend_artifacts['receptor']['site_domain_application'] = (
+                validate_staged_receptor(
+                    application_problem,
+                    receptor,
+                    receptor_export,
+                    receptor_pdbqt,
+                    application_box,
+                )
+            )
         if protocol.capture_backend_inputs:
             for role, content in (
                 ('receptor', receptor_pdbqt),

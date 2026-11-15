@@ -20,6 +20,7 @@ as implemented exports by the naming transition.
 | Change a result's order | `DockingResult.rank_by` | Stable ordering of existing scores, with ranking history; no new score or search. |
 | Declare/preserve a binding-site hypothesis | `BindingSite.from_residues`, `from_definition`, `from_atoms`, `from_groups`, `from_sphere`, `from_box` | Detached declarations, explicit source/scope/frame and versioned persistence; no molecular resolution or domain placement. |
 | Capture fixed selected membership | `BindingSite.from_selection` | MolSysMT-owned native inventory or one-structure atom/group selection; evaluated query/state history in experimental Site 0.4, with no live-rule or binding claim. |
+| Apply native membership as a search box | `BindingSite.to_search_domain`, `BoxRegion.to_backend_box(problem=...)` | Complete fixed support, explicit padding, source/normalized checks and final mapped PDBQT containment; no current-finding or chemical-equivalence claim. |
 | Project a native site region / admit saved output | `BindingSite.resolve_region`, `BindingSite.region_from_dict` | Source atom/group membership, explicit derived maps/state/occurrences and coverage; detached experimental 0.1 result, with no binding or placement claim. |
 | Describe a physical region | `BoxRegion` | Quantity-aware box construction. `from_selection` additionally reads a molecular system through MolSysMT. |
 | Declare molecular inputs | `DockingProblem`, `DockingProblem.for_redocking` | Resolve supported inputs/selections/states through MolSysMT. This can read/convert molecular data. |
@@ -179,7 +180,27 @@ predicate applicability. Existing explicit atom/group factories retain 0.2.
 Expression resource-error identity remains pending
 [MolSysMT #756](https://github.com/uibcdf/molsysmt/issues/756); the consumer neither
 unwraps causes nor implements a workaround selector. Richer addressed/ensemble
-resolution and public `to_search_domain`/C2 placement remain pending. Earlier wire versions,
+resolution and richer saved-geometry/current-finding placement remain pending.
+The subsequently delivered [native C2 application](binding_site_application.md)
+implements `site.to_search_domain(original_molsys, method='enclosing_box',
+padding=...)` on complete nonempty atom/group support, with existing C1 structure/
+state/expansion choices. It returns the existing BoxRegion with a separate
+experimental application 0.1 recipe, full original Site/region, bounds, quantities
+and exact position digest. No coordinates are copied into the Site or recipe.
+
+`BoxRegion.to_backend_box(problem=...)` requires the actual problem for this
+recipe and rechecks original and normalized support; plain boxes retain their
+old export path. `problem.search_domain_application` is detached historical
+construction evidence, preserved in normal problem/result records; reconstruction
+with explicit sources checks it again. Original source structure 2 maps to local
+normalized structure 0. Vina's final staging additionally composes native
+preparation/writer maps and checks direct retention, full-precision positions,
+actual submitted PDBQT and the actual rounded engine box before engine creation.
+Missing support or inadequate explicit padding refuses. No current-finding,
+chemical-equivalence or native-engine scientific qualification is inferred.
+Historical BoxRegion reading needs no live source and never authorizes export.
+Placed saved sphere/box and stronger or independently transformed applications
+keep separate gates. Earlier wire versions,
 record producers and 0.1.0 source tag are unchanged; no shared schema is frozen.
 
 ## Interface declarations and experimental persistence

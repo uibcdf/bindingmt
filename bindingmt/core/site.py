@@ -548,6 +548,49 @@ class BindingSite(_InterfaceRecordIO):
 
         return read(record, experimental)
 
+    @signal(tags=['api', 'site', 'application'])
+    @arg_digest(config='bindingmt._argdigest')
+    def to_search_domain(
+        self,
+        molecular_system,
+        *,
+        method,
+        view=None,
+        structure_index=None,
+        chemical_state=None,
+        expansion=None,
+        padding=None,
+        assurance_scope='placed_geometry',
+        context_policy='require_match',
+        max_source_atoms=100000,
+        max_structure_occurrences=4096,
+    ):
+        """Enclose fixed native membership and retain actual-input use conditions.
+
+        Supply ``method='enclosing_box'`` and explicit length padding. Original
+        source association is a caller precondition. The resulting BoxRegion
+        retains its Site/projection, geometry and exact position witness. Its
+        use requires the actual DockingProblem and checks source and normalized
+        receptor positions. It asserts no current binding finding.
+        See ``devguide/binding_site_application.md`` for the admitted profile.
+        """
+        from bindingmt._private.site_application import derive
+
+        return derive(
+            self,
+            molecular_system,
+            method=method,
+            view=view,
+            structure_index=structure_index,
+            chemical_state=chemical_state,
+            expansion=expansion,
+            padding=padding,
+            assurance_scope=assurance_scope,
+            context_policy=context_policy,
+            max_source_atoms=max_source_atoms,
+            max_structure_occurrences=max_structure_occurrences,
+        )
+
     def _derive(self, record, kind, reason):
         _require(text(reason), 'reason', 'Record why this declaration is derived.')
         record['record_id'] = str(uuid4())
@@ -663,7 +706,7 @@ class BindingSite(_InterfaceRecordIO):
                 'declaration': True,
                 'persistence': True,
                 'molecular_projection': molecular,
-                'domain_placement': False,
+                'domain_placement': molecular,
             },
         }
         if geometric:

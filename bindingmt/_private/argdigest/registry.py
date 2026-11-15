@@ -88,11 +88,19 @@ def digest_energy_range(energy_range, caller=None):
     return quantity
 
 
-def digest_problem(problem, caller=None, native_constructor=None, native_view=None):
+def digest_problem(
+    problem,
+    caller=None,
+    native_constructor=None,
+    native_view=None,
+    native_domain_export=None,
+):
     from bindingmt.core.problem import DockingProblem
 
     if native_view == 'bindingmt.view.view':
         return _view_option(problem, 'problem', DockingProblem, 'search_domain')
+    if problem is None and native_domain_export is True:
+        return None
     if problem is None and caller_is_one_of(
         native_constructor, ['bindingmt.core.results.DockingResult.__init__']
     ):
@@ -700,6 +708,7 @@ ARGUMENT_DIGESTERS = {
     'site_refs': _provider_owned,
     'claim_status': _optional_string('claim_status'),
     'assurance_scope': _optional_string('assurance_scope'),
+    'method': _optional_string('method'),
     'context_policy': _optional_string('context_policy'),
     'extensions': _optional_mapping('extensions'),
     'experimental': _boolean('experimental'),

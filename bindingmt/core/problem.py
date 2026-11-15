@@ -315,6 +315,20 @@ class DockingProblem:
         self._constraints = constraints if constraints is not None else []
         self._search_guidance = search_guidance if search_guidance is not None else []
         self._metadata = dict(metadata) if metadata is not None else {}
+        self._search_domain_application = None
+        if isinstance(search_domain, BoxRegion):
+            recipe = search_domain.derivation
+            if (
+                recipe is not None
+                and recipe.get('format') == 'bindingmt.site_domain_application'
+            ):
+                from bindingmt._private.site_application import (
+                    validate_problem_application,
+                )
+
+                self._search_domain_application = validate_problem_application(
+                    self, search_domain
+                )
 
     @classmethod
     @arg_digest(config='bindingmt._argdigest')
@@ -470,6 +484,11 @@ class DockingProblem:
         """Scientific metadata, state identities, and provenance annotations."""
         return self._metadata
 
+    @property
+    def search_domain_application(self):
+        """Detached historical construction check; actual export rechecks inputs."""
+        return deepcopy(getattr(self, '_search_domain_application', None))
+
     def to_dict(self) -> dict[str, Any]:
         """Return detached declarations while leaving live molecular inputs borrowed."""
         serialized_receptor: Any
@@ -488,7 +507,7 @@ class DockingProblem:
         else:
             serialized_partner = {'type': 'external', 'value': None}
 
-        return deepcopy(
+        record = deepcopy(
             {
                 'schema_version': SCHEMA_VERSION,
                 'receptor': serialized_receptor,
@@ -521,6 +540,10 @@ class DockingProblem:
                 'metadata': self._metadata,
             }
         )
+
+        if self.search_domain_application is not None:
+            record['search_domain_application'] = self.search_domain_application
+        return record
 
     @classmethod
     @arg_digest(config='bindingmt._argdigest', record_factory=True)
@@ -600,6 +623,19 @@ class DockingProblem:
             partner_structure_index=part_info.get('structure_index'),
         )
         actual_inputs = reconstructed.to_dict()['molecular_inputs']
+        from bindingmt._private.serialization import json_copy
+        from bindingmt._private.site_region import _same
+
+        if not _same(
+            json_copy(
+                data.get('search_domain_application'), 'search_domain_application'
+            ),
+            reconstructed.search_domain_application,
+        ):
+            raise ArgumentError(
+                arg_name='search_domain_application',
+                reason='Recorded construction receipt differs from the actual rechecked application.',
+            )
         for label, recorded in (('receptor', rec_info), ('partner', part_info)):
             for field in (
                 'atom_indices',
