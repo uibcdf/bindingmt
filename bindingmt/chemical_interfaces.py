@@ -58,7 +58,17 @@ def _scope(
         'Use an existing bounded native source/frame.',
     )
     axes = {
-        name: list(map(int, msm.select(molecular_system, selection=selection)))
+        name: list(
+            map(
+                int,
+                msm.select(
+                    molecular_system,
+                    selection=selection,
+                    structure_indices=[frame],
+                    chemical_state='structure',
+                ),
+            )
+        )
         for name, selection in participants.items()
     }
     # The existing domain core validates labels/grouping before owner interaction queries.
@@ -289,6 +299,8 @@ def characterize_interface_interactions(
     MolSysMT operations. The caller admits the unchanged complete source. This
     identity-map Cartesian profile invokes no detector and infers no binding strength.
     Full observations remain in the MolSys; this record is a domain view/reference.
+    Participant selections use the chosen structure and its associated chemical
+    state; the named observations must agree with that state and evaluated frame.
     """
     context, views, _ = _scope(
         molecular_system,

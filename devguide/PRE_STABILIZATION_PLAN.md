@@ -1,5 +1,27 @@
 # Core and Extended delivery before stabilization
 
+## Interface participant frame/state correction — 2026-11-15
+
+[#117's source correction](archive/interface_participant_selection_scope.md) now
+forwards the chosen frame and its associated state to MolSysMT when resolving
+contact, burial and ionic participants. Chemical/spatial selectors cannot silently
+use reference-state or all-frame defaults. Unknown associations refuse before
+required calculation; original provider/control failures retain identity.
+
+The old runtime has 28 failures/6 passes on 34 new controls; **138 affected cases
+pass per normal/pm-fs policy** after correction. Actual selected-frame results,
+Pint/unyt saved readback and annotation composition pass. Six real saved files
+also read cold with molecular queries blocked. No new resource interruption
+occurs; earlier heavy holds remain unretried. Exact source/assets/providers/native
+2dbcf13d and original receipts retain their separate identities.
+
+This advances #112's existing native profile while T/H/P owner inputs remain
+pending. It adds no schema, public signature, molecular fallback or method.
+Six workspace/fresh committed-export checks pass, export retired; #50 receipts
+are in `.molsyssuite/interface-selection-context-112-20261115/`, review 2026-11-22.
+No provider install/build, new tag/package or manual remote CI; skipped CI is not
+a pass. Existing scientific records are not silently repaired or recalculated.
+
 ## Finite owner inputs and current work order — 2026-11-15
 
 [The owner-input checkpoint](binding_site_owner_receiving.md) now records the

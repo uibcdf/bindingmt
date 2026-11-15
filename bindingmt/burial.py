@@ -75,6 +75,8 @@ def calculate_interface_burial(
     Cartesian coordinates, stable throughout the call. No inter-side covalent
     links/cut required chemistry are admitted. Explicit probe and sampling choices
     define this model; it predicts neither affinity nor chemical correctness.
+    Participant selections use the chosen structure and its resolvable associated
+    chemical state, independently of the source reference-state choice.
     Required MolSysMT child failures propagate without publishing a partial zero.
     """
     import molsysmt as msm

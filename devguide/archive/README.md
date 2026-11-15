@@ -4,7 +4,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 
 <!-- generated: devguide_index -->
 
-### Resolved (88)
+### Resolved (89)
 
 - [`add_displaced_search_domain_control_to_1iep_validation.md`](add_displaced_search_domain_control_to_1iep_validation.md) — [#15](https://github.com/uibcdf/bindingmt/issues/15) — Add displaced-search-domain control to 1IEP validation *(resolved, measured)*
 - [`audit_coordinate_record_admission.md`](audit_coordinate_record_admission.md) — [#90](https://github.com/uibcdf/bindingmt/issues/90) — Offline coordinate audits disagree with the existing pose-record admission. *(resolved, reproduced)*
@@ -42,6 +42,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 - [`interaction_binding_partial_carrier_diagnostic.md`](interaction_binding_partial_carrier_diagnostic.md) — [#89](https://github.com/uibcdf/bindingmt/issues/89) — Interaction binding leaks scalar/form errors for absent carrier domains. *(resolved, reproduced)*
 - [`interaction_module_missing_from_resource_inventory.md`](interaction_module_missing_from_resource_inventory.md) — [#93](https://github.com/uibcdf/bindingmt/issues/93) — The installed resource inventory omits the already-shipped interaction module. *(resolved, measured)*
 - [`interface_json_object_order.md`](interface_json_object_order.md) — [#114](https://github.com/uibcdf/bindingmt/issues/114) — Native contact records can fail reading after JSON object-key sorting without any content-digest change. *(resolved, reproduced)*
+- [`interface_participant_selection_scope.md`](interface_participant_selection_scope.md) — [#117](https://github.com/uibcdf/bindingmt/issues/117) — Resolve native interface participants on the chosen structure and its associated chemical state. *(resolved, reproduced)*
 - [`invalid_scores_can_corrupt_pose_ranking.md`](invalid_scores_can_corrupt_pose_ranking.md) — [#24](https://github.com/uibcdf/bindingmt/issues/24) — Reject invalid named scores before ranking docking poses *(resolved, measured)*
 - [`length_quantity_oserror.md`](length_quantity_oserror.md) — [#115](https://github.com/uibcdf/bindingmt/issues/115) — Shared length admission masks an original OS/resource error as invalid input. *(resolved, reproduced)*
 - [`ligand_pdbqt_writer_shifts_columns_for_four_character_atom_names.md`](ligand_pdbqt_writer_shifts_columns_for_four_character_atom_names.md) — [#18](https://github.com/uibcdf/bindingmt/issues/18) — Ligand PDBQT writer shifts columns for four-character atom names *(resolved, measured)*

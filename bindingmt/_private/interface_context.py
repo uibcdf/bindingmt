@@ -65,7 +65,17 @@ def admit_axes(msm, molecular_system, participants, frame, source_id):
     )
     names = list(participants)
     axes = [
-        list(map(int, msm.select(molecular_system, selection=participants[name])))
+        list(
+            map(
+                int,
+                msm.select(
+                    molecular_system,
+                    selection=participants[name],
+                    structure_indices=[frame],
+                    chemical_state='structure',
+                ),
+            )
+        )
         for name in names
     ]
     for indices in axes:

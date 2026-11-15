@@ -42,7 +42,9 @@ def calculate_interface_contacts(
 
     Supply two named MolSysMT selections on one native MolSys and an explicit
     length cutoff. Coordinates must be unwrapped in the intended common frame
-    and remain stable throughout the call. Intended identity/chemical state and
+    and remain stable throughout the call. Participant selections use the chosen
+    structure and its associated chemical state, which must be resolvable.
+    Intended identity/chemical state and
     absence of inter-side covalent bonds are caller preconditions. No preparation,
     alignment, PBC reconstruction or chemical recognition occurs.
     """

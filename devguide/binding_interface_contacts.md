@@ -212,3 +212,14 @@ is a selected compatibility floor, not a claim that QuantityRecord originated in
 0.29.3. Original E4 0.29.0 manifests/receipts remain at their original producer
 commits; the live bootstrap adjustment does not rerun or relabel that science.
 No dependency is installed or shared-prefix metadata rewritten by this increment.
+
+## Selected participant frame/state correction — 2026-11-15
+
+The [#117 correction and exact receiving](archive/interface_participant_selection_scope.md)
+now resolves participant queries on the chosen structure and its associated
+chemical state through public MolSysMT selection. Known association is required;
+unknown state refuses before required calculation. The 138-case normal/pm-fs
+population includes chemical/spatial/mixed selectors, numeric compatibility,
+positive/empty findings and actual saved-read/annotation controls. Earlier complete
+populations retain their original source, fixtures and limits. Existing record
+formats/producers are preserved; no historical result is automatically changed.

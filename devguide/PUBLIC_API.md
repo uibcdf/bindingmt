@@ -13,6 +13,11 @@ The current BindingSite selection/projection/application profile requires reside
 MolSysMT MolSys inputs. Foreign formats are explicitly refused before their
 discovery; general DockingProblem input normalization has its separate contract.
 
+Native interface contact, burial and ionic participant selectors use the chosen
+`structure_index` and that structure's associated chemical state. They require a
+resolvable association and preserve owner refusals; source reference-state defaults
+do not override the chosen frame. [Exact correction and scope](archive/interface_participant_selection_scope.md).
+
 ## Choose an operation
 
 | Need | Public route | Work performed |

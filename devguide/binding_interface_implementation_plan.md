@@ -2,7 +2,7 @@
 
 Owner: [BindingMT #112](https://github.com/uibcdf/bindingmt/issues/112).
 Recorded and reviewed: 2026-11-12. Work-plan revision **4**.
-Status: **first native Cartesian contact/footprint source profile delivered; N2 admission next**.
+Status: **native contact/surface/ionic and H-R2 source profiles delivered; participant frame/state selection corrected; consumer/shared receiving pending**.
 This plan turns the [reviewed second design](binding_interface_design.md) into
 bounded, independently useful implementation and receiving increments. It is
 the interface counterpart of the [BindingSite work plan](binding_site_implementation_plan.md),
@@ -243,15 +243,15 @@ make every later consumer profile a prerequisite for a useful data/native checkp
 | Increment | Current state | Completion boundary |
 | --- | --- | --- |
 | P0a | Closed for the first declaration/persistence profile | Actual question/intake/identity/version/default/refusal contract is in the data-profile admission. Later profiles close their own choices. |
-| P0m/P0s | Restricted #734 offer and first local native contact source receiving delivered | Actual shared/consumer-wide acceptance and remaining surface facts stay under #195 and their owners. |
+| P0m/P0s | Restricted #734 offer and bounded contact/surface/ionic source facts received | Actual shared/consumer-wide acceptance stays under #195; later operation profiles admit their own facts. |
 | P0t | Fixed artifacts and expectations supplied | Confirm input hashes, carrier/group/participant interpretation and exact first public contract. Not executed client receiving. |
-| P0h/P0p | Case outlines received; exact inputs/seams pending | Receive/admit the H and P specifications and independently expected outputs; do not invent fixtures or scientific choices from favorable review. |
+| P0h/P0p | Original ionic H0/H1 inputs received; P exact inputs/export seam pending | Receive/admit the H and P specifications and independently expected outputs; do not invent fixtures or scientific choices from favorable review. |
 | D1/D2 | First experimental data profile implemented and source-tested | Actual declaration/summary, copy/reinterpretation, content integrity and exclusive save/read. No molecular/foreign adapter receiving is inferred. |
-| C | Selected Cartesian contact facts/maps received | Exact public calls, tested source/frame/maps and caller preconditions are in the contact contract. Foreign/current-finding assurances remain unqualified. |
+| C | Bounded contact/surface/ionic source context received; participant frame/state corrected in #117 | Exact public calls, tested source/frame/maps and caller preconditions are in the contact contract. Foreign/current-finding assurances remain unqualified. |
 | N0/N1 | First bounded native source profile implemented and received | Actual MolSysMT contacts/distances, group witnesses and independent positive/empty footprints, without PISA/TopoMT. Larger profiles and installed/public receiving remain separate. |
-| N2 | Next numerical milestone planned | Public owner SASA composition, both side losses and mapped contributions, convergence and honest readback/refusal. |
+| N2 | Bounded Cartesian SASA/burial source profile implemented and received | Public owner SASA composition, both side losses and mapped contributions, convergence and honest readback/refusal. |
 | T0/T1 | Deferred optional interoperability by maintainer; runtime pending | Actual saved analysis intake and exact participant-contact footprint/replay, including adverse controls. |
-| H0/H1 | Inputs and runtime pending | Effective grouping, native construction, observation/site correspondence and native saved replay. |
+| H0/H1 | Bounded Pint ionic construction/replay and H-R2 annotation source-received; unyt #156 pending | Effective grouping, native construction, observation/site correspondence and native saved replay. |
 | P | Input/seam and runtime pending | Actual K/N payloads, native/derived-context and comparison controls under a declared policy. |
 | A | Evidence pending | Declared acceptance scope, exact evidence, shared disposition and per-consumer follow-ups are recorded honestly. |
 
@@ -1414,3 +1414,16 @@ commissioned. P is waiting on concrete owner delivery, not another general
 architecture round. Shared acceptance stays under #195. The independent
 [#113 summary correction](archive/redocking_summary_receiving_controls.md) does
 not supply P evidence or close #112; its extra evaluator interruption is preserved.
+
+## Participant selection frame/state correction — 2026-11-15
+
+The [#117 source correction](archive/interface_participant_selection_scope.md)
+closes a native orchestration defect: contact/burial and ionic participant
+selectors now use the chosen structure and its associated chemical state,
+independently of source reference-state defaults. Unknown association refuses
+before required numerical work. All molecular selection/calculation stays in
+MolSysMT; signatures and record formats remain unchanged. The new 34-case
+module has 28 failures/6 passes before correction, and 138 affected cases pass
+per policy afterward. Actual historical readback and annotation composition
+retain original inputs/producers. This is bounded source receiving, not complete
+H/P/shared/installed/public/platform acceptance or a new scientific method.

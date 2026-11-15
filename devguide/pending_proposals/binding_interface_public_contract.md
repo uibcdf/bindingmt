@@ -1,5 +1,5 @@
 ---
-summary: Deliver native contacts, surfaces, ionic H0/H1 and H-R2 annotation; PISA deferred, unyt/P and shared receiving pending.
+summary: Correct actual frame/state participant selection across native contact/surface/ionic profiles; retain pending consumer/shared gates.
 issue: uibcdf/bindingmt#112
 status: active
 opened: 2026-11-12
@@ -451,3 +451,15 @@ Independent [#113](../archive/redocking_summary_receiving_controls.md) now passe
 97 complete summary controls per policy and preserved historical saved readback;
 its interrupted extra evaluator selection remains outside that pass under #30.
 #112 and #195 remain open for their actual implementation/shared/adoption evidence.
+
+## Native participant frame/state correction — 2026-11-15
+
+[The independently closed #117 correction](../archive/interface_participant_selection_scope.md)
+now forwards the selected frame and associated chemical state for all native
+participant queries. The main status matrix distinguishes delivered surface/ionic/
+H-R2 profiles from pending unyt/P/shared receiving. The complete affected native
+population passes 138 cases per policy, including 34 new controls with explicit
+positive/empty findings, failure identity, history and annotation composition.
+This does not qualify complete #112, native pharmacophore matching or any new
+installed/public/provider source. Original schemas, inputs and prior populations
+retain their identities; #112 remains active.

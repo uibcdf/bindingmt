@@ -10,6 +10,7 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [archive/interface_participant_selection_scope.md](archive/interface_participant_selection_scope.md) | How do contact/burial/ionic participant selectors honor the actual frame/state, with which positive/empty, refusal and historical-read controls? |
 | [binding_site_owner_receiving.md](binding_site_owner_receiving.md) | What finite T/H/P inputs are requested, which native profiles are already delivered, and what should happen when an owner case becomes ready? |
 | [binding_site_geometry_application.md](binding_site_geometry_application.md) | Which declared sphere/box placement, caller frame assumptions and actual normalized/payload checks are source-received, and with what limits? |
 | [binding_site_application.md](binding_site_application.md) | Which native C2 application, source/local/staged-payload checks and historical receipts are delivered, with which original and subsequent native-admission evidence and remaining owner gates? |
