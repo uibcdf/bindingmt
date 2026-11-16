@@ -163,9 +163,11 @@ fresh committed-source export retain separate receipts in that custody.
 
 This completes BindingMT's execution of the specifically requested
 **default write/default whole-file migration** profile for MolSysMT #256.
-MolSysMT owns provider acceptance and any stable-format freeze. Share this report
-and its immutable publishing commit in BindingMT #73; retain previous P5/P6
-acceptances without rerunning them.
+MolSysMT owns provider acceptance and any stable-format freeze. The report and
+immutable evidence commit `2b761a84d698c1bbe44adb947c8919f08c8d1c78` are now
+[published and read back in BindingMT #73](https://github.com/uibcdf/bindingmt/issues/73#issuecomment-6906085364).
+Next receive MolSysMT's disposition of that exact receipt, retaining previous
+P5/P6 acceptances without rerunning them.
 
 No new package, build, installation, tag/release, hosted matrix or final installed
 MolSysMT/MolSysViewer pair is qualified or launched. Other Python/platforms,

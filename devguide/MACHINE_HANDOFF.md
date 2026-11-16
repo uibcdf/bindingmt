@@ -19,7 +19,8 @@ preserve producer/input/output bytes and full receipts. Independent stored readi
 passes without MolSysMT/quantity/molecular replay. Serial CPU-one cells preserve
 the monitored 13 GiB reserve; no failure or new resource interruption occurs.
 
-Publish the immutable report/commit in #73 for MolSysMT's provider acceptance.
+The [immutable report/commit is published in #73](https://github.com/uibcdf/bindingmt/issues/73#issuecomment-6906085364).
+Next MolSysMT reviews this exact receipt for its provider acceptance.
 The broader scientific/preparation pause, final MolSysMT/MolSysViewer pair,
 installed/public/platform/hosted gates retain their separate scope. No docking,
 minimization, new campaign/model/package/tag/release or manual CI is launched.
