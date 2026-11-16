@@ -1,5 +1,8 @@
 # Document Map
 
+Current storage-only handoff: [default H5MSM #73/#256 receiving](validation/h5msm_default_client_receiving_2026-11-15.md),
+with unchanged earlier P5/P6 acceptance and separate final-pair/public gates.
+
 Current optional-interface checkpoint: [T0/T1 source receiving](binding_interface_topomt_receiving.md)
 and its [copyable saved-analysis example](../examples/preserved_interface/README.md).
 Both complete plans retain their explicit owner-input/shared/consumer gates.

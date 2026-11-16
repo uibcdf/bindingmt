@@ -1,0 +1,137 @@
+{
+  "schema": "bindingmt.h5msm_default_client_reader@1",
+  "owner": "uibcdf/bindingmt#73",
+  "source_producer": "c09c6f90302e3b726371b1869afa33749235179c",
+  "primary_manifest_sha256": "5addb125362b9b3462ee98ab5b034fec157f4cd2dc1aee8b0b3e0885e445a849",
+  "scope": "Independent stored-record authentication and separately labelled post-run import/HDF5-library observations; no molecular/default-IO replay.",
+  "files": [
+    {
+      "path": "producer/records.py.txt.gz",
+      "original_path": "producer/records.py.txt",
+      "bytes": 2545,
+      "sha256": "9b75080b7adbdd58e1be260b737febb6368c42081a06b3305d64fa5c0fde4d8d",
+      "decoded_bytes": 5876,
+      "decoded_sha256": "b4e93999108ad01bbf4ee4fabf82179c5f73775914ec6ff711b2ca66b852067a"
+    },
+    {
+      "path": "producer/origins.py.txt.gz",
+      "original_path": "producer/origins.py.txt",
+      "bytes": 837,
+      "sha256": "cbcb6c9e7cf90013807666554ae6f7bf3bd14b1e3e11947afcccfcc52a42b0f9",
+      "decoded_bytes": 1685,
+      "decoded_sha256": "9f3f0a6f83e71faf6981554da91e808fbb8a8864bca28ae2f5818b145f0059ee"
+    },
+    {
+      "path": "producer/seal_companion.py.txt.gz",
+      "original_path": "producer/seal_companion.py.txt",
+      "bytes": 904,
+      "sha256": "aff3984e62d0fe3c6c3ed6852b38c2e78d77dbb85adef80873dc84ed25c7350f",
+      "decoded_bytes": 1843,
+      "decoded_sha256": "d4cfc45d9c3cdb7992b75e561515f4ea595fce02e959616ce7494a93d2e7d09a"
+    },
+    {
+      "path": "producer/reader-receipt.json.gz",
+      "original_path": "producer/reader-receipt.json",
+      "bytes": 372,
+      "sha256": "2ce32d48c9347ffbf0b15f5265f5582726f36eaa550716dc2fbdde53bd35add9",
+      "decoded_bytes": 1757,
+      "decoded_sha256": "bce0c723f4f5e8d4ee8f0739d6e2fcad014e80cfb5058e4a9eca3f5c34a73105"
+    },
+    {
+      "path": "producer/seal-receipt.json.gz",
+      "original_path": "producer/seal-receipt.json",
+      "bytes": 144,
+      "sha256": "5114d3b1265ccb1f3e6274606a2abfd1cf2ccb860ae9416d581ac4986bc67856",
+      "decoded_bytes": 164,
+      "decoded_sha256": "de6164163e2e111ec0a255e5296277140af7b5a5015d5022dbe0f08ce2095abb"
+    },
+    {
+      "path": "producer/postrun-origins.json.gz",
+      "original_path": "producer/postrun-origins.json",
+      "bytes": 994,
+      "sha256": "bd41333266d4ed99b404fd4bc8613cddf81b519f8b21e9e776731a7ad07c7f94",
+      "decoded_bytes": 2566,
+      "decoded_sha256": "5c84168b60c75a7132b582e5063e125f30c6c7d216281b354983b07b8e641c0b"
+    },
+    {
+      "path": "attempts/independent-reader/program.py.gz",
+      "original_path": "attempts/independent-reader/program.py",
+      "bytes": 2545,
+      "sha256": "9b75080b7adbdd58e1be260b737febb6368c42081a06b3305d64fa5c0fde4d8d",
+      "decoded_bytes": 5876,
+      "decoded_sha256": "b4e93999108ad01bbf4ee4fabf82179c5f73775914ec6ff711b2ca66b852067a"
+    },
+    {
+      "path": "attempts/independent-reader/registration.json.gz",
+      "original_path": "attempts/independent-reader/registration.json",
+      "bytes": 295,
+      "sha256": "d1e1426852138354fac851b1c6a57833629f565c838b6777bb9c5585f0ad2fb0",
+      "decoded_bytes": 461,
+      "decoded_sha256": "5d086d66cd1ad41d1fde133ff48dfaf100e2c7139f3da24d4f9eefc607e7c83f"
+    },
+    {
+      "path": "attempts/independent-reader/resource-outcome.json.gz",
+      "original_path": "attempts/independent-reader/resource-outcome.json",
+      "bytes": 317,
+      "sha256": "e731510f951e5c2598e5edf7ca54c3cd821c6b1f1117f1f23039dea66041da22",
+      "decoded_bytes": 551,
+      "decoded_sha256": "28966f722338c805d64fbbba95e7bc92fd3911bc4ae37197db9ea2030a5d00cc"
+    },
+    {
+      "path": "attempts/independent-reader/stderr.log.gz",
+      "original_path": "attempts/independent-reader/stderr.log",
+      "bytes": 20,
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+      "decoded_bytes": 0,
+      "decoded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "attempts/independent-reader/stdout.log.gz",
+      "original_path": "attempts/independent-reader/stdout.log",
+      "bytes": 137,
+      "sha256": "758ee2bbdf6e62dc3ad53c30aed99a87e6015b1581fd55c29625f7c0cd33e896",
+      "decoded_bytes": 142,
+      "decoded_sha256": "bf0f6053888c4f47df5e83aa857967019875d3fdf5a4ff759f41e29b523226c0"
+    },
+    {
+      "path": "attempts/postrun-origins/program.py.gz",
+      "original_path": "attempts/postrun-origins/program.py",
+      "bytes": 837,
+      "sha256": "cbcb6c9e7cf90013807666554ae6f7bf3bd14b1e3e11947afcccfcc52a42b0f9",
+      "decoded_bytes": 1685,
+      "decoded_sha256": "9f3f0a6f83e71faf6981554da91e808fbb8a8864bca28ae2f5818b145f0059ee"
+    },
+    {
+      "path": "attempts/postrun-origins/registration.json.gz",
+      "original_path": "attempts/postrun-origins/registration.json",
+      "bytes": 294,
+      "sha256": "dba0a05d688cce397a3c5f0a84445101e081dd17d1547e5b4016ab3f1cb972d3",
+      "decoded_bytes": 461,
+      "decoded_sha256": "44cebb990274bc2fff0e6cac778638a21fe2d6195cd43687aca721aafe4005cf"
+    },
+    {
+      "path": "attempts/postrun-origins/resource-outcome.json.gz",
+      "original_path": "attempts/postrun-origins/resource-outcome.json",
+      "bytes": 315,
+      "sha256": "6c4cde7601b9e17c0c79cd210aa956c084804ec1fc321406d5f2829d91744242",
+      "decoded_bytes": 551,
+      "decoded_sha256": "031ebf1d9df8d0f66fcff494d06e4d7b9223b5ed33cb6be3fd2562663b957c28"
+    },
+    {
+      "path": "attempts/postrun-origins/stderr.log.gz",
+      "original_path": "attempts/postrun-origins/stderr.log",
+      "bytes": 20,
+      "sha256": "ac73670af3abed54ac6fb4695131f4099be9fbe39d6076c5d0264a6bbdae9d83",
+      "decoded_bytes": 0,
+      "decoded_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "attempts/postrun-origins/stdout.log.gz",
+      "original_path": "attempts/postrun-origins/stdout.log",
+      "bytes": 95,
+      "sha256": "a209f78f0b73ab02a14dffb19acbc195d3c30f77eedbfd773e474cd2b6241a99",
+      "decoded_bytes": 75,
+      "decoded_sha256": "301e69351a2913543d66d9a8ea556d866b4071598074f1e4887265ccdf0c2661"
+    }
+  ]
+}

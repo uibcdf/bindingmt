@@ -1,5 +1,33 @@
 # Roadmap
 
+## Original H5MSM default IO received — 2026-11-15
+
+[The finite #73/#256 report](validation/h5msm_default_client_receiving_2026-11-15.md)
+now receives default native write and whole-file migration of the three original
+complete/projected/merged 0.6 fixtures, with `format_version` omitted. **All twelve
+requested policy/source/route operations pass**, ordinary and pm/fs; all targets
+are actual 1.0, reopened full typed snapshots equal the original oracles, migration
+roots preserve all original metadata and input hashes stay unchanged. The earlier
+explicit-version P5/P6 acceptances are retained, not substituted or repeated.
+
+Actual MolSysMT source remains `6deb0200`, mapped ABI3 `2dbcf13d`; requested
+`08442cb14` is fetched/compared, with only two unrelated mmCIF package changes and
+unchanged H5/native/Rust inputs. Exact source/byte identities and the separate
+stale generated build stamp stay explicit. No merge, shared install or rebuild.
+The 76-member primary archive and 16-member independent-reader/origin companion
+preserve producer/input/output bytes and full receipts. Independent stored reading
+passes without MolSysMT/quantity/molecular replay. Serial CPU-one cells preserve
+the monitored 13 GiB reserve; no failure or new resource interruption occurs.
+
+Publish the immutable report/commit in #73 for MolSysMT's provider acceptance.
+The broader scientific/preparation pause, final MolSysMT/MolSysViewer pair,
+installed/public/platform/hosted gates retain their separate scope. No docking,
+minimization, new campaign/model/package/tag/release or manual CI is launched.
+BindingSite/Interface's preceding T0/T1 milestone and outstanding owner inputs
+remain unchanged. Raw #50 custody: `.molsyssuite/h5msm-default-client-20261115/`,
+review **2026-11-22**.
+
+
 ## Optional saved-interface receiving — 2026-11-15
 
 [The T0/T1 source contract](binding_interface_topomt_receiving.md) delivers
