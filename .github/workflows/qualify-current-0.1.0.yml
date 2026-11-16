@@ -84,7 +84,7 @@ jobs:
 
   policy:
     needs: build
-    uses: uibcdf/molsyssuite/.github/workflows/check-python-repository.yaml@policy-v1.5.4
+    uses: uibcdf/molsyssuite/.github/workflows/check-python-repository.yaml@policy-v1.5.12
 
   controls:
     name: Exact-candidate quality, resources and frontend

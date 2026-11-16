@@ -1,5 +1,28 @@
 # New-machine development handoff
 
+## Latest-policy source receiving — 2026-11-15
+
+[#119's reviewed adoption](archive/latest_policy_adoption.md) updates the remaining
+current-source policy job from policy-v1.5.4 to the freshly verified immutable
+policy-v1.5.12 target. Both actual callers are now current. The official owner
+synchronizer receives the common guide (SHA-256 `2e13d565…`); root/local
+instructions and independently qualified SDK/scientific/installed pins stay
+unchanged. Historical executions retain their original contracts.
+
+The official selected inventory passes, live-source conformance has no findings,
+20 existing administrative controls and six workspace/fresh-export gates pass.
+This is source/governance receiving, not a new scientific, installed, public or
+hosted policy execution. #30 retains exact-candidate hosted evidence; `[skip ci]`
+and no automatic manual CI remain the authorized route. Raw #50 custody:
+`.molsyssuite/latest-policy-119-20261115/`, review 2026-11-22; task-owned central
+checkout/workspace retire after public verification, with no new interruption.
+
+BindingSite M1/M2 and Interface M1/MN1/MN2 are source-delivered in their admitted
+profiles. Site M3 and Interface consumer closeout remain pending owner inputs;
+Interface optional PISA receiving stays explicitly deferred. Neither complete
+plan is closed. Next receive the first ready finite T/H/P case and retain
+PyUnitWizard #156/#158's separate limitations.
+
 ## Saved contact-option admission corrected — 2026-11-15
 
 [#120](archive/contact_record_options.md) now checks both saved contact operation
