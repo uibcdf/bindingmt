@@ -242,7 +242,8 @@ def validate_calculation(value):
     for call in value['calls']:
         options = call.get('options', {})
         _require(
-            options.get('pairs') is False
+            isinstance(options, Mapping)
+            and options.get('pairs') is False
             and options.get('pbc') is False
             and options.get('use_gpu') is False
             and options.get('parallel') is False

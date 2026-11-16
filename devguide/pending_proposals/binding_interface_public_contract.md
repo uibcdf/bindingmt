@@ -463,3 +463,13 @@ positive/empty findings, failure identity, history and annotation composition.
 This does not qualify complete #112, native pharmacophore matching or any new
 installed/public/provider source. Original schemas, inputs and prior populations
 retain their identities; #112 remains active.
+
+## Saved contact-operation diagnostic correction — 2026-11-15
+
+[BindingMT #120](../archive/contact_record_options.md) delivers the shared contact
+option-mapping guard, with 268 affected cases passing per normal/pm-fs policy and
+172 SDK-staged controls. Existing valid history/producers and resource/process
+exceptions retain identity; no wire or scientific definition changes. The
+independently isolated malformed quantity record is reported to PyUnitWizard
+#158 without a consumer workaround. No finite T/H/P case is newly supplied;
+#111/#112 and all broader receiving/installed/public gates remain independent.

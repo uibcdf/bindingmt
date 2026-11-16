@@ -4,7 +4,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 
 <!-- generated: devguide_index -->
 
-### Resolved (90)
+### Resolved (91)
 
 - [`add_displaced_search_domain_control_to_1iep_validation.md`](add_displaced_search_domain_control_to_1iep_validation.md) — [#15](https://github.com/uibcdf/bindingmt/issues/15) — Add displaced-search-domain control to 1IEP validation *(resolved, measured)*
 - [`audit_coordinate_record_admission.md`](audit_coordinate_record_admission.md) — [#90](https://github.com/uibcdf/bindingmt/issues/90) — Offline coordinate audits disagree with the existing pose-record admission. *(resolved, reproduced)*
@@ -20,6 +20,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 - [`consume_fixed_state_hydrogens.md`](consume_fixed_state_hydrogens.md) — [#41](https://github.com/uibcdf/bindingmt/issues/41) — Consume explicit fixed-state ligand hydrogen and charge stages with provenance. *(resolved, measured)*
 - [`consume_named_autodock_types.md`](consume_named_autodock_types.md) — [#43](https://github.com/uibcdf/bindingmt/issues/43) — Consume named MolSysMT AutoDock types with explicit stages and parent-label projection. *(resolved, measured)*
 - [`consume_named_partial_charges.md`](consume_named_partial_charges.md) — [#40](https://github.com/uibcdf/bindingmt/issues/40) — Consume named MolSysMT charges with explicit conserved projection evidence. *(resolved, measured)*
+- [`contact_record_options.md`](contact_record_options.md) — [#120](https://github.com/uibcdf/bindingmt/issues/120) — Saved native contact/footprint readers inspect malformed second-operation options before checking their type. *(resolved, reproduced)*
 - [`correct_suite_dependency_installation_routes.md`](correct_suite_dependency_installation_routes.md) — [#64](https://github.com/uibcdf/bindingmt/issues/64) — Advertise the actual MolSysMT and MolSysViewer installation routes. *(resolved, measured)*
 - [`decide_validation_and_benchmark_publication.md`](decide_validation_and_benchmark_publication.md) — [#29](https://github.com/uibcdf/bindingmt/issues/29) — Decide how to collect and publish validation strategies and benchmarks *(resolved, inspected)*
 - [`declaration_snapshots_alias_live_inputs.md`](declaration_snapshots_alias_live_inputs.md) — [#97](https://github.com/uibcdf/bindingmt/issues/97) — Preparation/problem snapshots alias live mutable declarations. *(resolved, reproduced)*

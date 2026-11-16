@@ -1,5 +1,26 @@
 # BindingMT Development Guide
 
+### Saved contact-option admission corrected — 2026-11-15
+
+[#120](archive/contact_record_options.md) now checks both saved contact operation
+option objects before inspecting their fields. Public Interface and independent
+Footprint readers give the existing structured error for malformed options,
+preserving valid history and original resource/process failures. No scientific
+value, schema, signature, helper/data/dependency or native asset changes.
+
+**268 complete affected cases pass per normal/pm-fs policy**, including the
+172 new controls; the unchanged-runtime baseline has 48 failures/124 passes.
+The same 172 controls pass with official SDK-staged inputs and retired support
+resources. Reporting/origin and six workspace/fresh-export checks pass. Cells
+remain serial/CPU-one with a monitored 13 GiB reserve and no new interruption.
+Raw #50 custody: `.molsyssuite/record-admission-112-20261115/`, review 2026-11-22.
+
+[PyUnitWizard #158](https://github.com/uibcdf/pyunitwizard/issues/158) owns the
+separate malformed quantity-metadata diagnostic, without a consumer codec.
+T/H/P cases remain unreceived; next receive the first ready case. New central
+policy receiving is separately tracked in #119/MolSysSuite #201. No install,
+build, tag/package/release or manual remote CI; skipped CI is not a pass.
+
 ### Runnable Site/interface workflow — 2026-11-15
 
 [The copyable walkthrough](../examples/site_interface/README.md) now connects

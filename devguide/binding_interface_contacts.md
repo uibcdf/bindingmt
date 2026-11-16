@@ -223,3 +223,14 @@ population includes chemical/spatial/mixed selectors, numeric compatibility,
 positive/empty findings and actual saved-read/annotation controls. Earlier complete
 populations retain their original source, fixtures and limits. Existing record
 formats/producers are preserved; no historical result is automatically changed.
+
+## Saved operation-option admission corrected — 2026-11-15
+
+[#120](archive/contact_record_options.md) checks every saved operation's option
+mapping before field inspection. In particular, a malformed second distance-call
+option object no longer leaks `AttributeError` through public Interface or
+Footprint reading. Existing field/axis diagnostics and scientific/quantity
+semantics remain unchanged. The exact 268-case normal/pm-fs source and 172-case
+SDK-staged support evidence, original 48/124 baseline, unchanged identities,
+provider #158 and remaining gates are retained in the owning record. This adds
+no quantity-codec fallback, molecular query or stronger scientific assurance.

@@ -10,6 +10,7 @@ making a bounded contribution.
 
 | Document | Primary question |
 | --- | --- |
+| [archive/contact_record_options.md](archive/contact_record_options.md) | How do saved contact/footprint readers reject malformed operation options with structured errors, preserve resource failures and qualify the exact 268-case source/172-case staged scope? |
 | [../examples/site_interface/README.md](../examples/site_interface/README.md) | How do I copy/run the current native Site/region/contact/burial workflow and read its history without molecular input? |
 | [archive/site_interface_walkthrough.md](archive/site_interface_walkthrough.md) | Which frozen source, exact providers and 17-case source/staged-support controls qualify #118, with what limits and custody? |
 | [archive/interface_participant_selection_scope.md](archive/interface_participant_selection_scope.md) | How do contact/burial/ionic participant selectors honor the actual frame/state, with which positive/empty, refusal and historical-read controls? |
