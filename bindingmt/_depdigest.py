@@ -39,6 +39,12 @@ LIBRARIES = {
         'conda': 'pharmacophoremt',
         'channel': 'uibcdf',
     },
+    'topomt': {
+        'type': 'soft',
+        'pypi': None,
+        'conda': 'topomt',
+        'channel': 'uibcdf',
+    },
     'vina': {'type': 'soft', 'pypi': 'vina', 'conda': 'vina'},
     'molsysviewer': {
         'type': 'soft',

@@ -3,6 +3,9 @@ version_file = "site-packages/bindingmt/_version.py"
 import_name = "bindingmt"
 required_paths = [
   "site-packages/bindingmt/__init__.py",
+  "site-packages/bindingmt/provider_interfaces.py",
+  "site-packages/bindingmt/_private/interface_topomt.py",
+  "site-packages/bindingmt/_private/interface_reported_contacts.py",
   "site-packages/bindingmt/_argdigest.py",
   "site-packages/bindingmt/_depdigest.py",
   "site-packages/bindingmt/_private/__init__.py",
@@ -3403,3 +3406,168 @@ sha256 = "eb3174c05f4a9ab0a562eeb1fb151e3ca17c4e149af49ceb74de965613babe4d"
 source = "examples/site_interface/case.json"
 target = "bmt_test_support/site_interface/case.json"
 sha256 = "35d37782fce1180df2304bc88329a8be16fbdb66cfd02c67b975cf6f5fa4d507"
+
+[[installed_tests.support.files]]
+source = "bmt_test_support/build_pisa_records.py"
+target = "bmt_test_support/build_pisa_records.py"
+sha256 = "cc6290aec576b708e8a299c7a5f20c2706390b18e8410af7e4ea00be4650fa0b"
+
+[[installed_tests.support.files]]
+source = "bmt_test_support/build_pisa_sources.py"
+target = "bmt_test_support/build_pisa_sources.py"
+sha256 = "fa2829f80514ba65c5739618469e0dd66adeadbe27213f10771d971c2f55fecc"
+
+[[installed_tests.support.files]]
+source = "bmt_test_support/pisa_case.py"
+target = "bmt_test_support/pisa_case.py"
+sha256 = "55a7a9e2e09dcb0bc872efe1376d0e4661cb81bb16219f6d468e2eb3b7163a48"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/README.md"
+target = "tests/data/interface_topomt_pisa/3a8ee979/README.md"
+sha256 = "80f3cc76af0f2cbbee912a6662165ce324900c22ff1ae10c39124068dfbea404"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/analysis.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/analysis.txt"
+sha256 = "e76df51e03905b207e33e47bb2aeaa6b2393c1a3ef6e329985826cafe8b42948"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/assemblies.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/assemblies.txt"
+sha256 = "5ed01894738f7a97985ce8dda8e111cdd6ce15ead5e03a6834f56315b2a40c87"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_analysis.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_analysis.txt"
+sha256 = "b3468d2e8712a86c613d23f602c55345e90f3ed5a7294e2378569921680afc39"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_assemblies.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_assemblies.txt"
+sha256 = "5f56292c45301b54e03fd8728926c7b963378a3e0aa5430b50be4d24f1a9bb1b"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_input.pdb"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_input.pdb"
+sha256 = "a39034567a0d043d2cbd5ca3df936cd0a41bee6d0b3421ec18bbda5c5b476504"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_interfaces.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_interfaces.txt"
+sha256 = "b550abadfb21d63a26bd2a65005d47c42c4b9d17001d0acec4b950f3ae45d197"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_monomers.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_monomers.txt"
+sha256 = "b8a686c0f07f6f8986093996d570295e1a336066d595ae6ad0af08fa1db9f95d"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/empty_receipt.json"
+target = "tests/data/interface_topomt_pisa/3a8ee979/empty_receipt.json"
+sha256 = "39da97d479334a88fdc4509865bdae1fd1e52942f8c9ffeaa5c9d454adff349f"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/input.pdb"
+target = "tests/data/interface_topomt_pisa/3a8ee979/input.pdb"
+sha256 = "9d23b0a83f59f67306961874d8f4879ab51768d9d409b594f2909da248e6194d"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/interfaces.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/interfaces.txt"
+sha256 = "8d7919a65c87ec7d7680843ac40155499891005b548d01c064e27a9d8d008c68"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/monomers.txt"
+target = "tests/data/interface_topomt_pisa/3a8ee979/monomers.txt"
+sha256 = "b8a686c0f07f6f8986093996d570295e1a336066d595ae6ad0af08fa1db9f95d"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/pisa-empty.zip"
+target = "tests/data/interface_topomt_pisa/3a8ee979/pisa-empty.zip"
+sha256 = "7ece5e4227baf674acac761e6bd7f0aaf5ddce7841749b1ce2358a02d232fcf7"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/pisa-failed.zip"
+target = "tests/data/interface_topomt_pisa/3a8ee979/pisa-failed.zip"
+sha256 = "08d7ec9b0c8d7fead453a36c1b841057a75591c575d64522b9cff0df0c8395fd"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/pisa.zip"
+target = "tests/data/interface_topomt_pisa/3a8ee979/pisa.zip"
+sha256 = "7bbfa0aa23e62384b301096c4b0a80ee85c0367d07e87b6ad72c9f973bc30770"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/protocol.json"
+target = "tests/data/interface_topomt_pisa/3a8ee979/protocol.json"
+sha256 = "0933dab29474f92b68c36f1bc3bce814d0cd7d9df34192797a15953165b4505c"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/3a8ee979/receipt.json"
+target = "tests/data/interface_topomt_pisa/3a8ee979/receipt.json"
+sha256 = "617dcae5c5c54882f7fd0ab66f0307a0a2f82bd3a07050cbd6c46ff7c592e00b"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/native_6deb0200/empty.h5msm"
+target = "tests/data/interface_topomt_pisa/native_6deb0200/empty.h5msm"
+sha256 = "758ea4d0bf0f8d9cda6012b49604c37b5a305b3a2a7afd78a330ab6c902013dd"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/native_6deb0200/manifest.json"
+target = "tests/data/interface_topomt_pisa/native_6deb0200/manifest.json"
+sha256 = "cac822edfb3225ed6f151a53edd6a6781ecbd04e20a1377e7952646a4cdf237e"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/native_6deb0200/positive.h5msm"
+target = "tests/data/interface_topomt_pisa/native_6deb0200/positive.h5msm"
+sha256 = "fbb1156ea9d813cc4e2d022f34457c59f59b637724fead42049db1d9219d8a78"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_pisa/receiving.json"
+target = "tests/data/interface_topomt_pisa/receiving.json"
+sha256 = "9838e9815de0d78baf7dc5f539f9e3cbaf8abeacf9eb4cf7daee2bd0501009ea"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/F-A.json"
+target = "tests/data/interface_topomt_records/20261115/F-A.json"
+sha256 = "2f9513d798ab474c8a8434393544f5b85e4d1e997085d9055330ea45af89d283"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/F-B.json"
+target = "tests/data/interface_topomt_records/20261115/F-B.json"
+sha256 = "f066c884f35312f1613c659c6795159fecd03126c6572fe5c5d42500052bbdb2"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/F-empty.json"
+target = "tests/data/interface_topomt_records/20261115/F-empty.json"
+sha256 = "d55099707cb693fe86d02bf4e78bc8bc1f9a78a2ca625a933f523c1ccdd8dd16"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/F-mixed.json"
+target = "tests/data/interface_topomt_records/20261115/F-mixed.json"
+sha256 = "1b11252e937bec12f82338ddda1d5a069bed757687ec557f7993584f02b0f3a9"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/I-empty.json"
+target = "tests/data/interface_topomt_records/20261115/I-empty.json"
+sha256 = "476d42142e32ac3ab2d66b7d3da19d9d46a8a1456afba3fa0eb1422e6f3c87ee"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/I-failed.json"
+target = "tests/data/interface_topomt_records/20261115/I-failed.json"
+sha256 = "e13bbbce228bd368f842a12cd5d8f95891b9c1bb1309f7e644f059304e7ac1c9"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/I-positive.json"
+target = "tests/data/interface_topomt_records/20261115/I-positive.json"
+sha256 = "06f56a070b53de139aa13590beb8e2e4ff4fe365712faac08c661948588b613e"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/I-unknown.json"
+target = "tests/data/interface_topomt_records/20261115/I-unknown.json"
+sha256 = "b927e058c108db288be141e4d282ce6f93ee704a9e32c5942bbdd8bd36e95c82"
+
+[[installed_tests.support.files]]
+source = "tests/data/interface_topomt_records/20261115/manifest.json"
+target = "tests/data/interface_topomt_records/20261115/manifest.json"
+sha256 = "dc7043a55684fd659b56f5ac1169620625b5e629e270d1b68f97dfb63655d3cc"

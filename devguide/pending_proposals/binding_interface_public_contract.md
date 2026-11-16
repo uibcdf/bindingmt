@@ -1,5 +1,5 @@
 ---
-summary: Correct actual frame/state participant selection across native contact/surface/ionic profiles; retain pending consumer/shared gates.
+summary: Deliver finite optional saved-PISA intake and exact independent reported-contact footprints; retain pending consumer/shared gates.
 issue: uibcdf/bindingmt#112
 status: active
 opened: 2026-11-12
@@ -473,3 +473,36 @@ exceptions retain identity; no wire or scientific definition changes. The
 independently isolated malformed quantity record is reported to PyUnitWizard
 #158 without a consumer workaround. No finite T/H/P case is newly supplied;
 #111/#112 and all broader receiving/installed/public gates remain independent.
+
+## Finite T0/T1 source delivery — 2026-11-15
+
+[The T0/T1 source contract](../binding_interface_topomt_receiving.md) delivers
+original TopoMT PISA intake and independent reported-contact footprints through
+actual public owner/MolSysMT calls. Positive/zero/failed/unknown evidence,
+attribution, quantities, both participant arrays, group witnesses and historical
+source checks survive save/read. New experimental Interface 0.6 and Footprint 0.2
+keep earlier profiles intact. The [copyable example](../../examples/preserved_interface/README.md)
+shows the user route. The maintainer's request to finish both plans reactivates
+this already agreed branch; the earlier native-first deferral remains historical.
+
+**467 complete affected cases pass per normal/pm-fs policy; 118 new owner/core
+cases pass per policy with official SDK-staged inputs.** A fresh blocked-owner/asset/molecular/network reader passes 24 reads of
+eight actual frozen records across Pint/nm-ps, Pint/pm-fs and unyt/pm-fs. Exact
+original inputs, new native-copy producer and actual portable-record producer
+retain separate immutable manifests. Serial CPU-one monitored cells preserve a
+13 GiB available reserve and have no new interruption. Earlier failed setup,
+source-fingerprint and admission attempts are retained, not counted as passes.
+
+Interface M2's finite source receiving is delivered alongside M1/MN1/MN2 and the
+bounded ionic/H-R2 slices. **Neither entire plan is complete.** Site T0 still
+needs TopoMT #199's four finite owner dispositions; regional H needs
+PharmacophoreMT #226's input/policy; Site P and Interface P1/P2/P3 need PeptideMT
+#60's real cases/export seams. Ionic/unyt #156 and malformed QuantityRecord #158
+remain PyUnitWizard-owned; MolSysSuite #195 owns shared disposition and the new
+optional dependency-graph notice. Next receive those actual owner inputs, without
+fabricated consumer payloads or a second local molecular implementation.
+
+No shared install, sibling edit, build, tag/package/release or hosted/manual CI.
+The `0.1.0` tag remains unchanged; #30/#47 keep exact-candidate installed/public/
+platform/hosted evidence. Raw #50 custody:
+`.molsyssuite/complete-site-interface-20261115/`, review **2026-11-22**.

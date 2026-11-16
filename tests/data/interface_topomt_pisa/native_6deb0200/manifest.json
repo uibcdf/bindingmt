@@ -1,0 +1,26 @@
+{
+  "scope": "New native copies of unchanged offered sources; no new PISA execution.",
+  "bindingmt_base": "d2a0085c682da1391c02ffc6ca5ee914824522de",
+  "molsysmt_source": "6deb0200cd7e384128eded46caaf751a57e65bc6",
+  "producer_sha256": "fa2829f80514ba65c5739618469e0dd66adeadbe27213f10771d971c2f55fecc",
+  "sources": {
+    "positive": {
+      "original_file": "input.pdb",
+      "original_sha256": "9d23b0a83f59f67306961874d8f4879ab51768d9d409b594f2909da248e6194d",
+      "file": "positive.h5msm",
+      "sha256": "fbb1156ea9d813cc4e2d022f34457c59f59b637724fead42049db1d9219d8a78",
+      "bytes": 175104,
+      "n_atoms": 40,
+      "n_structures": 1
+    },
+    "empty": {
+      "original_file": "empty_input.pdb",
+      "original_sha256": "a39034567a0d043d2cbd5ca3df936cd0a41bee6d0b3421ec18bbda5c5b476504",
+      "file": "empty.h5msm",
+      "sha256": "758ea4d0bf0f8d9cda6012b49604c37b5a305b3a2a7afd78a330ab6c902013dd",
+      "bytes": 175104,
+      "n_atoms": 40,
+      "n_structures": 1
+    }
+  }
+}

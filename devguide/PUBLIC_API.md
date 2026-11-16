@@ -24,6 +24,8 @@ do not override the chosen frame. [Exact correction and scope](archive/interface
 | --- | --- | --- |
 | Calculate native Cartesian contacts | `calculate_interface_contacts` -> `BindingInterface`; `project_footprint` -> `ContactFootprint` | Use public MolSysMT selection/inspection/maps/contact/distance operations; retain exact atom/group witnesses and independent positive/empty footprint persistence. Explicit cutoff/structure/source and a bounded dense profile are required. |
 | Declare/preserve an interface question | `characterize_interface` → `BindingInterface` | Compose caller-declared participants/analysis outcomes; inspect/copy/revise and exclusively save/read experimental core JSON. No molecular or provider execution. |
+| Preserve an original PISA analysis | `BindingInterface.from_topomt` | Explicit optional public-owner intake; preserve original completed/zero/failed/unknown evidence, attribution and typed measurements in experimental Interface 0.6. |
+| Project reported contact atoms | `BindingInterface.project_reported_footprint` → `ContactFootprint`; `check_context` | Recover/check the unchanged complete original native source through TopoMT and MolSysMT; preserve exact participant/group contributors and historical correspondence in experimental Footprint 0.2. |
 | Read saved observations | `DockingPose.from_dict`, `DockingResult.from_dict`, `DockingOutcome.from_dict` | Validate and restore records without reconstructing a molecular problem or running an engine. |
 | Inspect available evidence | `audit_pose`, `audit_result`, `verify_captured_inputs` | Cross-check supplied mappings/captured bytes offline. An internally consistent record is not authenticated provenance or chemical validation. |
 | Change a result's order | `DockingResult.rank_by` | Stable ordering of existing scores, with ranking history; no new score or search. |
@@ -243,6 +245,18 @@ footprints. `contact_calculation` exposes detached expert evidence. Native resul
 records use experimental 0.2; `ContactFootprint` uses 0.1 and has its own copy/save/read.
 Both readers preserve history without molecular operations or current-use reassessment.
 The format version 0.1 is separate from the package's 0.1.0 tag.
+
+The optional [saved PISA profile](binding_interface_topomt_receiving.md) adds
+`BindingInterface.from_topomt` for actual public `PisaOutput`/`ProviderRun` input,
+detached `topomt_analyses` and explicit `recover_topomt`. Experimental Interface
+0.6 preserves original analysis authority, quantities, attribution and outcomes.
+`project_reported_footprint` admits `h-bonds`/`other-bonds`, one finding and a named
+participant on the unchanged complete original MolSys; it returns independently
+readable experimental Footprint 0.2. `check_context` explicitly produces a new
+source-correspondence receipt without rewriting history. No original engine runs;
+core read/copy/summary needs no optional owner or asset. Other versions retain
+their meaning; a native footprint 0.1 is not a reported PISA footprint. See the
+[saved-analysis example](../examples/preserved_interface/README.md).
 
 The [native SASA/burial profile](binding_interface_burial.md) adds
 `calculate_interface_burial` with explicit probe, sample density and supplied-H

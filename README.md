@@ -38,6 +38,11 @@ calculations, a completed empty result and reading saved history without the
 molecular source. These experimental source capabilities are later than the
 `0.1.0` tag.
 
+For a previously saved TopoMT PISA analysis, see the
+[preserved-interface example](examples/preserved_interface/README.md): retain the
+original evidence, project reported contact atoms and inspect the saved footprint
+later with the normal core dependencies.
+
 Use the [short prepared-input quickstart](QUICKSTART.md) for execution, score
 inspection, saving, restoration and audit through the public API. The current
 [source-only 0.1.0 milestone](devguide/releases/0.1.0_current.md) records its exact

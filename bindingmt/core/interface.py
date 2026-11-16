@@ -119,17 +119,84 @@ def _analysis(value, version):
         'extensions',
         'calculation',
         'native_observation',
+        'topomt_observation',
     }
     _fields(value, required, optional, 'analyses')
     _require(_text(value['owner']), 'analyses', 'Name the declared originating owner.')
     _reference(value['reference'], 'analyses')
     _require(
         value['authority']
-        in ('caller_declared', 'bindingmt_calculated', 'molsysmt_native'),
+        in (
+            'caller_declared',
+            'bindingmt_calculated',
+            'molsysmt_native',
+            'topomt_preserved',
+        ),
         'analyses',
         'Use declared evidence or the admitted BindingMT native calculation profile.',
     )
-    if value['authority'] == 'bindingmt_calculated':
+    if value['authority'] == 'topomt_preserved':
+        from bindingmt._private.interface_topomt import (
+            _sha,
+            finding_refs,
+            validate_observation,
+            validate_receiver,
+        )
+
+        _require(
+            version == '0.6'
+            and value['owner'] == 'pisa'
+            and 'topomt_observation' in value
+            and 'calculation' not in value
+            and 'native_observation' not in value,
+            'analyses',
+            'Require the complete experimental preserved-PISA profile.',
+        )
+        observation = value['topomt_observation']
+        validate_observation(observation)
+        extensions = value.get('extensions')
+        _require(
+            isinstance(extensions, Mapping)
+            and 'bindingmt.original_intake' in extensions,
+            'receiver',
+            'Preserve receiving provenance separately from the original owner producer.',
+        )
+        validate_receiver(
+            extensions['bindingmt.original_intake'], 'BindingInterface.from_topomt'
+        )
+        asset_refs = value.get('asset_refs', [])
+        _require(
+            isinstance(asset_refs, list) and len(asset_refs) <= 1,
+            'asset_refs',
+            'This original profile retains at most one exact bundle reference.',
+        )
+        for reference in asset_refs:
+            _fields(reference, {'uri', 'sha256'}, set(), 'asset_refs')
+            _require(
+                _text(reference['uri']) and _sha(reference['sha256']),
+                'asset_refs',
+                'Preserve the exact declared URI/digest without looking it up.',
+            )
+        _require(
+            value['outcome'] == observation['outcome']
+            and value['finding_refs'] == finding_refs(observation)
+            and value['reference']
+            == {key: observation[key] for key in ('provider', 'backend', 'run_id')},
+            'analyses',
+            'Preserve the exact original outcome, finding and run references.',
+        )
+        if value['outcome'] == 'failed':
+            _require(
+                value.get('failure')
+                == {
+                    'stage': 'analysis',
+                    'reference': {'run_id': observation['run_id']},
+                    'artifact_refs': sorted(observation['artifact_checksums']),
+                },
+                'failure',
+                'Preserve the original failed analysis and all captured artifact references.',
+            )
+    elif value['authority'] == 'bindingmt_calculated':
         from bindingmt._private import interface_burial, interface_contacts
 
         _require(
@@ -311,10 +378,10 @@ def _validate(record):
     _fields(record, required, set(), 'record')
     _require(
         record['format'] == _FORMAT
-        and record['format_version'] in (_VERSION, '0.2', '0.3', '0.4', '0.5')
+        and record['format_version'] in (_VERSION, '0.2', '0.3', '0.4', '0.5', '0.6')
         and record['experimental'] is True,
         'format_version',
-        'Explicit experimental bindingmt.binding_interface version 0.1, 0.2, 0.3, 0.4 or 0.5 is required.',
+        'Explicit experimental bindingmt.binding_interface version 0.1 through 0.6 is required.',
     )
     _require(_text(record['record_id']), 'record_id', 'Use a nonempty record identity.')
     _claim(
@@ -344,7 +411,10 @@ def _validate(record):
     )
     _require(
         native_count <= 1
-        and (record['format_version'] in ('0.1', '0.4', '0.5') or native_count == 1),
+        and (
+            record['format_version'] in ('0.1', '0.4', '0.5', '0.6')
+            or native_count == 1
+        ),
         'analyses',
         'Experimental 0.2/0.3 admits exactly one corresponding native calculation.',
     )
@@ -353,6 +423,22 @@ def _validate(record):
         for name, a in record['analyses'].items()
         if a['authority'] == 'molsysmt_native'
     }
+    if record['format_version'] == '0.6':
+        _require(
+            len(record['analyses']) == 1
+            and all(
+                a['authority'] == 'topomt_preserved'
+                for a in record['analyses'].values()
+            ),
+            'analyses',
+            'Experimental 0.6 admits one preserved original PISA analysis.',
+        )
+    else:
+        _require(
+            all('topomt_observation' not in a for a in record['analyses'].values()),
+            'analyses',
+            'Preserved original PISA evidence requires experimental 0.6.',
+        )
     _require(
         not observations or record['format_version'] in ('0.4', '0.5'),
         'analyses',
@@ -444,7 +530,7 @@ class BindingInterface(_InterfaceRecordIO):
         _require(
             experimental is True,
             'experimental',
-            'Opt in with experimental=True to admit interface format 0.1/0.2/0.3/0.4/0.5.',
+            'Opt in with experimental=True to admit interface format 0.1 through 0.6.',
         )
         _validate(record)
         snapshot = json_copy(record, 'record')
@@ -455,6 +541,93 @@ class BindingInterface(_InterfaceRecordIO):
         )
         object.__setattr__(
             self, '_json', json.dumps(snapshot, allow_nan=False, ensure_ascii=True)
+        )
+
+    @classmethod
+    @signal(tags=['api', 'interface', 'original-evidence'])
+    @arg_digest(config='bindingmt._argdigest')
+    def from_topomt(
+        cls,
+        provider_result,
+        *,
+        question,
+        participants,
+        grouping,
+        analysis_name='pisa',
+        artifact_ref=None,
+        contexts=None,
+        site_refs=None,
+    ):
+        """Preserve an original public PisaOutput/ProviderRun, without molecular use.
+
+        This explicit optional route preserves completed, failed or unrecovered
+        evidence. Core readers need no TopoMT or original engine. Source and
+        participant references remain caller declarations, not current matches.
+        """
+        from bindingmt.provider_interfaces import _from_topomt
+
+        return _from_topomt(
+            provider_result,
+            question=question,
+            participants=participants,
+            grouping=grouping,
+            analysis_name=analysis_name,
+            artifact_ref=artifact_ref,
+            contexts=contexts,
+            site_refs=site_refs,
+        )
+
+    @property
+    def topomt_analyses(self):
+        """Return detached historical original observations without owner imports."""
+        return {
+            name: analysis['topomt_observation']
+            for name, analysis in self.analyses.items()
+            if analysis['authority'] == 'topomt_preserved'
+        }
+
+    @signal(tags=['api', 'interface', 'original-recovery'])
+    @arg_digest(config='bindingmt._argdigest')
+    def recover_topomt(self, molecular_system, *, bundle_file, analysis_name='pisa'):
+        """Explicitly recover completed evidence on its unchanged original source."""
+        from bindingmt.provider_interfaces import _recover_topomt
+
+        return _recover_topomt(
+            self, molecular_system, analysis_name=analysis_name, bundle_file=bundle_file
+        )
+
+    @signal(tags=['api', 'interface', 'reported-footprint'])
+    @arg_digest(config='bindingmt._argdigest')
+    def project_reported_footprint(
+        self,
+        molecular_system,
+        *,
+        bundle_file,
+        finding_id,
+        participant,
+        contact_groups,
+        analysis_name='pisa',
+        assurance_scope='molecular_correspondence',
+        context_policy='require_match',
+    ):
+        """Project original PISA witnesses after fresh complete-source checks.
+
+        Explicit groups are reported original criteria, not a native distance
+        cutoff or chemical recognition. Read the saved result without TopoMT or
+        molecular input; explicit later context checks reassess required facts.
+        """
+        from bindingmt.provider_interfaces import _project_reported
+
+        return _project_reported(
+            self,
+            molecular_system,
+            bundle_file=bundle_file,
+            analysis_name=analysis_name,
+            finding_id=finding_id,
+            participant=participant,
+            contact_groups=contact_groups,
+            assurance_scope=assurance_scope,
+            context_policy=context_policy,
         )
 
     @property
@@ -607,6 +780,7 @@ class BindingInterface(_InterfaceRecordIO):
         calculation = self.contact_calculation
         surface = self.surface_calculation
         observations = self.interaction_analyses
+        originals = self.topomt_analyses
         native_context = (
             (calculation or surface)['context']
             if calculation or surface
@@ -677,6 +851,25 @@ class BindingInterface(_InterfaceRecordIO):
                 for label, entry in self.characterizations.items()
             },
             'native_analysis_order': self.interaction_analysis_order,
+            'original_provider_analyses': {
+                name: {
+                    'provider': view['provider'],
+                    'backend': view['backend'],
+                    'run_id': view['run_id'],
+                    'assembly_policy': view['assembly_policy'],
+                    'finding_ids': [
+                        finding['source_id'] for finding in view['findings']
+                    ]
+                    if view['findings'] is not None
+                    else None,
+                    'attribution_state': 'preserved'
+                    if view['attribution'] is not None
+                    else 'not_recorded',
+                    'current_assessment': 'not_performed',
+                }
+                for name, view in originals.items()
+            }
+            or None,
             'native_interactions': {
                 name: {
                     'occurrence_count': len(view['observations']),
@@ -701,12 +894,16 @@ class BindingInterface(_InterfaceRecordIO):
             if surface
             else None,
             'limitations': [
-                'Native ionic evidence under caller-admitted unchanged full-source context.'
+                'Original PISA evidence preserved through its public TopoMT carrier; no current molecular match is inferred.'
+                if originals
+                else 'Native ionic evidence under caller-admitted unchanged full-source context.'
                 if observations
                 else 'MolSysMT geometric calculation; intended identity/state remains caller admitted.'
                 if calculation or surface
                 else 'Caller-declared evidence; no owner verification, molecular checking or binding inference.',
-                'Saved native evidence is historical; no current molecular match or binding strength is inferred.'
+                'Saved original evidence is historical; explicit recovery, reported projection and source checks never infer binding strength.'
+                if originals
+                else 'Saved native evidence is historical; no current molecular match or binding strength is inferred.'
                 if calculation or surface or observations
                 else 'Native calculation, recovery and footprint projection are not implemented by this profile.',
             ],

@@ -81,6 +81,11 @@ slice or a concrete external-result workflow; it is not an automatic next step.
 The [finite ionic/H0/H1 admission](binding_interface_native_interactions.md) owns
 actual implementation/receiving; richer chemistry remains separately admitted.
 
+The 2026-11-15 request to finish both complete plans explicitly reactivates that
+already agreed optional branch. Its [finite T0/T1 source M2](binding_interface_topomt_receiving.md)
+is now implemented/received. The preceding paragraph preserves the original
+priority decision; it is no longer the current implementation status.
+
 ### 1.1 Native catalogue contribution and planning disposition
 
 The [new TopoMT post](https://github.com/uibcdf/bindingmt/issues/112#issuecomment-6836773833)
@@ -244,13 +249,13 @@ make every later consumer profile a prerequisite for a useful data/native checkp
 | --- | --- | --- |
 | P0a | Closed for the first declaration/persistence profile | Actual question/intake/identity/version/default/refusal contract is in the data-profile admission. Later profiles close their own choices. |
 | P0m/P0s | Restricted #734 offer and bounded contact/surface/ionic source facts received | Actual shared/consumer-wide acceptance stays under #195; later operation profiles admit their own facts. |
-| P0t | Fixed artifacts and expectations supplied | Confirm input hashes, carrier/group/participant interpretation and exact first public contract. Not executed client receiving. |
+| P0t | Finite saved-PISA source contract admitted and received | Exact original inputs, owner recovery, quantities, outcomes and first public contract are in the [T0/T1 receiving record](binding_interface_topomt_receiving.md). Larger/installed/public profiles remain separate. |
 | P0h/P0p | Original ionic H0/H1 inputs received; P exact inputs/export seam pending | Receive/admit the H and P specifications and independently expected outputs; do not invent fixtures or scientific choices from favorable review. |
 | D1/D2 | First experimental data profile implemented and source-tested | Actual declaration/summary, copy/reinterpretation, content integrity and exclusive save/read. No molecular/foreign adapter receiving is inferred. |
 | C | Bounded contact/surface/ionic source context received; participant frame/state corrected in #117 | Exact public calls, tested source/frame/maps and caller preconditions are in the contact contract. Foreign/current-finding assurances remain unqualified. |
 | N0/N1 | First bounded native source profile implemented and received | Actual MolSysMT contacts/distances, group witnesses and independent positive/empty footprints, without PISA/TopoMT. Larger profiles and installed/public receiving remain separate. |
 | N2 | Bounded Cartesian SASA/burial source profile implemented and received | Public owner SASA composition, both side losses and mapped contributions, convergence and honest readback/refusal. |
-| T0/T1 | Deferred optional interoperability by maintainer; runtime pending | Actual saved analysis intake and exact participant-contact footprint/replay, including adverse controls. |
+| T0/T1 | Finite source M2 implemented and received after maintainer reactivation | Actual saved positive/zero/failed/unknown intake, exact A/B/group footprint/persistence, authored overlap, independent core reader and adverse/context controls. No broader method/consumer/shared acceptance is inferred. |
 | H0/H1 | Bounded Pint ionic construction/replay and H-R2 annotation source-received; unyt #156 pending | Effective grouping, native construction, observation/site correspondence and native saved replay. |
 | P | Input/seam and runtime pending | Actual K/N payloads, native/derived-context and comparison controls under a declared policy. |
 | A | Evidence pending | Declared acceptance scope, exact evidence, shared disposition and per-consumer follow-ups are recorded honestly. |
@@ -1385,7 +1390,9 @@ controls, normal/pm-fs and independent offline readback. Exact source/native
 receiving remains distinct from installed/public or shared-consumer acceptance.
 Record shared/consumer disposition separately in MolSysSuite #195.
 
-Keep deferred T0/C/T1 PISA persistence/adverse controls on their own branch.
+The maintainer now reactivates the agreed T0/C/T1 branch to complete both plans.
+Its [finite source M2 receiving](binding_interface_topomt_receiving.md) is delivered;
+the original native-first deferral remains historical.
 The finite delivered H0/H1 ionic and H-R2 annotation slices and exact P inputs retain
 their own owner contracts. Source inspection or owner expectation does not
 complete an unexecuted branch.
@@ -1401,8 +1408,8 @@ qualifies sorted/reversed JSON and actual old 0.4 compatibility, with explicit
 new ionic record 0.5 ordering. Its 229 passes/1 strict owner xfail per policy
 cover the directly affected modules; the prior 105 unrelated result/helper cases
 are outside this selection. Complete exact P controls and record #195 disposition.
-Receive PyUnitWizard #156 for unyt native construction under the maintainer native-first disposition. T0/T1 stays deferred
-optional interoperability. Remaining H/P inputs and later application choices
+Receive PyUnitWizard #156 for unyt native construction. T0/T1 now has its finite
+source receiving above; stronger/transferred profiles remain separate. Remaining H/P inputs and later application choices
 retain the owners and gates in the
 [readiness ledger](binding_interface_plan_review.md#8-sufficiency-for-the-agreed-implementation-programme).
 No source-only profile closes provider adoption, hosted/platform acceptance or

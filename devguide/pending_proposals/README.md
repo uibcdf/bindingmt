@@ -6,7 +6,7 @@ Open proposals following [`reporting_protocol.md`](../reporting_protocol.md).
 
 ### Active (2)
 
-- [`binding_interface_public_contract.md`](binding_interface_public_contract.md) — [#112](https://github.com/uibcdf/bindingmt/issues/112) — Correct actual frame/state participant selection across native contact/surface/ionic profiles; retain pending consumer/shared gates. *(active, reproduced)*
+- [`binding_interface_public_contract.md`](binding_interface_public_contract.md) — [#112](https://github.com/uibcdf/bindingmt/issues/112) — Deliver finite optional saved-PISA intake and exact independent reported-contact footprints; retain pending consumer/shared gates. *(active, reproduced)*
 - [`binding_site_public_contract.md`](binding_site_public_contract.md) — [#111](https://github.com/uibcdf/bindingmt/issues/111) — Track published finite T/H/P owner requests and the corrected current work order; retain delivered native profiles and pending shared receiving. *(active, reproduced)*
 
 ### Partial (15)

@@ -16,6 +16,11 @@ The latest source correction at `36d88d35111054e9344c23beefae433bfd0cc34d`
 has 368 affected cases passing per unit policy; its earlier 1191-case population
 retains the original source. No population is rerun or enlarged by this document.
 
+The independent Interface saved-PISA T0/T1 branch is now
+[source-received](binding_interface_topomt_receiving.md). It uses an already agreed
+original saved-analysis offer and does **not** admit this Site T case, its member/
+lining/geometry interpretation or the four outstanding TopoMT #199 decisions.
+
 ## Exact requests and remaining owner decisions
 
 | Branch | Public owner destination | Received now | Required next input |

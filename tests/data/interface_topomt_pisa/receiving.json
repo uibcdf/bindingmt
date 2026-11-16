@@ -1,0 +1,69 @@
+{
+  "owner": "uibcdf/topomt",
+  "frozen_source": "3a8ee979db8de6f6345de74558a878bb96ba3234",
+  "observed_source": "e7a3052d949f207241e602bea3728d43427aca20",
+  "scope": "Original supplied PISA captures; no new execution or independent scientific truth.",
+  "files": {
+    "empty_interfaces.txt": "b550abadfb21d63a26bd2a65005d47c42c4b9d17001d0acec4b950f3ae45d197",
+    "pisa-failed.zip": "08d7ec9b0c8d7fead453a36c1b841057a75591c575d64522b9cff0df0c8395fd",
+    "monomers.txt": "b8a686c0f07f6f8986093996d570295e1a336066d595ae6ad0af08fa1db9f95d",
+    "empty_monomers.txt": "b8a686c0f07f6f8986093996d570295e1a336066d595ae6ad0af08fa1db9f95d",
+    "interfaces.txt": "8d7919a65c87ec7d7680843ac40155499891005b548d01c064e27a9d8d008c68",
+    "analysis.txt": "e76df51e03905b207e33e47bb2aeaa6b2393c1a3ef6e329985826cafe8b42948",
+    "empty_receipt.json": "39da97d479334a88fdc4509865bdae1fd1e52942f8c9ffeaa5c9d454adff349f",
+    "empty_input.pdb": "a39034567a0d043d2cbd5ca3df936cd0a41bee6d0b3421ec18bbda5c5b476504",
+    "empty_assemblies.txt": "5f56292c45301b54e03fd8728926c7b963378a3e0aa5430b50be4d24f1a9bb1b",
+    "README.md": "80f3cc76af0f2cbbee912a6662165ce324900c22ff1ae10c39124068dfbea404",
+    "assemblies.txt": "5ed01894738f7a97985ce8dda8e111cdd6ce15ead5e03a6834f56315b2a40c87",
+    "pisa-empty.zip": "7ece5e4227baf674acac761e6bd7f0aaf5ddce7841749b1ce2358a02d232fcf7",
+    "protocol.json": "0933dab29474f92b68c36f1bc3bce814d0cd7d9df34192797a15953165b4505c",
+    "pisa.zip": "7bbfa0aa23e62384b301096c4b0a80ee85c0367d07e87b6ad72c9f973bc30770",
+    "input.pdb": "9d23b0a83f59f67306961874d8f4879ab51768d9d409b594f2909da248e6194d",
+    "receipt.json": "617dcae5c5c54882f7fd0ab66f0307a0a2f82bd3a07050cbd6c46ff7c592e00b",
+    "empty_analysis.txt": "b3468d2e8712a86c613d23f602c55345e90f3ed5a7294e2378569921680afc39"
+  },
+  "expected": {
+    "finding_id": "1",
+    "contact_groups": [
+      "h-bonds",
+      "other-bonds"
+    ],
+    "other_bonds": {
+      "count": 24,
+      "A": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8,
+        10,
+        11,
+        12,
+        13,
+        15,
+        16,
+        17,
+        18
+      ],
+      "B": [
+        21,
+        22,
+        24,
+        26,
+        27,
+        29,
+        31,
+        32,
+        34,
+        36,
+        37,
+        39
+      ]
+    },
+    "h_bonds_count": 0,
+    "completed_zero_findings": 0
+  }
+}

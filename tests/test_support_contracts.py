@@ -163,7 +163,9 @@ def test_optional_dependency_inventory_is_complete():
     } == hard
     assert {
         name for name, entry in dependencies.items() if entry['type'] == 'soft'
-    } == optional
+    } == optional | {'pharmacophoremt', 'topomt'}
+    # Explicit development-source receiving routes have no published extra/floor.
+    assert not hard & {'pharmacophoremt', 'topomt'}
 
 
 @pytest.mark.parametrize(

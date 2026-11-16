@@ -1,5 +1,9 @@
 # Document Map
 
+Current optional-interface checkpoint: [T0/T1 source receiving](binding_interface_topomt_receiving.md)
+and its [copyable saved-analysis example](../examples/preserved_interface/README.md).
+Both complete plans retain their explicit owner-input/shared/consumer gates.
+
 Start with the current-work documents. Design documents explain intent; dated
 audits, notebooks and receipts retain evidence at their stated source/artifact
 identities. A historical "next" action is not automatically today's queue.
@@ -21,6 +25,7 @@ making a bounded contribution.
 | [binding_site_topomt_receiving.md](binding_site_topomt_receiving.md) | Which exact saved TopoMT reader controls pass, what finite agreement does TopoMT #199 own, and what remains before T0/T1? |
 | [binding_site_selection.md](binding_site_selection.md) | Which public inventory/one-structure selection snapshots, Site 0.4 codec and region checks are received, how do exact MolSysMT #756 receiving and the later native-admission correction retain their independent populations? |
 | [binding_site_region.md](binding_site_region.md) | Which bounded public C1 native atom/group projections and saved-result reader are delivered, with which maps/coverage/state/trust limits and 765-case normal/pm-fs qualification? |
+| [binding_interface_topomt_receiving.md](binding_interface_topomt_receiving.md) | Which original PISA intake, exact participant/contact footprints, independent core records, source checks and optional-route evidence are received, with what limits and remaining gates? |
 | [binding_interface_peptide_receiving.md](binding_interface_peptide_receiving.md) | What exact P1/P2/P3 inputs does PeptideMT #60 own, which existing API/map/environment limits apply, and what is still pending before consumer adoption? |
 | [archive/redocking_summary_receiving_controls.md](archive/redocking_summary_receiving_controls.md) | How are original evaluator identities/hashes preserved, which complete summary controls pass, and which broader evaluator attempt was interrupted? |
 | [archive/interface_json_object_order.md](archive/interface_json_object_order.md) | How do saved axes survive sorted/reversed JSON, what changes in ionic record 0.5, how are actual 0.4 records read, and what exact regression/cold-reader evidence qualifies #114? |

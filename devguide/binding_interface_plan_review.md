@@ -1,5 +1,10 @@
 # BindingInterface work-plan review: revisions 3 and 4
 
+Current implementation update — 2026-11-15: [the finite T0/T1 source profile](binding_interface_topomt_receiving.md)
+is implemented and received after maintainer reactivation. This supersedes the
+historical PISA deferral below without rewriting its original priority decision.
+P inputs/actual consumer seams, full ionic/unyt and shared acceptance remain pending.
+
 Owner: [BindingMT #112](https://github.com/uibcdf/bindingmt/issues/112).
 Reviewed: 2026-11-12. Scope: **planning completeness and implementation readiness**;
 no native calculation, API emission, scientific qualification or adoption is
@@ -292,7 +297,7 @@ and shared/installed/public acceptance remain pending:
 | D2 | Safe exclusive save/read, explicit experimental admission, quantities, detached ownership, historical checks and crossed outcomes. | BindingMT chooses the concrete record/version and produces actual public declarations/analysis-summary round trips and I/O/refusal guards. Handwritten examples are not the output evidence. |
 | N0/C -> N1 | Published #734 contacts/distances/maps offer and independent expected populations. | BindingMT binds the actual public call recipe, source/native/import closure, cutoff/boundary, fields, checked facts/preconditions and resource/failure policy; then qualifies the real contact/footprint round trip without PISA/TopoMT. |
 | N0/C -> N2 | Published #734 fixed-input three-context native SASA/radius offer. | BindingMT chooses supported chemistry/H/radius/environment/probe/sampling and numerical acceptance, proves common input/maps and receives both side losses/contributions. A membership threshold is needed only for an admitted burial-derived footprint. N2 does not require a prior contact result. |
-| T0/T1 | Frozen PISA sources/bundles, owner carrier/reader boundary and exact positive/empty/failure expectations. | BindingMT implements actual optional intake, qualified footprint persistence/readback and adverse controls. This independent branch remains an obligation under its agreed scope. |
+| T0/T1 | Frozen original inputs and actual optional intake/footprints source-received. | Finite M2 evidence is in the T0/T1 contract; installed/public, stronger transferred profiles and shared/consumer acceptance retain their separate gates. |
 | H0/H1 and selected regional H | Native semantics baseline and received consumer case outlines. | PharmacophoreMT/BindingMT receive exact prepared native inputs and expected occurrences/site maps; admit the selected conversion/participation/curation policies and execute actual saved receiving. Regional H-R1 is conditional on selecting that path. |
 | P and admitted P1/P2/P3 | Concrete native/derived, sequence/group and contribution-view outlines, alongside K/N/comparison controls. | PeptideMT/BindingMT receive exact inputs, maps/roles and actual export/result seams; record independent expectations, applicability and explicit deferrals. Reporting views preserve the original calculation. |
 | Optional regional enrichment | TopoMT #198 owns its standalone regional scientific/public profile and controls. | Receive a supported public owner result and independent persistence when ready. This does not block native N1/N2 or qualify every topographic family. |
