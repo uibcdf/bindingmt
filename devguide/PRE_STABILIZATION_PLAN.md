@@ -1,5 +1,31 @@
 # Core and Extended delivery before stabilization
 
+## Policy 1.6.0 source review completed — 2026-11-17
+
+[#121's archived review](archive/latest_policy_1_6_0.md) receives both actual
+Python policy callers at immutable 1.6.0, preserving #119's completed 1.5.12
+history and every scientific/installed/publication SDK pin. Official selected
+checking confirms the seven canonical relationships unchanged. The frozen
+checker goes from LATEST_POLICY to no findings; all 11 existing administrative
+tests, Ruff, indexes, exact 70 runtime / 688 support resources and the example recipe
+contract pass. The existing guard now verifies both callers; independent pin
+reversions fail it. [Exact local receipt](validation/policy_1_6_0_receiving_20261117.json).
+
+The bounded resource profile uses one inherited CPU/nice 10/native threads 1,
+estimated 1 GiB RAM / 256 MiB scratch, per-process AS 2 GiB / CPU 45 s and monitored
+owned-session wall 180 s / 13 GiB available reserve. Observations and per-process
+controls do not establish reservations or aggregate RAM/admission protection.
+No shared-prefix install, scientific/native/browser campaign or owner scratch
+cleanup is selected. Preserve existing #50 custody and review dates.
+
+Use the maintainer-authorized `[skip ci]` push; hosted/source/scientific/installed/
+public evidence remains with #30/#47 and their agreed checkpoints. No manual CI
+is dispatched and skipped CI is not passing evidence. The containing commit and
+fresh committed-export results are returned to #121 and central #201/#197.
+Next resume the first ready finite owner case under the existing site/interface
+plans; this administrative review does not complete those plans or broaden gates.
+
+
 ## Original H5MSM default IO received — 2026-11-15
 
 [The finite #73/#256 report](validation/h5msm_default_client_receiving_2026-11-15.md)

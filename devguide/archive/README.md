@@ -4,7 +4,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 
 <!-- generated: devguide_index -->
 
-### Resolved (92)
+### Resolved (93)
 
 - [`add_displaced_search_domain_control_to_1iep_validation.md`](add_displaced_search_domain_control_to_1iep_validation.md) — [#15](https://github.com/uibcdf/bindingmt/issues/15) — Add displaced-search-domain control to 1IEP validation *(resolved, measured)*
 - [`audit_coordinate_record_admission.md`](audit_coordinate_record_admission.md) — [#90](https://github.com/uibcdf/bindingmt/issues/90) — Offline coordinate audits disagree with the existing pose-record admission. *(resolved, reproduced)*
@@ -45,6 +45,7 @@ Permanent resolved, withdrawn and superseded records. Archive, never delete.
 - [`interface_json_object_order.md`](interface_json_object_order.md) — [#114](https://github.com/uibcdf/bindingmt/issues/114) — Native contact records can fail reading after JSON object-key sorting without any content-digest change. *(resolved, reproduced)*
 - [`interface_participant_selection_scope.md`](interface_participant_selection_scope.md) — [#117](https://github.com/uibcdf/bindingmt/issues/117) — Resolve native interface participants on the chosen structure and its associated chemical state. *(resolved, reproduced)*
 - [`invalid_scores_can_corrupt_pose_ranking.md`](invalid_scores_can_corrupt_pose_ranking.md) — [#24](https://github.com/uibcdf/bindingmt/issues/24) — Reject invalid named scores before ranking docking poses *(resolved, measured)*
+- [`latest_policy_1_6_0.md`](latest_policy_1_6_0.md) — [#121](https://github.com/uibcdf/bindingmt/issues/121) — Receive policy 1.6.0 in both actual callers with current guide and bounded resource review. *(resolved, measured)*
 - [`latest_policy_adoption.md`](latest_policy_adoption.md) — [#119](https://github.com/uibcdf/bindingmt/issues/119) — Receive the latest-policy rule, update the remaining policy caller and synchronize the common guide through its owner tool. *(resolved, inspected)*
 - [`length_quantity_oserror.md`](length_quantity_oserror.md) — [#115](https://github.com/uibcdf/bindingmt/issues/115) — Shared length admission masks an original OS/resource error as invalid input. *(resolved, reproduced)*
 - [`ligand_pdbqt_writer_shifts_columns_for_four_character_atom_names.md`](ligand_pdbqt_writer_shifts_columns_for_four_character_atom_names.md) — [#18](https://github.com/uibcdf/bindingmt/issues/18) — Ligand PDBQT writer shifts columns for four-character atom names *(resolved, measured)*

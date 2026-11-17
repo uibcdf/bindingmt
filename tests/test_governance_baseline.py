@@ -15,12 +15,16 @@ def test_shared_governance_surfaces_are_present():
     ):
         assert (ROOT / filename).is_file()
 
-    policy = ROOT / '.github/workflows/molsyssuite-policy.yml'
-    assert policy.is_file()
-    assert (
-        'uibcdf/molsyssuite/.github/workflows/'
-        'check-python-repository.yaml@policy-v1.5.4'
-    ) in policy.read_text(encoding='utf-8')
+    for filename in (
+        'molsyssuite-policy.yml',
+        'qualify-current-0.1.0.yml',
+    ):
+        policy = ROOT / '.github/workflows' / filename
+        assert policy.is_file()
+        assert (
+            'uibcdf/molsyssuite/.github/workflows/'
+            'check-python-repository.yaml@policy-v1.6.0'
+        ) in policy.read_text(encoding='utf-8')
 
 
 def test_ci_covers_supported_lanes_and_common_quality_gates():
